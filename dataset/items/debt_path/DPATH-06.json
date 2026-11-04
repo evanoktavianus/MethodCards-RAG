@@ -1,0 +1,148 @@
+{
+ "id": "DPATH-06",
+ "family": "methodology",
+ "method": "debt_path",
+ "style": "named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "For El Salvador: how much of the 2016 change in the general government gross debt ratio is attributable to each of the primary deficit, the real interest rate paid on last year's debt and real GDP growth? Give each contribution in percentage points of GDP and say which one mattered most.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the change in the public debt ratio is attributed to its components by applying the debt-accumulation identity to the previous-year debt stock: primary deficit, an interest-rate term, a growth term (and, in the other published variant, a separate inflation term), as set out in Escolano (2010) 'A Practical Guide to Public Debt Dynamics...' (equations 24-28) and in the IMF (2013) Staff Guidance Note / MAC SRDSF (2021) debt-dynamics annex ('contribution from real interest rate', 'contribution from real GDP growth').",
+    "accept": "full = names the debt-dynamics decomposition (any of Escolano 2010, IMF 2013 Staff Guidance Note Annex I, MAC SRDSF 2021, or the IMF Public Debt Dynamics Tool) and applies it with the previous-year debt ratio; partial = describes an interest-growth-primary-balance attribution without a source; no = uses a stabilising-balance calculation or a naive deficit/interest split."
+   },
+   {
+    "id": "c6",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Names the real-interest-rate effect on last year's debt stock as the largest of the named contributions in 2016 (+2.4 percentage points).",
+    "accept": "full = identifies it as the dominant named driver with the sign (adds to / reduces debt) stated correctly; partial = right driver without sign or magnitude; no = otherwise."
+   }
+  ],
+  "data": [
+   {
+    "id": "c7",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government gross debt (% of GDP), primary balance, interest paid (primary balance minus overall balance), nominal and real GDP (WEO), i.e. IMF WEO GGXWDG_NGDP, GGXONLB_NGDP, GGXCNL_NGDP, NGDP, NGDP_R.",
+    "accept": "full = debt, primary balance, interest or overall balance, and nominal/real GDP or growth+deflator all used; partial = most of them; no = other."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "El Salvador: +0.2 percentage points of GDP in 2016 (primary deficit (positive = adds to debt)).",
+    "accept": "full = within 0.3 percentage points of +0.2; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 0.189,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "El Salvador: +2.4 percentage points of GDP in 2016 (real-interest-rate effect on last year's debt stock).",
+    "accept": "full = within 0.3 percentage points of +2.4; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 2.437,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c4",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "El Salvador: -1.8 percentage points of GDP in 2016 (real GDP growth effect).",
+    "accept": "full = within 0.3 percentage points of -1.8; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": -1.809,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c5",
+    "kind": "computation",
+    "importance": "okay",
+    "text": "El Salvador: +0.9 percentage points of GDP in 2016 (remainder (change not explained by those three; includes exchange-rate and other flows)).",
+    "accept": "full = within 0.3 percentage points of +0.9; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 0.933,
+    "tolerance_abs": 0.3
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 0.3,
+  "note": "Contributions are in percentage points of GDP in the target year; published tables round to 0.1 and use older WEO vintages, so 0.3 pp absolute. Gold from frozen WEO Oct 2025."
+ },
+ "provenance": {
+  "generator": "scripts/debt_path_build_items.py",
+  "frozen_data": "frozen_extra/weo_oct2025_*.csv (WEO Oct 2025 vintage)",
+  "method_text": "Escolano 2010 eqs 24-28 (decomposition of changes in the debt ratio); IMF 2013 Staff Guidance Note Fig. 1 footnotes 4-5 and Annex I",
+  "subject": {
+   "iso3": "SLV",
+   "country": "El Salvador",
+   "year": 2016
+  }
+ },
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [
+  "82a97870-c9e5-4f33-aa7c-c4fe241355e6"
+ ],
+ "published_value": [
+  {
+   "doc": "82a97870-c9e5-4f33-aa7c-c4fe241355e6",
+   "title": "El Salvador: Staff Report for the 2018 Article IV Consultation",
+   "table_block_sequence": 281,
+   "primary_deficit": 0.3,
+   "real_interest": 2.7,
+   "real_growth": -1.7,
+   "change_in_debt": 1.9
+  }
+ ],
+ "recomputed_value": {
+  "change": 1.75,
+  "primary_deficit": 0.189,
+  "real_interest_imf": 2.437,
+  "growth_imf": -1.809,
+  "interest_total": 2.915,
+  "inflation": -0.466,
+  "growth": -1.821,
+  "residual": 0.933,
+  "auto_imf": 0.628,
+  "eff_rate": 4.095,
+  "defl": 0.654,
+  "g": 2.542,
+  "d_prev": 73.464,
+  "d": 75.214
+ },
+ "inputs": [
+  "GGXWDG_NGDP",
+  "GGXONLB_NGDP",
+  "GGXCNL_NGDP",
+  "NGDP",
+  "NGDP_R"
+ ],
+ "distractors": [
+  "Debt-stabilising primary balance / required fiscal adjustment (answers a different question: what balance holds the ratio constant)",
+  "Fiscal-impulse or change in the cyclically adjusted primary balance (measures policy stance, not debt-ratio attribution)",
+  "Naive attribution that divides the change in debt by the deficit (ignores interest-growth interaction and the previous-year debt stock)",
+  "Gross financing needs projection (liquidity measure, includes amortisation)",
+  "Using the overall deficit as the 'fiscal' term and then also adding interest, which double counts the interest bill"
+ ],
+ "famous_method": false,
+ "gold_script": "scripts/debt_path_build_items.py",
+ "validation": {
+  "published_instances_matching": 1,
+  "tolerance_abs_pp": 0.3,
+  "note": "Every reported report table in gold_report_ids matches the recomputation on change in debt, primary deficit, real-interest and real-growth contributions within tolerance"
+ },
+ "decomposition_variant": "IMF real-interest / real-growth contributions",
+ "dominant_driver": "ri"
+}

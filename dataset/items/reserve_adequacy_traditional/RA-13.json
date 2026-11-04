@@ -1,0 +1,90 @@
+{
+  "id": "RA-13",
+  "family": "methodology",
+  "pattern": "M-claim",
+  "tier": "analytical",
+  "status": "validated",
+  "validation_tier": "formula-validated",
+  "procedure_kind": "institutional procedure",
+  "query": "A staff note says that in 2020 the reserves of Algeria met the customary cover benchmark for short-term external debt. Is that correct? Count reserves including gold, short-term external debt on original maturity and use World Bank WDI data.",
+  "claims": {
+    "text": [
+      {
+        "id": "c0",
+        "kind": "text",
+        "importance": "vital",
+        "text": "Identifies that the answer uses the traditional reserve-adequacy rules of thumb: reserves of at least 3 months of imports, full (100 percent) cover of short-term external debt (Greenspan-Guidotti), and about 20 percent of broad money.",
+        "accept": "full = names the traditional / rule-of-thumb reserve adequacy metrics (imports, short-term debt, M2); acceptable alternative: IMF ARA risk-weighted metric if the three traditional metrics are also computed; no = reserves to GDP only, or a debt sustainability analysis"
+      },
+      {
+        "id": "cv",
+        "kind": "text",
+        "importance": "vital",
+        "text": "States the short-term-debt-cover benchmark met (100 percent or more); judges the quoted statement TRUE.",
+        "accept": "full = benchmark verdicts match the recomputation"
+      }
+    ],
+    "data": [
+      {
+        "id": "cd",
+        "kind": "data",
+        "importance": "okay",
+        "text": "Uses WDI total reserves and short-term external debt (original maturity)."
+      }
+    ],
+    "computation": [
+      {
+        "id": "c2",
+        "kind": "computation",
+        "importance": "vital",
+        "text": "Reserves as a share of short-term external debt = 3332 % (benchmark 100)",
+        "reference_value": 3332.38,
+        "tolerance": 166.6,
+        "unit": "percent",
+        "accept": "full = within 5 percent of the value (min 10 pp); short-term debt on original maturity"
+      }
+    ]
+  },
+  "grading": {
+    "method": "answer_recall"
+  },
+  "provenance": {
+    "assembled_from": [
+      "IMF (2011) Assessing Reserve Adequacy, traditional-metrics section",
+      "frozen WDI 2026-10-08 extract (frozen_extra/wdi_20261008_ara_ig_extract.psv)"
+    ],
+    "gold_script": "gold_scripts/ext_procedures/build_reserve_adequacy.py",
+    "selection": "non-high-income countries, 2012-2022, all five series present, 0.5 months / 15 pp / 4 pp away from each benchmark; seeded draw; one per country"
+  },
+  "method": "reserve_adequacy_traditional_metrics",
+  "method_doc_ids": [
+    "e7c9a1d0-858e-4c4a-b336-1e4bd26d8504"
+  ],
+  "method_doc_alternatives": [],
+  "gold_report_ids": [],
+  "gold_report_note": "No corpus country report is the gold source; recomputed from frozen WDI. Cross-check against WDI own months-of-imports series failed (that series excludes gold, 443 of 5942 country-years match), so it is not used as a published value.",
+  "published_value": null,
+  "recomputed_value": 17.405,
+  "tolerance": 0.3,
+  "inputs": [
+    "FI.RES.TOTL.CD",
+    "NE.IMP.GNFS.CD",
+    "DT.DOD.DSTC.CD",
+    "FM.LBL.BMNY.GD.ZS",
+    "NY.GDP.MKTP.CD"
+  ],
+  "style": "claim",
+  "distractors": [
+    "IMF risk-weighted ARA composite metric (needs exchange-rate regime, portfolio liabilities)",
+    "external debt sustainability analysis",
+    "debt-carrying-capacity classification",
+    "reserves-to-GDP ratio only"
+  ],
+  "famous_method": true,
+  "hidden_set_size": null,
+  "predicate": null,
+  "method_class": "institutional procedure",
+  "validation_label": "formula-validated",
+  "iso3": "DZA",
+  "year": 2020
+}

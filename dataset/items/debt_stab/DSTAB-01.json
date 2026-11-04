@@ -1,0 +1,135 @@
+{
+  "id": "DSTAB-01",
+  "family": "methodology",
+  "method": "debt_stab",
+  "style": "named",
+  "tier": "single_step",
+  "status": "validated",
+  "validation_tier": "published-validated",
+  "procedure_kind": "textbook identity",
+  "query": "What primary balance would Hungary have needed in 2019 to stop its debt-to-GDP ratio from rising?",
+  "claims": {
+    "text": [
+      {
+        "id": "c1",
+        "kind": "text",
+        "importance": "vital",
+        "text": "Identifies the debt-dynamics identity d_t=(1+lambda)d_{t-1}-p_t with lambda=(r-g)/(1+g) (the debt-stabilising primary balance p*=lambda*d_{t-1}) as the applicable method.",
+        "accept": "full = names the debt-dynamics / debt-stabilising primary balance approach (Escolano 2010; IMF 2013 Staff Guidance Note for public DSA; MAC SRDSF) or applies the equivalent formula; partial = uses only a rule of thumb (r-g)*d without the 1+g denominator; no = uses an overall-balance, structural-balance or S1/S2 method.",
+        "supporting_passages": [
+          "55319ff9-c45c-4e8d-99e4-5562a1158bf2#escolano_eq5_7_20"
+        ]
+      }
+    ],
+    "data": [
+      {
+        "id": "c5",
+        "kind": "data",
+        "importance": "okay",
+        "text": "Uses general government gross debt (% GDP), primary balance and overall balance (interest = primary minus overall balance, % GDP), and nominal GDP (WEO Oct 2025: GGXWDG_NGDP, GGXONLB_NGDP, GGXCNL_NGDP, NGDP).",
+        "accept": "full = all inputs correctly sourced; partial = some inputs approximated (e.g. real growth plus deflator); no = unrelated series."
+      }
+    ],
+    "computation": [
+      {
+        "id": "c2",
+        "kind": "computation",
+        "importance": "vital",
+        "text": "Primary balance needed in 2019 is about -4.1% of GDP (a deficit of this size keeps the ratio constant), computed as p* = lambda x previous-year debt with the effective interest rate = interest paid in 2019 / debt at end of 2018 and nominal growth = NGDP_2019/NGDP_2018 - 1; surplus positive.",
+        "accept": "full = within +-0.25 pp (sign convention: surplus positive; a deficit stated as a positive 'deficit of x' with explicit wording is accepted); partial = right sign within +-0.5 pp; no = otherwise. The gold uses the convention stated in the grading note; interest-definition alternatives (average debt, current-year debt, real-rate form) move the value by at most 0.08 pp, covered by the tolerance. The ratio-of-%GDP-numbers form (interest/GDP_t divided by debt/GDP_{t-1}, no rescaling for GDP growth) moves the value by 0.24 pp and is also covered.",
+        "target": -4.1,
+        "tolerance_abs": 0.25
+      }
+    ]
+  },
+  "grading": {
+    "tolerance_abs_pp": 0.25,
+    "tolerance_basis": 0.15,
+    "note": "Vital computation tolerance +-0.25 (path endpoint pp of GDP; gap/required/horizon-target pp). Verdicts and directions exact. Convention for the gold (WEO Oct 2025, general government): effective interest rate r_t = interest paid in year t divided by gross debt at the end of year t-1 (in levels; interest = primary balance minus overall balance, % of GDP_t, so r_t = interest/GDP_t x (1+g_t) / (debt/GDP)_{t-1}); nominal GDP growth g_t = NGDP_t / NGDP_{t-1} - 1 from nominal GDP in national currency; primary balance = revenue minus non-interest spending, surplus positive; lambda=(r-g)/(1+g) and p* = lambda x (debt/GDP)_{t-1}. Sensitivity: the four interest-definition variants are recorded in the sensitivity object; the tolerance covers them.",
+    "definitions": "Convention for the gold (WEO Oct 2025, general government): effective interest rate r_t = interest paid in year t divided by gross debt at the end of year t-1 (in levels; interest = primary balance minus overall balance, % of GDP_t, so r_t = interest/GDP_t x (1+g_t) / (debt/GDP)_{t-1}); nominal GDP growth g_t = NGDP_t / NGDP_{t-1} - 1 from nominal GDP in national currency; primary balance = revenue minus non-interest spending, surplus positive; lambda=(r-g)/(1+g) and p* = lambda x (debt/GDP)_{t-1}."
+  },
+  "provenance": {
+    "source": "frozen WEO Oct 2025 (frozen_extra/)",
+    "generator": "scripts/debt_stab_items.py",
+    "method_text": "Escolano (2010) eqs 5,7,20,22; IMF 2013 Staff Guidance Note (DSA table footnote on debt-stabilising primary balance)",
+    "validation": "scripts/debt_stab_validation.json (28 of 29 published instances reproduced)"
+  },
+  "method_doc_ids": [
+    "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+    "2dea3fb1-758b-40a4-882b-59f953293e2d",
+    "c010cde9-5069-43d5-a0a6-d162270835fd"
+  ],
+  "gold_report_ids": [
+    "e6d5191d-27f2-4574-b8e4-87ec9b6305fb"
+  ],
+  "recomputed_value": -4.1,
+  "inputs": [
+    "GGXWDG_NGDP",
+    "GGXONLB_NGDP",
+    "GGXCNL_NGDP",
+    "NGDP"
+  ],
+  "distractors": [
+    "overall (headline) balance that holds debt constant, b* = -g/(1+g) d (answers a different question)",
+    "cyclically adjusted / structural primary balance",
+    "fiscal-gap or tax-gap indicators (S1/S2) over an infinite horizon",
+    "primary balance needed to reach a debt anchor or fiscal-rule ceiling",
+    "debt-change decomposition without a stabilising benchmark"
+  ],
+  "famous_method": true,
+  "answer_summary": "HUN 2019: debt prev 68.8, effective rate 3.45%, nominal growth 10.07%, lambda -0.0602, required primary balance -4.14, actual 0.13, gap +4.27. Gold: -4.1",
+  "gold_script": "scripts/debt_stab_items.py",
+  "validation_note": "The formula is validated on 29 published country-years; item gold is on frozen WEO Oct 2025 data for a historic year, so it is not itself a published number (see published_value_note / published_vintage_note).",
+  "sensitivity": {
+    "values": {
+      "a": -4.143,
+      "b": -4.184,
+      "c": -4.224,
+      "d": -4.142
+    },
+    "lambda_by_definition": {
+      "a": -0.0602,
+      "b": -0.0608,
+      "c": -0.06139,
+      "d": -0.06019
+    },
+    "definitions": {
+      "a": "interest / previous-year debt (canonical)",
+      "b": "interest / average of previous- and current-year debt",
+      "c": "interest / current-year debt",
+      "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+    },
+    "spread": 0.082,
+    "max_abs_dev_from_canonical": 0.082,
+    "flag_spread_gt_0.15": false,
+    "tolerance_before": 0.15,
+    "tolerance_used": 0.15,
+    "within_tolerance_before": true,
+    "action": "none: all definitions within tolerance",
+    "canonical": "a"
+  },
+  "gold": {
+    "iso3": "HUN",
+    "year": 2019,
+    "kind": "required",
+    "value": -4.1,
+    "unit": "% of GDP",
+    "answer": "-4.1"
+  },
+  "published_value": null,
+  "published_report_id": null,
+  "published_value_note": "No DSA baseline table in the corpus states a debt-stabilising primary balance for Hungary for 2019 or an adjacent year: the published figure always refers to the last projection year of the table (report year + 4 or 5), and the validated reports for this country give e6d5191d (report 2021, last projection year 2026): -1.3.",
+  "published_other_years": [
+    {
+      "report_id": "e6d5191d-27f2-4574-b8e4-87ec9b6305fb",
+      "report_title": "Hungary: 2021 Article IV Consultation-Press Release; and Staff Report",
+      "report_year": 2021,
+      "table_last_projection_year": 2026,
+      "table_year_inferred": false,
+      "published_value": -1.3,
+      "status": "MATCH",
+      "recomputed_pure_formula_report_vintage": -1.286,
+      "other_identified_flows_included": false
+    }
+  ]
+}

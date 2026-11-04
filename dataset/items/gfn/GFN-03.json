@@ -1,0 +1,149 @@
+{
+ "id": "GFN-03",
+ "family": "methodology",
+ "method": "gfn",
+ "style": "named",
+ "tier": "analytical",
+ "validation_label": "published-validated",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "How large were El Salvador's gross financing needs in 2018 as a share of GDP, and how was that total made up? Use IMF World Economic Outlook (October 2025) general government balances and World Bank Public Sector Debt maturity data for central government debt.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that gross financing needs are the debt falling due in the year (amortization) plus the overall deficit (interest plus the primary deficit), i.e. amortization + interest - primary balance, as a share of GDP, as set out in the IMF (2025) 'A Guide and Tool for Projecting Public Gross Financing Needs' (the same definition appears in the IMF 2013 Staff Guidance Note for public DSA and the 2021 MAC SRDSF).",
+    "accept": "full = states the definition (amortization of debt falling due plus overall deficit) and applies it; partial = adds only the interest bill or only the deficit, or uses a debt-stock proxy for amortization; no = reports the deficit alone, a debt-stabilising balance or an external financing need."
+   }
+  ],
+  "data": [
+   {
+    "id": "c9",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government overall balance (% of GDP) and nominal GDP from the WEO October 2025 vintage, and short-term debt plus long-term debt due within one year (central government, end of the previous year) from World Bank Public Sector Debt, or an equivalent maturity table.",
+    "accept": "full = overall balance, nominal GDP and a maturity-based amortization measure all used; partial = amortization approximated; no = other series."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "El Salvador 2018: gross financing needs of about 7.0% of GDP.",
+    "accept": "full = within 1 of 7; partial = correct sign and within 2; no = otherwise. Tolerance reflects the loose amortization source.",
+    "target": 7.045,
+    "tolerance_abs": 1.0
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "El Salvador 2018: debt falling due (amortization) of about 4.3% of GDP.",
+    "accept": "full = within 1 of 4.3; partial = correct sign and within 2; no = otherwise.",
+    "target": 4.339,
+    "tolerance_abs": 1.0
+   },
+   {
+    "id": "c4",
+    "kind": "computation",
+    "importance": "okay",
+    "text": "El Salvador 2018: overall deficit of about 2.7% of GDP (the remainder).",
+    "accept": "full = within 0.3 of 2.7; partial = correct sign and within 0.6; no = otherwise. Overall deficit is the sign-reversed WEO overall balance.",
+    "target": 2.706,
+    "tolerance_abs": 0.3
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 1.0,
+  "note": "GFN in percent of GDP; the frozen gold matches the published public-sector value within 1 pp for this country-year (published 7.1, recomputed 7.04). Tolerance 1.0 pp because the amortization source and perimeter are loose."
+ },
+ "provenance": {
+  "generator": "gold from gold_scripts/gfn/gold_gfn.py via item_gold.py",
+  "frozen_data": "WEO_2025_OCT_VINTAGE csvs and psd_20261014_maturity_extract.psv in frozen_extra/",
+  "method_text": "IMF (2025) Guide and Tool for Projecting Public Gross Financing Needs, section III eq. 1-2",
+  "subject": {
+   "iso3": "SLV",
+   "country": "El Salvador",
+   "year": 2018
+  }
+ },
+ "method_doc_ids": [
+  "4315e3d9-f42f-4814-be24-d9b0218011ab",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [
+  "12cf28cb-122b-4a12-b084-48dd998a240f"
+ ],
+ "published_value": [
+  {
+   "doc": "12cf28cb-122b-4a12-b084-48dd998a240f",
+   "title": "El Salvador: 2019 Article IV Consultation—Press Release; Sta",
+   "report_year": 2019,
+   "published_gfn": 7.1,
+   "recomputed_minus_published": -0.05
+  }
+ ],
+ "recomputed_value": {
+  "iso3": "SLV",
+  "year": 2018,
+  "gfn": 7.045,
+  "amortization": 4.339,
+  "overall_deficit": 2.706
+ },
+ "inputs": [
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "GGXCNL_NGDP"
+  },
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "NGDP"
+  },
+  {
+   "release": "PSD_2026-10-14",
+   "code": "DP.DOD.DSTC.CR.CG"
+  },
+  {
+   "release": "PSD_2026-10-14",
+   "code": "DP.DOD.DLTC.CR.L1.CG"
+  }
+ ],
+ "distractors": [
+  "Overall deficit or primary deficit alone (leaves out amortization of debt falling due)",
+  "Debt-stabilising primary balance (the balance that holds the debt ratio constant, a different question)",
+  "Debt-dynamics decomposition of the change in the debt ratio (a stock accounting, not a financing flow)",
+  "Gross external financing need of the balance of payments (current account deficit plus external amortization)",
+  "Debt maturity profile or average maturity of debt (stock structure without the deficit)",
+  "Interest bill as a share of GDP (only one component)"
+ ],
+ "famous_method": false,
+ "strictness": {
+  "overall": "strict definition, loose amortization source and perimeter",
+  "parameters": {
+   "definition": "strict: gross financing need = amortization falling due + interest - primary balance = amortization - overall balance, as a share of the same year's nominal GDP (guide eq. 1-2)",
+   "amortization_source": "loose: analyst may use a redemption schedule, a maturity table or amortization rate x debt stock; the frozen gold uses World Bank Public Sector Debt short-term debt plus long-term debt due within one year, central government, end of the previous year, divided by the year's nominal GDP",
+   "perimeter": "loose: the gold combines the WEO general government overall balance with central government maturity data; it matched published public-sector GFN only for the validated countries",
+   "vintage": "WEO October 2025 and PSD 2026-10-14 (frozen)"
+  }
+ },
+ "parameter_notes": {
+  "definition": "strict: gross financing need = amortization falling due + interest - primary balance = amortization - overall balance, as a share of the same year's nominal GDP (guide eq. 1-2)",
+  "amortization_source": "loose: analyst may use a redemption schedule, a maturity table or amortization rate x debt stock; the frozen gold uses World Bank Public Sector Debt short-term debt plus long-term debt due within one year, central government, end of the previous year, divided by the year's nominal GDP",
+  "perimeter": "loose: the gold combines the WEO general government overall balance with central government maturity data; it matched published public-sector GFN only for the validated countries",
+  "vintage": "WEO October 2025 and PSD 2026-10-14 (frozen)"
+ },
+ "gold_script": "gold_scripts/gfn/gold_gfn.py",
+ "gold_command": "python3 -I gold_scripts/gfn/item_gold.py SLV 2018   (run from the gold/ directory; full validation table: python3 -I gold_scripts/gfn/gold_gfn.py)",
+ "validation_note": "Validated country: recomputed GFN matches published public gross financing needs within 1 pp for this country-year; countries ITA, JPN, BRA, CHN, CYP, NZL, MLT excluded as unmatched.",
+ "withhold_also_candidates": [
+  "6dc051c9-e072-432d-83b3-d9aba4bfed7e",
+  "82a97870-c9e5-4f33-aa7c-c4fe241355e6",
+  "a579a8b6-e276-4f6c-b790-d53a4eeb39fc"
+ ]
+}

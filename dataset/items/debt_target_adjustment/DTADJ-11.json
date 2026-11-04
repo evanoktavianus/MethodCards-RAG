@@ -1,0 +1,154 @@
+{
+ "id": "DTADJ-11",
+ "family": "methodology",
+ "method": "debt_target_adjustment",
+ "style": "claim_check",
+ "tier": "analytical",
+ "validation_label": "published-validated",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "A fiscal review says that Thailand, which ended 2014 with general government debt of 46.6 percent of GDP and a cyclically adjusted primary balance of 0.6 percent of GDP, would need to hold a cyclically adjusted primary balance of about 1.0 percent of GDP over 2020-30 (reached by 2020) for its debt to come down to the long-term benchmark for emerging market economies by 2030. Is that correct to within three quarters of a percentage point? Use IMF World Economic Outlook (October 2025) GDP and fiscal outturns for its growth and interest costs.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the Fiscal Monitor approach to illustrative fiscal adjustment needs for a long-term debt target: solve for the cyclically adjusted primary balance that, held constant over 2020-2030 after a gradual adjustment over 2016-2020 (taken as linear), brings debt to 40 percent of GDP by 2030 for an emerging market economy (or holds it at the end-2014 ratio if that is already lower), using a debt recursion in which the interest-growth differential rises linearly from its 2014 level to 1 percentage point by 2028.",
+    "accept": "full = names the long-term debt-target adjustment-needs exercise (Fiscal Monitor Statistical Appendix, tables 'Illustrative Adjustment Needs Based on Long-Term Debt Targets') and applies the 40 percent EM target with the stated path and differential; partial = right idea (primary balance needed to reach a debt target by 2030) but with a different target, path or constant differential; no = debt-stabilising balance, S1/S2 gap or a fiscal-rule calibration."
+   },
+   {
+    "id": "c3",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Judges the statement correct.",
+    "accept": "verdict must match (true)."
+   }
+  ],
+  "data": [
+   {
+    "id": "c9",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses nominal GDP (growth) and the interest bill implied by the primary and overall balances relative to previous-year debt from the WEO October 2025 vintage (GGXONLB_NGDP, GGXCNL_NGDP, GGXWDG_NGDP, NGDP) together with the end-2014 debt and CAPB given in the question.",
+    "accept": "full = growth, interest and the given 2014 positions used; partial = a single assumed r-g or growth path; no = unrelated series."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Thailand: recomputed CAPB over 2020-30 of about 0.7% of GDP.",
+    "accept": "full = within 0.75 of 0.7; partial = correct sign and within 1.5; no = otherwise.",
+    "target": 0.728,
+    "tolerance_abs": 0.75
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 0.75,
+  "note": "Level of the constant CAPB over 2020-30 and its change from 2014, in percentage points of GDP. Tolerance 1.0 pp: the recomputation with WEO Oct 2025 outturn differs from the Fiscal Monitor April 2014 published column by -0.27 pp for this country (published 1.0, recomputed 0.73); across the 26 EMs 21 are within 1 pp."
+ },
+ "provenance": {
+  "generator": "gold from gold_scripts/debt_target_adjustment/gold_debt_target_em.py via item_gold.py",
+  "frozen_data": "frozen_extra/fm_apr2014_statistical_tables_13a_14.txt and WEO Oct 2025 csvs",
+  "method_text": "Fiscal Monitor Statistical Appendix, 'Illustrative Adjustment Needs Based on Long-Term Debt Targets', notes on emerging markets (Table 14 in the April 2014 issue)",
+  "subject": {
+   "iso3": "THA",
+   "country": "Thailand",
+   "year": 2014
+  }
+ },
+ "method_doc_ids": [
+  "a9063586-d77b-4273-b482-b26b0bdfb979",
+  "49b36e52-0874-438b-976b-09670bde9aa3",
+  "9a9aeb9c-3a8b-4e2e-a459-aa8143f05d3f"
+ ],
+ "method_doc_note": "Verified on the corpus text 2026-10-30. All three issues carry the emerging-market rule in the note of their statistical table: FM April 2014 (a9063586) Table 14 note 3, block 955; FM October 2014 (49b36e52) Table 25 note 3, block 935 (identical wording: 40 percent target, CAPB follows projections to 2015, adjusts gradually 2016-2020, constant to 2030, r-g linear from 2014 level to 1 by 2028); FM October 2013 (9a9aeb9c) Table 14 note 3, block 832 (same rule one year earlier: 2011-14 projections, gradual 2015-2020, r-g to 1 by 2027). The three tables also print the answer: April 2014 Table 14 block 950 (the gold report), October 2014 Table 25 block 930 (same base year, updated numbers: for example Poland CAPB 2020-30 1.2 against 1.3, within the 1.0 tolerance) and October 2013 Table 14 block 827 (2013 base). WITHHOLDING: remove the table blocks 950 (April 2014), 930 (October 2014, and Table 24a block 917) and 827 (October 2013, and Table 13a block 815); keep the note blocks 955, 935, 832 and 942/923/821 so the rule stays in the corpus. Whole-document withholding of a9063586 and 49b36e52 would leave only the 2013 vintage for the rule. The word 'linearly' in the document applies to the interest-growth differential only; the CAPB path is 'gradual', and the gold's linear shape is an assumption (changes the answer by up to 1.1 points for India, under 0.7 for the others tested).",
+ "gold_report_ids": [
+  "a9063586-d77b-4273-b482-b26b0bdfb979",
+  "49b36e52-0874-438b-976b-09670bde9aa3"
+ ],
+ "published_value": {
+  "doc": "a9063586-d77b-4273-b482-b26b0bdfb979",
+  "title": "Fiscal Monitor, April 2014 - Statistical Table 14",
+  "capb_2020_30": 1.0,
+  "debt_2014": 46.6,
+  "capb_2014": 0.6
+ },
+ "recomputed_value": {
+  "iso3": "THA",
+  "debt_2014": 46.6,
+  "capb_2014": 0.6,
+  "published_capb_2020_30": 1.0,
+  "recomputed_capb_2020_30": 0.728,
+  "improvement_vs_2014": 0.128,
+  "target_debt": 40.0
+ },
+ "inputs": [
+  {
+   "release": "FM_APR_2014_STATISTICAL_TABLE_14 (frozen_extra/fm_apr2014_statistical_tables_13a_14.txt)",
+   "code": "debt_2014; capb_2014; published CAPB 2020-30"
+  },
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "GGXWDG_NGDP"
+  },
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "GGXONLB_NGDP"
+  },
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "GGXCNL_NGDP"
+  },
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "NGDP"
+  }
+ ],
+ "distractors": [
+  "Debt-stabilising primary balance (holds the ratio constant, no debt target)",
+  "Fiscal sustainability gaps (S1/S2 type indicators over a long or infinite horizon)",
+  "Calibration of a fiscal rule (debt anchor with a safety margin, deficit ceiling)",
+  "Adjustment needed to reach the 60 percent advanced-economy benchmark (wrong target and group for an emerging market)",
+  "Decomposition of the change in the debt ratio (accounting of past debt changes, no forward target)",
+  "Stress test of the debt path (shock scenarios rather than a required adjustment)"
+ ],
+ "famous_method": false,
+ "strictness": {
+  "overall": "strict (emerging-market rule fully specified); free only the 2014 starting differential (data)",
+  "parameters": {
+   "debt_target": "strict: 40 percent of GDP in 2030 for emerging markets (60 for advanced); if the end-2014 ratio is already lower, hold that ratio",
+   "adjustment_path": "loose in shape: CAPB follows projections to 2015, adjusts gradually 2016-2020 (the document says 'gradually'; the gold takes a linear path), constant 2020-2030 (gold holds the 2015 CAPB at its 2014 value)",
+   "interest_growth_differential": "strict rule: rises linearly from its 2014 level to 1 percentage point by 2028 and stays there; the 2014 starting level is data (gold uses WEO Oct 2025 outturn: interest on previous-year debt minus nominal GDP growth, not the 2014 projection)",
+   "scope": "emerging markets only (the advanced-economy rule is not fully specified and is not reproducible)",
+   "vintage": "WEO October 2025 for GDP and fiscal outturns; end-2014 debt and CAPB as printed in the Fiscal Monitor Statistical Table 14 and stated in the question"
+  }
+ },
+ "parameter_notes": {
+  "debt_target": "strict: 40 percent of GDP in 2030 for emerging markets (60 for advanced); if the end-2014 ratio is already lower, hold that ratio",
+  "adjustment_path": "loose in shape: CAPB follows projections to 2015, adjusts gradually 2016-2020 (the document says 'gradually'; the gold takes a linear path), constant 2020-2030 (gold holds the 2015 CAPB at its 2014 value)",
+  "interest_growth_differential": "strict rule: rises linearly from its 2014 level to 1 percentage point by 2028 and stays there; the 2014 starting level is data (gold uses WEO Oct 2025 outturn: interest on previous-year debt minus nominal GDP growth, not the 2014 projection)",
+  "scope": "emerging markets only (the advanced-economy rule is not fully specified and is not reproducible)",
+  "vintage": "WEO October 2025 for GDP and fiscal outturns; end-2014 debt and CAPB as printed in the Fiscal Monitor Statistical Table 14 and stated in the question"
+ },
+ "gold_script": "gold_scripts/debt_target_adjustment/gold_debt_target_em.py",
+ "gold_command": "python3 -I gold_scripts/debt_target_adjustment/item_gold.py THA   (run from the gold/ directory; full 26-country table: python3 -I gold_scripts/debt_target_adjustment/gold_debt_target_em.py)",
+ "validation_note": "Emerging-market rule only; this country is within 0.9 pp of the published table value.",
+ "truth": true,
+ "stated_value": 1.0,
+ "gold": {
+  "truth": true,
+  "stated": 1.0,
+  "recomputed": 0.728,
+  "tolerance_pp": 0.75
+ },
+ "withhold_also_candidates_note": "Other Fiscal Monitor vintages print the same table with different base-year inputs; withhold their Table 14 blocks too.",
+ "doc_check": {
+  "document": "FM April 2014 block 955; FM October 2014 block 935; FM October 2013 block 832",
+  "verdict": "40 percent EM target (or end-2014 level if lower), constant CAPB 2020-30, r-g linear from 2014 level to 1 pp by 2028 and then 1 pp: MATCH. CAPB path 2016-2020 is \"gradual\" not \"linear\" in the document: shape assumed linear (loose). 2015 CAPB follows FM projections in the document, gold holds the 2014 value (deviation, already stated). Oct 2013 and Oct 2014 carry the rule; Oct 2014 Table 25 also prints near-identical answers and is added to gold_report_ids."
+ }
+}

@@ -1,0 +1,88 @@
+{
+  "id": "MC-15",
+  "family": "methodology",
+  "pattern": "M-claim",
+  "tier": "analytical",
+  "status": "validated",
+  "validation_tier": "formula-validated",
+  "procedure_kind": "institutional procedure",
+  "query": "A convergence note says that in 2015 Croatia failed the debt test for euro entry. Is that correct? Use October 2025 WEO annual-average CPI inflation as the price measure, take the 27 current EU members as the comparison group, and apply the criteria strictly with no leeway for improving trends.",
+  "claims": {
+    "text": [
+      {
+        "id": "c0",
+        "kind": "text",
+        "importance": "vital",
+        "text": "Identifies that the answer applies the Maastricht (euro-adoption) convergence criteria: deficit at or below 3 percent of GDP, debt at or below 60 percent, inflation within 1.5 pp of the three best performers.",
+        "accept": "full = names the Maastricht / euro convergence criteria; acceptable alternatives: EMU entry tests; no = Stability and Growth Pact fiscal rules only, debt sustainability analysis, or fiscal-rule calibration"
+      },
+      {
+        "id": "cv",
+        "kind": "text",
+        "importance": "vital",
+        "text": "States the debt test missed (debt above 60 percent of GDP); judges the quoted statement (Croatia failed the debt test in 2015) TRUE.",
+        "accept": "full = verdict per test matches the recomputation"
+      }
+    ],
+    "data": [
+      {
+        "id": "cd",
+        "kind": "data",
+        "importance": "okay",
+        "text": "Uses WEO gross debt (GGXWDG_NGDP) for the debt test."
+      }
+    ],
+    "computation": [
+      {
+        "id": "c4",
+        "kind": "computation",
+        "importance": "vital",
+        "text": "Croatia gross public debt in 2015 = 82.8 % of GDP (limit 60)",
+        "reference_value": 82.77,
+        "tolerance": 1.0,
+        "unit": "percent of GDP",
+        "accept": "full = within tolerance"
+      }
+    ]
+  },
+  "grading": {
+    "method": "answer_recall"
+  },
+  "provenance": {
+    "assembled_from": [
+      "IMF WEO Oct 1996 (EMU and the World Economy), convergence-table notes",
+      "frozen WEO Oct 2025 (reference_data + frozen_extra)"
+    ],
+    "gold_script": "gold_scripts/ext_procedures/build_convergence.py",
+    "selection": "EU27 country-years 2012-2024 where deficit is 0.4pp+ from 3, debt 3pp+ from 60, inflation 0.4pp+ from the limit; seeded draw; one per country"
+  },
+  "method": "maastricht_convergence_criteria",
+  "method_doc_ids": [
+    "e3b52b4e-bd1c-4659-b48e-6cf3c5b854c6"
+  ],
+  "method_doc_alternatives": [],
+  "gold_report_ids": [],
+  "gold_report_note": "No corpus country report is the gold source; values are recomputed from frozen WEO. Proxy caveat: consumer-price inflation (PCPIPCH) stands in for the treaty HICP measure, and the three lowest rates are taken over all EU27 without outlier screening (the note says a simple average of the three is used for illustration).",
+  "published_value": 0.263,
+  "recomputed_value": 0.263,
+  "tolerance": 0.3,
+  "inputs": [
+    "GGXCNL_NGDP",
+    "GGXWDG_NGDP",
+    "PCPIPCH"
+  ],
+  "style": "claim",
+  "distractors": [
+    "Stability and Growth Pact fiscal-rule compliance",
+    "debt-stabilising primary balance",
+    "public debt sustainability analysis",
+    "fiscal-rule calibration"
+  ],
+  "famous_method": true,
+  "hidden_set_size": null,
+  "predicate": null,
+  "method_class": "institutional procedure",
+  "validation_label": "formula-validated",
+  "iso3": "HRV",
+  "year": 2015
+}

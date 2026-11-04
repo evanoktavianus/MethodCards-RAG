@@ -1,0 +1,587 @@
+{
+ "DSTAB-01": {
+  "values": {
+   "a": -4.143,
+   "b": -4.184,
+   "c": -4.224,
+   "d": -4.142
+  },
+  "lambda_by_definition": {
+   "a": -0.0602,
+   "b": -0.0608,
+   "c": -0.06139,
+   "d": -0.06019
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.082,
+  "max_abs_dev_from_canonical": 0.082,
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.15,
+  "tolerance_used": 0.15,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-02": {
+  "values": {
+   "a": -1.435,
+   "b": -1.423,
+   "c": -1.41,
+   "d": -1.435
+  },
+  "lambda_by_definition": {
+   "a": -0.02597,
+   "b": -0.02575,
+   "c": -0.02552,
+   "d": -0.02597
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.025,
+  "max_abs_dev_from_canonical": 0.025,
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.15,
+  "tolerance_used": 0.15,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-03": {
+  "values": {
+   "a": 1.253,
+   "b": 1.545,
+   "c": 1.805,
+   "d": 1.253
+  },
+  "lambda_by_definition": {
+   "a": -0.06152,
+   "b": -0.06502,
+   "c": -0.06813,
+   "d": -0.06152
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.552,
+  "max_abs_dev_from_canonical": 0.552,
+  "flag_spread_gt_0.15": true,
+  "tolerance_before": 0.3,
+  "tolerance_used": 0.6,
+  "within_tolerance_before": false,
+  "action": "tolerance widened 0.30 -> 0.60 to cover all four definitions",
+  "canonical": "a"
+ },
+ "DSTAB-04": {
+  "values": {
+   "a": 1.325,
+   "b": 1.466,
+   "c": 1.587,
+   "d": 1.324
+  },
+  "lambda_by_definition": {
+   "a": -0.09804,
+   "b": -0.10077,
+   "c": -0.10312,
+   "d": -0.09803
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.263,
+  "max_abs_dev_from_canonical": 0.263,
+  "flag_spread_gt_0.15": true,
+  "tolerance_before": 0.3,
+  "tolerance_used": 0.3,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-05": {
+  "values": {
+   "a": 68.694,
+   "b": 68.6,
+   "c": 68.509,
+   "d": 68.696
+  },
+  "lambda_by_definition": {
+   "a": -0.01153,
+   "b": -0.01183,
+   "c": -0.01211,
+   "d": -0.01152
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.187,
+  "max_abs_dev_from_canonical": 0.185,
+  "direction_flips": [],
+  "flag_spread_gt_0.15": true,
+  "tolerance_before": 1.0,
+  "tolerance_used": 1.0,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-06": {
+  "values": {
+   "a": 120.983,
+   "b": 120.46,
+   "c": 119.975,
+   "d": 120.98
+  },
+  "lambda_by_definition": {
+   "a": -0.0369,
+   "b": -0.03784,
+   "c": -0.03871,
+   "d": -0.03691
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 1.008,
+  "max_abs_dev_from_canonical": 1.008,
+  "direction_flips": [],
+  "flag_spread_gt_0.15": true,
+  "tolerance_before": 1.0,
+  "tolerance_used": 1.05,
+  "within_tolerance_before": false,
+  "action": "tolerance widened 1.00 -> 1.05 to cover all four definitions",
+  "canonical": "a"
+ },
+ "DSTAB-07": {
+  "values": {
+   "a": -0.629,
+   "b": -0.649,
+   "c": -0.668,
+   "d": -0.629
+  },
+  "lambda_by_definition": {
+   "a": -0.03575,
+   "b": -0.03605,
+   "c": -0.03635,
+   "d": -0.03575
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.039,
+  "max_abs_dev_from_canonical": 0.039,
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.2,
+  "tolerance_used": 0.2,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-08": {
+  "values": {
+   "a": -7.503,
+   "b": -7.521,
+   "c": -7.538,
+   "d": -7.503
+  },
+  "lambda_by_definition": {
+   "a": -0.1031,
+   "b": -0.10335,
+   "c": -0.10358,
+   "d": -0.10311
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.034,
+  "max_abs_dev_from_canonical": 0.034,
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.15,
+  "tolerance_used": 0.15,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-09": {
+  "values": {
+   "a": -3.889,
+   "b": -3.833,
+   "c": -3.783,
+   "d": -3.89
+  },
+  "lambda_by_definition": {
+   "a": -0.03578,
+   "b": -0.03658,
+   "c": -0.03729,
+   "d": -0.03577
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.107,
+  "max_abs_dev_from_canonical": 0.107,
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.3,
+  "tolerance_used": 0.3,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-10": {
+  "values": {
+   "a": 2.617,
+   "b": 2.667,
+   "c": 2.714,
+   "d": 2.617
+  },
+  "lambda_by_definition": {
+   "a": -0.03543,
+   "b": -0.03628,
+   "c": -0.03709,
+   "d": -0.03543
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.097,
+  "max_abs_dev_from_canonical": 0.097,
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.3,
+  "tolerance_used": 0.3,
+  "within_tolerance_before": true,
+  "action": "replaced item (see replaces)",
+  "canonical": "a"
+ },
+ "DSTAB-11": {
+  "values": {
+   "a": -3.185,
+   "b": -3.127,
+   "c": -3.076,
+   "d": -3.185
+  },
+  "lambda_by_definition": {
+   "a": -0.16032,
+   "b": -0.15738,
+   "c": -0.15484,
+   "d": -0.16032
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.109,
+  "max_abs_dev_from_canonical": 0.109,
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.15,
+  "tolerance_used": 0.15,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-12": {
+  "values": {
+   "a": 29.54,
+   "b": 29.361,
+   "c": 29.211,
+   "d": 29.539
+  },
+  "lambda_by_definition": {
+   "a": -0.04173,
+   "b": -0.04322,
+   "c": -0.04447,
+   "d": -0.04173
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.329,
+  "max_abs_dev_from_canonical": 0.329,
+  "direction_flips": [],
+  "flag_spread_gt_0.15": true,
+  "tolerance_before": 1.0,
+  "tolerance_used": 1.0,
+  "within_tolerance_before": true,
+  "action": "replaced item (see replaces)",
+  "canonical": "a"
+ },
+ "DSTAB-13": {
+  "values": {
+   "a": 45.706,
+   "b": 45.96,
+   "c": 46.221,
+   "d": 45.705
+  },
+  "lambda_by_definition": {
+   "a": 0.03611,
+   "b": 0.03695,
+   "c": 0.03781,
+   "d": 0.0361
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.516,
+  "max_abs_dev_from_canonical": 0.515,
+  "direction_flips": [],
+  "flag_spread_gt_0.15": true,
+  "tolerance_before": 1.0,
+  "tolerance_used": 1.0,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-14": {
+  "values": {
+   "a": -2.397,
+   "b": -2.403,
+   "c": -2.408,
+   "d": -2.397
+  },
+  "lambda_by_definition": {
+   "a": -0.13013,
+   "b": -0.13044,
+   "c": -0.13071,
+   "d": -0.13012
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.011,
+  "max_abs_dev_from_canonical": 0.011,
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.15,
+  "tolerance_used": 0.15,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-15": {
+  "values": {
+   "a": 1.455,
+   "b": 1.484,
+   "c": 1.511,
+   "d": 1.456
+  },
+  "lambda_by_definition": {
+   "a": -0.03707,
+   "b": -0.03806,
+   "c": -0.039,
+   "d": -0.03707
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.056,
+  "max_abs_dev_from_canonical": 0.056,
+  "verdict_flips": [],
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.15,
+  "tolerance_used": 0.15,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-16": {
+  "values": {
+   "a": -4.064,
+   "b": -3.968,
+   "c": -3.878,
+   "d": -4.062
+  },
+  "lambda_by_definition": {
+   "a": 0.06986,
+   "b": 0.06776,
+   "c": 0.06579,
+   "d": 0.06981
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.186,
+  "max_abs_dev_from_canonical": 0.186,
+  "verdict_flips": [],
+  "flag_spread_gt_0.15": true,
+  "tolerance_before": 0.15,
+  "tolerance_used": 0.2,
+  "within_tolerance_before": false,
+  "action": "tolerance widened 0.15 -> 0.20 to cover all four definitions",
+  "canonical": "a"
+ },
+ "DSTAB-17": {
+  "values": {
+   "a": 1.945,
+   "b": 1.933,
+   "c": 1.922,
+   "d": 1.944
+  },
+  "lambda_by_definition": {
+   "a": 0.04352,
+   "b": 0.04325,
+   "c": 0.04301,
+   "d": 0.04351
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.023,
+  "max_abs_dev_from_canonical": 0.023,
+  "stated_within_0.25": {
+   "a": true,
+   "b": true,
+   "c": true,
+   "d": true
+  },
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.15,
+  "tolerance_used": 0.15,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-18": {
+  "values": {
+   "a": 0.01,
+   "b": -0.031,
+   "c": -0.066,
+   "d": 0.01
+  },
+  "lambda_by_definition": {
+   "a": 0.00049,
+   "b": -0.00156,
+   "c": -0.00337,
+   "d": 0.00049
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.076,
+  "max_abs_dev_from_canonical": 0.076,
+  "stated_within_0.25": {
+   "a": false,
+   "b": false,
+   "c": false,
+   "d": false
+  },
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.15,
+  "tolerance_used": 0.15,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-19": {
+  "values": {
+   "a": 4.579,
+   "b": 4.597,
+   "c": 4.615,
+   "d": 4.579
+  },
+  "lambda_by_definition": {
+   "a": -0.08064,
+   "b": -0.08193,
+   "c": -0.08312,
+   "d": -0.08063
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.036,
+  "max_abs_dev_from_canonical": 0.036,
+  "verdict_flips": [],
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.15,
+  "tolerance_used": 0.15,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ },
+ "DSTAB-20": {
+  "values": {
+   "a": -1.618,
+   "b": -1.635,
+   "c": -1.652,
+   "d": -1.618
+  },
+  "lambda_by_definition": {
+   "a": -0.03802,
+   "b": -0.03843,
+   "c": -0.03882,
+   "d": -0.03802
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.034,
+  "max_abs_dev_from_canonical": 0.034,
+  "stated_within_0.25": {
+   "a": true,
+   "b": true,
+   "c": true,
+   "d": true
+  },
+  "flag_spread_gt_0.15": false,
+  "tolerance_before": 0.15,
+  "tolerance_used": 0.15,
+  "within_tolerance_before": true,
+  "action": "none: all definitions within tolerance",
+  "canonical": "a"
+ }
+}

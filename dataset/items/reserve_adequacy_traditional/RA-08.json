@@ -1,0 +1,110 @@
+{
+ "id": "RA-08",
+ "family": "methodology",
+ "pattern": "M-hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "formula-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "Consider the Middle Eastern or North African economy with the fastest real GDP growth in 2016. How adequate were its foreign exchange reserves against external financing risks that year? Judge it with the simple single-ratio cover tests (imports, short-term external debt, broad money), counting reserves including gold, short-term external debt on original maturity and World Bank WDI data.",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the answer uses the traditional reserve-adequacy rules of thumb: reserves of at least 3 months of imports, full (100 percent) cover of short-term external debt (Greenspan-Guidotti), and about 20 percent of broad money.",
+    "accept": "full = names the traditional / rule-of-thumb reserve adequacy metrics (imports, short-term debt, M2); acceptable alternative: IMF ARA risk-weighted metric if the three traditional metrics are also computed; no = reserves to GDP only, or a debt sustainability analysis"
+   },
+   {
+    "id": "cv",
+    "kind": "text",
+    "importance": "vital",
+    "text": "States 3 of 3 benchmarks met (imports cover met, short-term-debt cover met, broad-money cover met)",
+    "accept": "full = benchmark verdicts match the recomputation"
+   }
+  ],
+  "data": [
+   {
+    "id": "cd",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WDI total reserves, imports of goods and services, short-term external debt, M2 as % GDP and GDP in current US dollars."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Reserves cover of Iraq imports in 2016 = 12.3 months (benchmark 3)",
+    "reference_value": 12.311,
+    "tolerance": 0.3,
+    "unit": "months",
+    "accept": "full = within 0.3 months (total reserves incl. gold over imports of goods and services / 12)"
+   },
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Reserves as a share of short-term external debt = 3596 % (benchmark 100)",
+    "reference_value": 3596.47,
+    "tolerance": 179.8,
+    "unit": "percent",
+    "accept": "full = within 5 percent of the value (min 10 pp); short-term debt on original maturity"
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Reserves as a share of broad money (M2 = M2/GDP x GDP in US dollars) = 59.1 % (benchmark 20)",
+    "reference_value": 59.135,
+    "tolerance": 3.0,
+    "unit": "percent",
+    "accept": "full = within 5 percent of the value (min 2 pp)"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "IMF (2011) Assessing Reserve Adequacy, traditional-metrics section",
+   "frozen WDI 2026-10-08 extract (frozen_extra/wdi_20261008_ara_ig_extract.psv)"
+  ],
+  "gold_script": "gold_scripts/ext_procedures/build_reserve_adequacy.py",
+  "selection": "non-high-income countries, 2012-2022, all five series present, 0.5 months / 15 pp / 4 pp away from each benchmark; seeded draw; one per country"
+ },
+ "method": "reserve_adequacy_traditional_metrics",
+ "method_doc_ids": [
+  "e7c9a1d0-858e-4c4a-b336-1e4bd26d8504"
+ ],
+ "method_doc_alternatives": [],
+ "gold_report_ids": [],
+ "gold_report_note": "No corpus country report is the gold source; recomputed from frozen WDI. Cross-check against WDI own months-of-imports series failed (that series excludes gold, 443 of 5942 country-years match), so it is not used as a published value.",
+ "published_value": null,
+ "recomputed_value": 12.311,
+ "tolerance": 0.3,
+ "inputs": [
+  "FI.RES.TOTL.CD",
+  "NE.IMP.GNFS.CD",
+  "DT.DOD.DSTC.CD",
+  "FM.LBL.BMNY.GD.ZS",
+  "NY.GDP.MKTP.CD"
+ ],
+ "style": "hidden",
+ "distractors": [
+  "IMF risk-weighted ARA composite metric (needs exchange-rate regime, portfolio liabilities)",
+  "external debt sustainability analysis",
+  "debt-carrying-capacity classification",
+  "reserves-to-GDP ratio only"
+ ],
+ "famous_method": true,
+ "hidden_set_size": 1,
+ "predicate": "the Middle Eastern or North African economy with the fastest real GDP growth in 2016",
+ "method_class": "institutional procedure",
+ "validation_label": "formula-validated",
+ "iso3": "IRQ",
+ "year": 2016
+}

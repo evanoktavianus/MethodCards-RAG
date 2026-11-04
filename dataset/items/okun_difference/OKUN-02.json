@@ -1,0 +1,83 @@
+{
+ "id": "OKUN-02",
+ "family": "methodology",
+ "method": "okun_difference",
+ "style": "named",
+ "tier": "medium",
+ "status": "validated",
+ "validation_tier": "formula-validated",
+ "procedure_kind": "textbook identity",
+ "validation_label": "formula-validated",
+ "method_kind": "textbook identity",
+ "famous_method": true,
+ "query": "Based on annual data from 1993 to 2019, what rate of real GDP growth has been consistent with an unchanged unemployment rate in the United States? Show how you obtained the figure.",
+ "claims": {
+  "text": [
+   {
+    "id": "T1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the applicable methodology: a simple regression of the annual change in the unemployment rate on real GDP growth (the output-unemployment relationship, Okun-type law, difference form).",
+    "accept": "Okun-type difference-form regression of change in unemployment rate on real GDP growth (levels-gap form acceptable only if it reproduces the same quantity from the same data); NOT a Phillips curve, NOT an employment-elasticity or output-gap calculation.",
+    "supporting_passages": [
+     "89d05760-b533-4e9d-b20b-baf123bafa80 p.89-91 eq.(2); p.117-118 (Delta u = alpha + beta Delta y)"
+    ]
+   }
+  ],
+  "data": [
+   {
+    "id": "D1",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO unemployment rate (LUR) and real GDP growth (NGDP_RPCH), annual, 1993 to 2019 (change in unemployment needs LUR from 1992)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "C1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Gold growth rate at which the fitted change in unemployment is zero (-alpha/beta) for USA: 2.289 (tolerance +-0.40).",
+    "target": 2.289,
+    "tolerance_abs": 0.4
+   }
+  ]
+ },
+ "grading": {
+  "tolerance": "absolute 0.40 percentage points of growth; OLS with intercept, one regressor (growth), annual, 1993-2019 inclusive; slope reported as a positive number = pp rise in unemployment per 1pp slower growth",
+  "sensitivity_note": "see sens fields in validation"
+ },
+ "provenance": {
+  "frozen_data": "frozen_extra/weo_oct2025_lur.csv, weo_oct2025_ngdp_rpch.csv (WEO Oct 2025)",
+  "gold_script": "scripts/gr_okun_gold.py (lib scripts/gr_okun_lib.py)"
+ },
+ "method_doc_ids": [
+  "89d05760-b533-4e9d-b20b-baf123bafa80"
+ ],
+ "gold_report_ids": [],
+ "published_value": null,
+ "published_note": "No published figure for these exact data/window; Nicaragua 2022 Article IV (bbf21b8d-fcdf-4423-8f2c-9ab49d0d9713 p53) quotes quarterly Okun coefficients (advanced economies about -0.3, CAPDR about -0.16) which are in the same range as our annual slopes but not a like-for-like match.",
+ "recomputed_value": 2.2887,
+ "quantity": "growth rate at which the fitted change in unemployment is zero (-alpha/beta)",
+ "country_iso3": "USA",
+ "inputs": [
+  "LUR",
+  "NGDP_RPCH"
+ ],
+ "distractors": [
+  "Phillips-curve wage/inflation relation",
+  "output-gap based natural-rate (NAIRU) estimation",
+  "employment elasticity of growth",
+  "fiscal multiplier / sensitivity of the budget to growth"
+ ],
+ "gold_script": "scripts/gr_okun_gold.py",
+ "alpha": 1.0506,
+ "beta_slope": -0.459,
+ "r2": 0.566,
+ "n_obs": 27,
+ "validation": {
+  "sens_1995_2019_beta": 0.457,
+  "sens_1993_2024_beta": 0.613
+ },
+ "answer_summary": "For USA, about 2.3 percent growth."
+}

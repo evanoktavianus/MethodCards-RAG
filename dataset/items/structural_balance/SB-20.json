@@ -1,0 +1,90 @@
+{
+ "id": "SB-20",
+ "family": "methodology",
+ "pattern": "M-named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "Israel's general government balance moved from -5.0% to -3.4% of GDP between 2003 and 2004. Once the economic cycle is stripped out, was fiscal policy tighter or looser in 2004, and by how many percentage points of GDP did the underlying balance change?",
+ "instance_extension": true,
+ "extension_of": "SB-05",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the answer requires cyclically adjusting the budget balance (potential-output gap from a statistical trend, then removing the cyclical budget component).",
+    "accept": "full = names cyclically adjusted / structural balance approach with an output-gap estimate; acceptable alternatives: OECD or EC semi-elasticity approach, production-function output gap; no = raw balance only"
+   },
+   {
+    "id": "c4",
+    "kind": "text",
+    "importance": "vital",
+    "text": "States whether the underlying fiscal stance tightened.",
+    "accept": "direction must match the sign of the change in the underlying balance"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government revenue, expenditure and real GDP series from the WEO (GGR_NGDP, GGX_NGDP, NGDP_R, GGXCNL_NGDP)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Change in underlying balance ISR 2003-2004 = 1.13 pp of GDP",
+    "reference_value": 1.131,
+    "tolerance": 0.4,
+    "unit": "pp",
+    "accept": "full = within tolerance; the output gap is the HP-filter (lambda=100) cycle of log real GDP, revenue elasticity 1, expenditure elasticity 0"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "Fiscal Monitor Oct 2012 / Oct 2013 data-conventions note (CAB: HP potential output, revenue elasticity 1, expenditure elasticity 0)",
+   "frozen WEO Oct 2025 (+frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/structural_balance/gold_structural_balance_ext.py",
+  "selection": "instance extension; drawn from the eligible pool (|cyclical adjustment|>=0.7pp or |stance change|>=1.0pp, recompute within tolerance of WEO), seeded draw, one per country"
+ },
+ "method": "cyclically_adjusted_balance_hp_filter",
+ "method_doc_ids": [
+  "afa3529e-c97c-45cb-a668-d1a133131d8c",
+  "9a9aeb9c-3a8b-4e2e-a459-aa8143f05d3f"
+ ],
+ "method_doc_alternatives": [
+  "5bc9162b-f850-4bd4-a964-d3632f04cb9b (multivariate filter, alternative output-gap method)"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "No corpus country report states these values; published value is the IMF WEO Oct 2025 GGSB_NPGDP series (frozen), not a corpus document, so nothing needs withholding.",
+ "published_value": 1.145,
+ "recomputed_value": 1.131,
+ "tolerance": 0.4,
+ "inputs": [
+  "GGR_NGDP",
+  "GGX_NGDP",
+  "NGDP_R",
+  "GGXCNL_NGDP"
+ ],
+ "style": "named",
+ "distractors": [
+  "debt-stabilising primary balance",
+  "fiscal multiplier / fiscal impulse from multipliers",
+  "revenue buoyancy",
+  "fiscal rule calibration"
+ ],
+ "famous_method": true,
+ "hidden_set_size": null,
+ "predicate": null
+}

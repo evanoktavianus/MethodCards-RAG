@@ -1,0 +1,478 @@
+[
+ {
+  "iso3": "BEN",
+  "year": 2019,
+  "doc_id": "a2f448a5-d23d-4768-af15-197ca03b4432",
+  "title": "Benin: Staff Report for the 2019 Article IV Consultation, Fourth Review Under the Extended Credit Facility Arrangement, and Request for Modification of Performance Criteria\u2014Debt Sustainability Analysis",
+  "published_ci": 3.0
+ },
+ {
+  "iso3": "BEN",
+  "year": 2022,
+  "doc_id": "fcb8357a-de9c-4b68-a816-c1b8ef1bca57",
+  "title": "Benin: Staff Report for the 2022 Article IV Consultation and Requests for an Extended Arrangement Under the Extended Fund Facility and an Arrangement Under the Extended Credit Facility\u2014Debt Sustainability Analysis",
+  "published_ci": 3.0
+ },
+ {
+  "iso3": "BEN",
+  "year": 2024,
+  "doc_id": "9c85a352-c0fe-450e-b82b-49a268b5fab7",
+  "title": "Benin: Staff Report for the 2024 Article IV Consultation, Fourth Review Under the Extended Fund Facility and the Extended Credit Facility Arrangements, First Review Under the Resilience and Sustainability Facility, and Request for Modification of a Quantitative Performance Criterion\u2014Debt Sustainability Analysis",
+  "published_ci": 2.98
+ },
+ {
+  "iso3": "BTN",
+  "year": 2024,
+  "doc_id": "99aabe1b-6cc6-413b-9259-ba94390629e3",
+  "title": "Bhutan: Staff Report for the 2024 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.0
+ },
+ {
+  "iso3": "BTN",
+  "year": 2025,
+  "doc_id": "ce7f92b8-3c67-4f03-8efc-1e17f14e6af5",
+  "title": "Bhutan: Staff Report for the 2025 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.08
+ },
+ {
+  "iso3": "CPV",
+  "year": 2019,
+  "doc_id": "55fdb5d7-48fc-4767-a0a1-242c26c4c2a2",
+  "title": "Cabo Verde: Staff Report for the 2019 Article IV Consultation and Request for a Policy Coordination Instrument\u2014Debt Sustainability Analysis",
+  "published_ci": 3.28
+ },
+ {
+  "iso3": "CPV",
+  "year": 2023,
+  "doc_id": "4c2c6de4-1f69-45a1-97c7-4c47ea327c17",
+  "title": "Cabo Verde: Staff Report for the 2023 Article IV Consultation, Second Review Under the Extended Credit Facility Arrangement, and Request for Modification of a Performance Criterion\u2014Debt Sustainability Analysis",
+  "published_ci": 3.22
+ },
+ {
+  "iso3": "CMR",
+  "year": 2021,
+  "doc_id": "978d85b5-0069-4619-a0ae-c2866c0c506d",
+  "title": "Cameroon: Report for the 2021 Article IV Consultation and First Reviews Under the Extended Credit Facility and the Extended Fund Facility Arrangements and Requests for Waivers for Performance Criteria Applicability and Nonobservance and Modification of Performance Criterion\u2014Debt Sustainability Analysis",
+  "published_ci": 2.695
+ },
+ {
+  "iso3": "TLS",
+  "year": 2019,
+  "doc_id": "2213c73d-dcd9-4c58-8a48-21ded26978b5",
+  "title": "Democratic Republic of Timor-Leste:Staff Report for the 2019 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.72
+ },
+ {
+  "iso3": "DJI",
+  "year": 2024,
+  "doc_id": "782f89ea-a41d-4d0f-83cf-850b7c5289ed",
+  "title": "Djibouti: 2024 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.16
+ },
+ {
+  "iso3": "DJI",
+  "year": 2019,
+  "doc_id": "f1055803-fdbf-4a63-8534-778a1a947d0f",
+  "title": "Djibouti: Staff Report for the 2019 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.83
+ },
+ {
+  "iso3": "DJI",
+  "year": 2025,
+  "doc_id": "44d15873-063a-452b-8181-a69a9f8ea483",
+  "title": "Djibouti: Staff Report for the 2025 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.1
+ },
+ {
+  "iso3": "FSM",
+  "year": 2021,
+  "doc_id": "ca8c63c8-0089-45a8-8de2-d125a7aefa6b",
+  "title": "Federated States of Micronesia: Staff Report for the 2021 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 1.67
+ },
+ {
+  "iso3": "FSM",
+  "year": 2023,
+  "doc_id": "2fbc3555-0203-4678-9368-d3a9cdc0c827",
+  "title": "Federated States of Micronesia: Staff Report for the 2023 Article IV Consultation \u2014Debt Sustainability Analysis",
+  "published_ci": 1.72
+ },
+ {
+  "iso3": "FSM",
+  "year": 2026,
+  "doc_id": "b2a492df-d76c-4d2a-a8e9-39d999722aa2",
+  "title": "Federated States of Micronesia: Staff Report for the 2026 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 1.76
+ },
+ {
+  "iso3": "GHA",
+  "year": 2019,
+  "doc_id": "945f4a58-95cc-4ab1-a830-0f846da41579",
+  "title": "Ghana: Staff Report for the 2019 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.81
+ },
+ {
+  "iso3": "GHA",
+  "year": 2021,
+  "doc_id": "861422e0-253f-45af-857c-4268159edddd",
+  "title": "Ghana: Staff Report for the 2021 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.77
+ },
+ {
+  "iso3": "GHA",
+  "year": 2023,
+  "doc_id": "5abaf966-5d48-46de-a85b-4c214da4394a",
+  "title": "Ghana: Staff Report for the 2023 Article IV Consultation, First Review Under the Arrangement Under the Extended Credit Facility, Request for Modification of Performance Criteria, and Financing Assurances Review\u2014Debt Sustainability Analysis",
+  "published_ci": 2.75
+ },
+ {
+  "iso3": "GRD",
+  "year": 2019,
+  "doc_id": "e80f2003-c7dc-4862-90ce-7b4ad74f8244",
+  "title": "Grenada: Staff Report for the 2019 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.03
+ },
+ {
+  "iso3": "GRD",
+  "year": 2022,
+  "doc_id": "a540de44-2ae9-45b3-9239-2183dbb406ab",
+  "title": "Grenada: Staff Report for the 2022 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.03
+ },
+ {
+  "iso3": "GRD",
+  "year": 2023,
+  "doc_id": "289c9da4-95a9-47f8-9e4f-c6abd82f5fa8",
+  "title": "Grenada: Staff Report for the 2023 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.96
+ },
+ {
+  "iso3": "GRD",
+  "year": 2024,
+  "doc_id": "30ba802e-699c-43bd-851e-95bd75f7e19e",
+  "title": "Grenada: Staff Report for the 2024 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.0
+ },
+ {
+  "iso3": "GRD",
+  "year": 2025,
+  "doc_id": "a3396e68-7f4a-4161-9f9b-1b2de576e588",
+  "title": "Grenada: Staff Report for the 2025 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.003
+ },
+ {
+  "iso3": "GNB",
+  "year": 2025,
+  "doc_id": "49d8d697-e4fb-4106-9aae-fb4398433e4a",
+  "title": "Guinea-Bissau: Stafff Report for the 2025 Article IV Consultation, Eighth Review Under the Extended Credit Facility, Requests for Rephasing of Access, Extension of the Arrangement, Waivers of Nonobservance of Performance Criteria, Modification of Performance Criteria, and Financing Assurances Review\u2014Debt Sustainability Analysis",
+  "published_ci": 2.65
+ },
+ {
+  "iso3": "GIN",
+  "year": 2021,
+  "doc_id": "3d8984e7-d84d-4a59-8b0d-e97dc7017e13",
+  "title": "Guinea: Staff Report for the 2021 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.44
+ },
+ {
+  "iso3": "GIN",
+  "year": 2024,
+  "doc_id": "398594cd-a8c4-46eb-b366-7e3931da3a3e",
+  "title": "Guinea: Staff Report for the 2024 Article IV Consultation and Request for a Disbursement Under the Rapid Credit Facility(RCF)\u2014Debt Sustainability Analysis",
+  "published_ci": 2.51
+ },
+ {
+  "iso3": "HTI",
+  "year": 2024,
+  "doc_id": "d2761e64-f046-43d3-9230-f318169010e4",
+  "title": "Haiti: 2024 Article IV Consultation-Press Release; Staff Report; and Statement by the Executive Director for Haiti (2)",
+  "published_ci": 2.642
+ },
+ {
+  "iso3": "HTI",
+  "year": 2019,
+  "doc_id": "931fe6e2-13ec-4016-a526-f59422f13e53",
+  "title": "Haiti: Staff Report for the 2019 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.863
+ },
+ {
+  "iso3": "HND",
+  "year": 2019,
+  "doc_id": "5e7bd24b-8035-4aea-98bb-8088272cb4e8",
+  "title": "Honduras: Staff Report for the 2019 Article IV Consultation and Request for a Stand-by Arrangement and An Arrangement Under the Standby Credit Facility\u2014Press Release; Staff Report; and Statement by the Executive Director for Honduras",
+  "published_ci": 3.22
+ },
+ {
+  "iso3": "MRT",
+  "year": 2022,
+  "doc_id": "d7658e96-9694-4cd0-8f26-465f0f9ab0aa",
+  "title": "Islamic Republic of Mauritania: Staff Report for the 2022 Article IV Consultation and Requests for 42-Month Arrangements Under the Extended Credit Facility and the Extended Fund Facility\u2014Debt Sustainability Analysis",
+  "published_ci": 2.758
+ },
+ {
+  "iso3": "MRT",
+  "year": 2024,
+  "doc_id": "a31f8488-5c31-4422-b889-272743988bf0",
+  "title": "Islamic Republic of Mauritania: Staff Report for the 2024 Article IV Consultation, Third Reviews Under the Arrangements Under the Extended Credit Facility and Extended Fund Facility, Request for Modification of Quantitative Performance Criteria, and Second Review Under the Resilience and Sustainability Facility Arrangement\u2014Debt Sustainability Analysis",
+  "published_ci": 2.76
+ },
+ {
+  "iso3": "LSO",
+  "year": 2022,
+  "doc_id": "b3630afd-e055-43b7-8f68-6056f36e6bde",
+  "title": "Kingdom of Lesotho: Staff Report for the 2022 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.914
+ },
+ {
+  "iso3": "LSO",
+  "year": 2024,
+  "doc_id": "700d4a35-1594-498b-89a6-895f1b25f37a",
+  "title": "Kingdom of Lesotho: Staff Report for the 2024 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.978
+ },
+ {
+  "iso3": "LSO",
+  "year": 2025,
+  "doc_id": "968df4c6-cc90-48f9-95c5-af0a8eb49597",
+  "title": "Kingdom of Lesotho: Staff Report for the 2025 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.03
+ },
+ {
+  "iso3": "LAO",
+  "year": 2023,
+  "doc_id": "b639d085-1e2b-44e2-903d-46d05812aecf",
+  "title": "Lao People\u2019s Democratic Republic: Staff Report for the 2023 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.15
+ },
+ {
+  "iso3": "LAO",
+  "year": 2024,
+  "doc_id": "81dfbd57-9629-4c7c-89c9-7ff4b438e5fc",
+  "title": "Lao People's Democratic Republic: Staff Report for the 2024 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.3
+ },
+ {
+  "iso3": "LAO",
+  "year": 2025,
+  "doc_id": "f6f4d0d0-e863-40ae-a59f-6fd94e3dcb9e",
+  "title": "Lao People's Democratic Republic: Staff Report for the 2025 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.27
+ },
+ {
+  "iso3": "MDV",
+  "year": 2019,
+  "doc_id": "54e70cbd-f8b8-4b7d-9845-40354393ef96",
+  "title": "Maldives: Staff Report for the 2019 Article Iv Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.48
+ },
+ {
+  "iso3": "MDV",
+  "year": 2021,
+  "doc_id": "8c1ab2dd-5e7f-4cf7-9f66-e33343e9f63c",
+  "title": "Maldives: Staff Report for the 2021 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.53
+ },
+ {
+  "iso3": "NPL",
+  "year": 2023,
+  "doc_id": "6b44cc14-bc0d-4dfe-9690-9e497e1baa40",
+  "title": "Nepal: Staff Report for the 2023 Article IV Consultation, First and Second Reviews Under the Extended Credit Facility Arrangement, Requests for Waivers of Nonobservance of Performance Criteria, Extension of the Arrangement, and Rephasing of Disbursements\u2014Debt Sustainability Analysis",
+  "published_ci": 3.17
+ },
+ {
+  "iso3": "PNG",
+  "year": 2019,
+  "doc_id": "2b0ff474-283d-4f5e-846c-fcb561d60dfe",
+  "title": "Papua New Guinea: Staff Report for the 2019 Article IV Consultation and Request for a Staff-Monitored Program\u2014Debt Sustainability Analysis",
+  "published_ci": 2.784
+ },
+ {
+  "iso3": "PNG",
+  "year": 2025,
+  "doc_id": "b6d16ded-a303-4885-8a50-48c50992cb4a",
+  "title": "Papua New Guinea: Staff Report for the 2025 Article IV Consultation, Fourth Reviews Under the Extended Arrangement Under the Extended Fund Facility and the Arrangement Under the Extended Credit Facility, Requests for a Waiver of Nonobservance of Performance Criterion, Modification of a Quantitative Performance Criterion, and First Review Under the Arrangement Under the Resilience and Sustainability Facility\u2014Debt Sustainability Analysis",
+  "published_ci": 2.57
+ },
+ {
+  "iso3": "COG",
+  "year": 2019,
+  "doc_id": "7b090336-b930-411f-811a-3bf2cf82f623",
+  "title": "Republic of Congo: Staff Report for the 2019 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.47
+ },
+ {
+  "iso3": "COG",
+  "year": 2021,
+  "doc_id": "2367714a-c9f8-43a2-9db9-5f7575c2482b",
+  "title": "Republic of Congo: Staff Report for the 2021 Article IV Consultation-Debt Sustainability Analysis",
+  "published_ci": 2.28
+ },
+ {
+  "iso3": "COG",
+  "year": 2024,
+  "doc_id": "4adc5b14-d178-4503-9cd9-43d14a14cb24",
+  "title": "Republic of Congo: Staff Report for the 2024 Article IV Consultation, Fifth Review Under the Three-Year Arrangement Under the Extended Credit Facility, Requests for Modification of Performance Criteria, Waivers of Nonobservance of Performance Criteria, and Financing Assurances Review\u2014Debt Sustainability Analysis",
+  "published_ci": 2.3
+ },
+ {
+  "iso3": "MHL",
+  "year": 2025,
+  "doc_id": "b985df55-6e67-4f3d-8085-449c27d34ca9",
+  "title": "Republic of Marshall Islands: Staff Report for the 2025 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 1.65
+ },
+ {
+  "iso3": "MHL",
+  "year": 2021,
+  "doc_id": "127e03ef-caa6-4c5a-924e-929836e7de7c",
+  "title": "Republic of the Marshall Islands: Staff Report for the 2021 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 1.54
+ },
+ {
+  "iso3": "WSM",
+  "year": 2019,
+  "doc_id": "d60c8d31-6144-4da8-bbb5-ed7cf74308e8",
+  "title": "Samoa: Staff Report for the 2019 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.31
+ },
+ {
+  "iso3": "WSM",
+  "year": 2023,
+  "doc_id": "12a7abd2-89b2-4558-be57-e7770c2f336f",
+  "title": "Samoa: Staff Report for the 2023 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.28
+ },
+ {
+  "iso3": "WSM",
+  "year": 2024,
+  "doc_id": "b1658f98-7cbd-4def-bd3a-e5793b55aa2f",
+  "title": "Samoa: Staff Report for the 2024 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.31
+ },
+ {
+  "iso3": "SEN",
+  "year": 2018,
+  "doc_id": "11035c94-7659-4332-8415-62e71ed349dd",
+  "title": "Senegal: Staff Report for the 2018 Article IV Consultation and Seventh Review Under the Policy Support Instrument and Request for Modification of Assessment Criteria\u2014Debt Sustainability Analysis",
+  "published_ci": 3.32
+ },
+ {
+  "iso3": "SEN",
+  "year": 2021,
+  "doc_id": "4b1b5dbd-a067-4e2f-aecf-48a825fb7ebc",
+  "title": "Senegal: Staff Report for the 2021 Article IV Consultation, Fourth Review Under the Policy Coordination Instrument, First Reviews Under the Stand-by Arrangement and the Arrangement Under the Standby Credit Facility, and Request for Modification of Performance Criteria and Quantitative Targets\u2014Debt Sustainability Analysis",
+  "published_ci": 3.25
+ },
+ {
+  "iso3": "SLB",
+  "year": 2018,
+  "doc_id": "c19b2343-fea7-4915-8456-d02d38259ea9",
+  "title": "Solomon Islands: Staff Report for the 2018 Article IV Consultation\u2014Debt Sustainability Analysis1",
+  "published_ci": 2.72
+ },
+ {
+  "iso3": "SLB",
+  "year": 2023,
+  "doc_id": "30b0e28d-e94e-47c2-8209-b5b4755c350c",
+  "title": "Solomon Islands: Staff Report For the 2023 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.59
+ },
+ {
+  "iso3": "SLB",
+  "year": 2024,
+  "doc_id": "e104b6e1-1864-4e09-9d97-08fd1b45373d",
+  "title": "Solomon Islands: Staff Report for the 2024 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.65
+ },
+ {
+  "iso3": "SLB",
+  "year": 2026,
+  "doc_id": "8651ed90-ed92-4c6d-9fa8-ed9208d8de52",
+  "title": "Solomon Islands: Staff Report for the 2026 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.8
+ },
+ {
+  "iso3": "VCT",
+  "year": 2018,
+  "doc_id": "df54cc3f-efc8-41eb-b8f3-e8ea7811634d",
+  "title": "ST. Vincent and the Grenadines Staff Report for the 2018 Article IV Consultation\u2014Supplementary Information",
+  "published_ci": 2.98
+ },
+ {
+  "iso3": "VCT",
+  "year": 2022,
+  "doc_id": "ec2c1c37-c5cf-456c-ac4b-fec8c0adccab",
+  "title": "St. Vincent and the Grenadines: Staff Report for the 2022 Article IV Consultation\u2013Debt Sustainability Analysis",
+  "published_ci": 3.02
+ },
+ {
+  "iso3": "VCT",
+  "year": 2024,
+  "doc_id": "158ab008-4721-4358-aa8d-cd16fc96d974",
+  "title": "St. Vincent and the Grenadines: Staff Report for the 2024 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.02
+ },
+ {
+  "iso3": "TON",
+  "year": 2023,
+  "doc_id": "af4983c4-c370-4849-b8df-10af973e270a",
+  "title": "Tonga: Staff Report for the 2023 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.06
+ },
+ {
+  "iso3": "TUV",
+  "year": 2021,
+  "doc_id": "94ccc51c-d00b-4768-bff2-985dedd7e72c",
+  "title": "Tuvalu: Staff Report for the 2021 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.62
+ },
+ {
+  "iso3": "COM",
+  "year": 2025,
+  "doc_id": "18ea848e-e845-41f4-8ac1-544d4728cf3f",
+  "title": "Union of the Comoros: Staff Report for the 2025 Article IV Consultation, Fifth Review Under the Extended Credit Facility Arrangement, and Request for Waivers of Nonobservance of Performance Criteria\u2014Debt Sustainability Analysis",
+  "published_ci": 2.85
+ },
+ {
+  "iso3": "TZA",
+  "year": 2023,
+  "doc_id": "34616f6b-b4ba-46d2-a0bf-ca89b655de64",
+  "title": "United Republic of Tanzania: Staff Report for the 2023 Article IV Consultation and First Review Under the Extended Credit Facility Arrangement\u2014Debt Sustainability Analysis",
+  "published_ci": 2.92
+ },
+ {
+  "iso3": "TZA",
+  "year": 2025,
+  "doc_id": "1a1d5b64-bbb2-4245-afbe-f7fcd67382a5",
+  "title": "United Republic of Tanzania: Staff Report for the 2025 Article IV Consultation, Fifth Review Under the Extended Credit Facility Arrangement, Modification of Performance Criteria, and Second Review Under the Resilience and Sustainability Facility Arrangement\u2014Debt Sustainability Analysis",
+  "published_ci": 2.88
+ },
+ {
+  "iso3": "VUT",
+  "year": 2019,
+  "doc_id": "aeaad400-715b-4713-8204-f7009ee09725",
+  "title": "Vanuatu: Staff Report for the 2019 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 2.99
+ },
+ {
+  "iso3": "VUT",
+  "year": 2025,
+  "doc_id": "a7811d9c-3902-43e4-a855-3bea00eb3151",
+  "title": "Vanuatu: Staff Report for the 2025 Article IV Consultation\u2014Debt Sustainability Analysis",
+  "published_ci": 3.018
+ },
+ {
+  "iso3": "ZMB",
+  "year": 2023,
+  "doc_id": "bf1954ec-97a3-4b09-acfe-0d73badffedb",
+  "title": "Zambia: Staff Report for the 2023 Article IV Consultation, First Review Under the Extended Credit Facility Arrangement, and Financing Assurances Review\u2014 Debt Sustainability Analysis",
+  "published_ci": 2.59
+ },
+ {
+  "iso3": "ZWE",
+  "year": 2025,
+  "doc_id": "a316a9d0-df80-464a-b958-c6d6bd0d5818",
+  "title": "Zimbabwe: Staff Report for the 2025 Article IV Consultation \u2014 Debt Sustainability Analysis",
+  "published_ci": 2.06
+ }
+]

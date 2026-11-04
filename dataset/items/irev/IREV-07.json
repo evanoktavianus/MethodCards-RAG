@@ -1,0 +1,118 @@
+{
+ "id": "IREV-07",
+ "family": "methodology",
+ "method": "irev",
+ "style": "hidden",
+ "tier": "multi_step",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "Among the economies in the IMF World Economic Outlook database, take the one whose general government revenue in 2019 was between 27.5 and 30.5 percent of GDP, and whose general government gross debt at the end of 2019 was between 49 and 52 percent of GDP. What share of its government revenue went to paying interest on its debt in 2019?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the interest-to-revenue ratio (interest paid by general government as a share of government revenue, i.e. interest as % of GDP divided by revenue as % of GDP) as the applicable burden measure of repayment capacity (IMF 2013 Staff Guidance Note: debt burden indicators scale debt or debt service by GDP or government revenues).",
+    "accept": "full = interest/revenue in percent; partial = uses total debt service (interest plus amortisation) or interest/GDP; no = debt-to-revenue or debt-to-GDP.",
+    "supporting_passages": [
+     "2dea3fb1-758b-40a4-882b-59f953293e2d#p16 (EIR footnote 3); 47 (debt-to-revenue)",
+     "afe8e3fb-67da-4099-9ee6-020466614eb8#pFigure 23 (interest payment to revenue)"
+    ]
+   },
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the economy meeting the stated conditions as Colombia.",
+    "accept": "must name the correct economy (COL) before the computation."
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government revenue and grants (% GDP) and interest paid = primary balance minus overall balance (% GDP) (WEO Oct 2025: GGR_NGDP, GGXONLB_NGDP, GGXCNL_NGDP).",
+    "accept": "full = all inputs correctly sourced; partial = some inputs approximated; no = unrelated series."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "The value for Colombia in 2019 is about 7.8 % of revenue.",
+    "accept": "full = within +-0.5; partial = within +-1; no = otherwise.",
+    "target": 7.8,
+    "tolerance_abs": 0.5
+   }
+  ]
+ },
+ "grading": {
+  "tolerance_abs": 0.5,
+  "note": "Verdicts exact. Convention for the gold (WEO Oct 2025, general government): interest paid = primary balance minus overall balance (% of GDP); revenue = general government revenue and grants (GGR_NGDP, % of GDP); interest-to-revenue = interest / revenue x 100; debt-to-revenue = end-of-year gross debt (% of GDP) / revenue (% of GDP) x 100, in percent of revenue.",
+  "definitions": "Convention for the gold (WEO Oct 2025, general government): interest paid = primary balance minus overall balance (% of GDP); revenue = general government revenue and grants (GGR_NGDP, % of GDP); interest-to-revenue = interest / revenue x 100; debt-to-revenue = end-of-year gross debt (% of GDP) / revenue (% of GDP) x 100, in percent of revenue."
+ },
+ "provenance": {
+  "source": "frozen WEO Oct 2025 (frozen_extra/)",
+  "generator": "scripts/fr_items.py",
+  "method_text": "IMF 2013 Staff Guidance Note (annex on stress tests: debt-burden indicators; MAC DSA template debt-to-revenue)"
+ },
+ "validation_label": "definition-validated",
+ "method_kind": "textbook identity",
+ "famous_method": true,
+ "method_doc_ids": [
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "afe8e3fb-67da-4099-9ee6-020466614eb8"
+ ],
+ "gold_report_ids": [],
+ "published_value": null,
+ "published_value_note": "No corpus report states this country-year value for the identity on the frozen vintage; formula printed in the method document (gate a), inputs public (b), gold by script (c).",
+ "recomputed_value": 7.8,
+ "inputs": [
+  "GGR_NGDP",
+  "GGXONLB_NGDP",
+  "GGXCNL_NGDP"
+ ],
+ "distractors": [
+  "debt-to-GDP or interest-to-GDP ratios",
+  "debt-service-to-revenue (includes amortisation)",
+  "gross financing needs",
+  "present-value-of-debt-to-revenue indicators from the low-income-country framework",
+  "primary balance or debt-stabilising balance"
+ ],
+ "answer_summary": "COL 2019 hidden: int/rev 7.8%, debt/rev 173.4%. Gold 7.8",
+ "gold_script": "scripts/fr_items.py",
+ "gold": {
+  "iso3": "COL",
+  "year": 2019,
+  "unit": "% of revenue",
+  "hidden_condition": {
+   "fields": [
+    "revenue",
+    "debt",
+    "primary_balance"
+   ],
+   "used": [
+    0,
+    1
+   ],
+   "windows": {
+    "0": [
+     27.5,
+     30.5
+    ],
+    "1": [
+     49.0,
+     52.0
+    ]
+   },
+   "universe": 184,
+   "answer_set_size": 1
+  },
+  "value": 7.8,
+  "kind": "int_rev"
+ }
+}

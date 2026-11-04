@@ -1,0 +1,146 @@
+# Data overview
+
+Catalogue of the frozen series: `DATA_INDEX.csv` (columns release, code, name, countries, first period, last period). Example: `grep -i 'maturity' DATA_INDEX.csv | head`.
+
+
+## Frozen: WEO_2025_OCT_VINTAGE (44 codes)
+BCA, BCA_NGDPD, GGR, GGR_NGDP, GGSB, GGSB_NPGDP, GGX, GGXCNL, GGXCNL_NGDP, GGX_NGDP, GGXONLB, GGXONLB_NGDP, GGXWDG, GGXWDG_NGDP, GGXWDN, GGXWDN_NGDP, LE, LP, LUR, NGAP_NPGDP, NGDP, NGDP_D, NGDPD, NGDPDPC, NGDP_FY, NGDPPC, NGDP_R, NGDPRPC, NGDP_RPCH, NGDPRPPPPC, NGSD_NGDP, NID_NGDP, PCPI, PCPIE, PCPIEPCH, PCPIPCH, PPPEX, PPPGDP, PPPPC, PPPSH, TMG_RPCH, TM_RPCH, TXG_RPCH, TX_RPCH
+
+## Frozen: PSD_2026-10-14 (564 codes)
+- DP.DOD.DLDS.* (68): Gross PSD, Budgetary Central Gov., All maturities, Debt securities, No
+- DP.DOD.DLCD.* (51): Gross PSD, Budgetary Central Gov., All maturities, Currency and deposi
+- DP.DOD.DLIN.* (51): Gross PSD, Budgetary Central Gov., All maturities, Insurance, pensions
+- DP.DOD.DLLO.* (51): Gross PSD, Budgetary Central Gov., All maturities, Loans, Nominal Valu
+- DP.DOD.DLOA.* (51): Gross PSD, Budgetary Central Gov., All maturities, Other accounts paya
+- DP.DOD.DLTC.* (51): Gross PSD, Budgetary Central Gov., Long-term, All instruments, Nominal
+- DP.DOD.DLSD.* (34): Gross PSD, Budgetary Central Gov., All maturities, Special Drawing Rig
+- DP.DOD.DECD.* (17): Gross PSD, Budgetary Central Gov., All maturities, All instruments, Do
+- DP.DOD.DECF.* (17): Gross PSD, Budgetary Central Gov., All maturities, All instruments, Fo
+- DP.DOD.DECN.* (17): Gross PSD, Budgetary Central Gov., All maturities, All instruments, Do
+- DP.DOD.DECT.* (17): Gross PSD, Budgetary Central Gov., All maturities, All instruments, No
+- DP.DOD.DECX.* (17): Gross PSD, Budgetary Central Gov., All maturities, All instruments, Ex
+- DP.DOD.DSCD.* (17): Gross PSD, Budgetary Central Gov., Short-term, Currency and deposits, 
+- DP.DOD.DSDS.* (17): Gross PSD, Budgetary Central Gov., Short-term, Debt securities, Nomina
+- DP.DOD.DSIN.* (17): Gross PSD, Budgetary Central Gov., Short-term, Insurance, pensions, an
+- DP.DOD.DSLO.* (17): Gross PSD, Budgetary Central Gov., Short-term, Loans, Nominal Value, N
+- DP.DOD.DSOA.* (17): Gross PSD, Budgetary Central Gov., Short-term, Other accounts payable,
+- DP.DOD.DSTC.* (17): Gross PSD, Budgetary Central Gov., Short-term, All instruments, Nomina
+- DP.DOD.DLD1.* (4): Gross PSD, Central Gov.-D1, All maturities, Debt securities + loans, N
+- DP.DOD.DLD2A.* (4): Gross PSD, Central Gov.-D2A, All maturities, D1+ currency and deposits
+- DP.DOD.DLD2.* (4): Gross PSD, Central Gov.-D2, All maturities, D1+ SDRs + currency and de
+- DP.DOD.DLD3.* (4): Gross PSD, Central Gov.-D3, All maturities, D2+other accounts payable,
+- DP.DOD.DLD4.* (4): Gross PSD, Central Gov.-D4, All maturities, D3+insurance, pensions, an
+
+## Frozen: WDI_2026-10-08 (1497 codes)
+- SP.POP.* (64): Population ages 00-04, female (% of female population)
+- SH.STA.* (52): Mortality rate attributed to household and ambient air pollution, age-
+- SE.PRM.* (50): Primary school starting age (years)
+- SE.SEC.* (48): Lower secondary school starting age (years)
+- DT.NFL.* (46): Net financial flows, bilateral (NFL, current US$)
+- SL.TLF.* (46): Children in employment, female (% of female children ages 7-14)
+- EN.GHG.* (43): Total greenhouse gas emissions including LULUCF (Mt CO2e)
+- IC.BRE.* (43): B-READY: Business Entry: Overall Score
+- DC.DAC.* (33): Net bilateral aid flows from DAC donors, Australia (current US$)
+- NY.GDP.* (31): Coal rents (% of GDP)
+- NY.ADJ.* (28): Adjusted savings: education expenditure (current US$)
+- SL.UEM.* (27): Unemployment, youth female (% of female labor force ages 15-24) (natio
+- TX.VAL.* (27): Agricultural raw materials exports (% of merchandise exports)
+- NE.CON.* (25): General government final consumption expenditure (current US$)
+- SL.EMP.* (25): Employment to population ratio, ages 15-24, female (%) (national estim
+- TM.VAL.* (25): Agricultural raw materials imports (% of merchandise imports)
+- IC.FRM.* (23): Firms using banks to finance working capital (% of firms) 
+- IQ.CPA.* (21): CPIA business regulatory environment rating (1=low to 6=high)
+- AG.LND.* (19): Agricultural land (sq. km)
+- TM.TAX.* (18): Binding coverage, manufactured products (%)
+- NE.GDI.* (17): Gross fixed capital formation, private sector (current LCU)
+- SE.TER.* (17): Educational attainment, at least Bachelor's or equivalent, population 
+- SH.XPD.* (17): Current health expenditure (% of GDP)
+- DT.DOD.* (16): External debt stocks, total (DOD, current US$)
+- GC.TAX.* (16): Taxes on exports (current LCU)
+- NY.GNP.* (16): GNI, Atlas method (current US$)
+- SP.DYN.* (16): Mortality rate, adult, female (per 1,000 female adults)
+- EG.ELC.* (13): Access to electricity, rural (% of rural population)
+- GC.XPN.* (13): Compensation of employees (current LCU)
+- NV.IND.* (13): Industry (including construction), value added per worker (constant 20
+- SH.DYN.* (13): Probability of dying among children ages 5-9 years (per 1,000)
+- SM.POP.* (13): Asylum-seekers by country or territory of asylum
+- BX.GSR.* (12): ICT service exports (BoP, current US$)
+- SE.XPD.* (12): Current education expenditure, primary (% of total expenditure in prim
+- SH.HIV.* (12): Children (0-14) living with HIV
+- DT.ODA.* (11): Net official development assistance and official aid received (current
+- SH.DTH.* (11): Number of deaths ages 5-9 years
+- SI.POV.* (11): Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population)
+- BM.GSR.* (10): Communications, computer, etc. (% of service imports, BoP)
+- DT.TDS.* (10): Debt service on external debt, total (TDS, current US$)
+- ST.INT.* (10): International tourism, number of arrivals
+- FX.OWN.* (9): Account ownership at a financial institution or with a mobile-money-se
+- SE.LPV.* (9): Learning poverty: Share of Children at the End-of-Primary age below mi
+- ER.H2O.* (8): Annual freshwater withdrawals, agriculture (% of total freshwater with
+- MS.MIL.* (8): Arms imports (SIPRI trend indicator values)
+- SE.PRE.* (8): Preprimary education, duration (years)
+- SI.DST.* (8): Income share held by second 20%
+- CM.MKT.* (7): S&P Global Equity Indices (annual % change)
+- IT.NET.* (7): Fixed broadband subscriptions
+- LP.LPI.* (7): Logistics performance index: Efficiency of customs clearance process (
+- NV.AGR.* (7): Agriculture, forestry, and fishing, value added per worker (constant 2
+- NV.SRV.* (7): Services, value added per worker (constant 2015 US$)
+- SE.ADT.* (7): Literacy rate, youth female (% of females ages 15-24)
+- SG.VAW.* (7): Proportion of women subjected to physical and/or sexual violence in th
+- EG.USE.* (6): Alternative and nuclear energy (% of total energy use)
+- FM.AST.* (6): Claims on central government (annual growth as % of broad money)
+- GC.REV.* (6): Grants and other revenue (current LCU)
+- IQ.SPI.* (6): Statistical performance indicators (SPI): Overall score (scale 0-100)
+- NE.DAB.* (6): Gross national expenditure deflator (base year varies by country)
+- NE.EXP.* (6): Exports of goods and services (current US$)
+- NE.IMP.* (6): Imports of goods and services (current US$)
+- NV.MNF.* (6): Chemicals (% of value added in manufacturing)
+- PA.NUS.* (6): DEC alternative conversion factor (LCU per US$)
+- SH.H2O.* (6): People using at least basic drinking water services, rural (% of rural
+- SL.AGR.* (6): Child employment in agriculture, female (% of female economically acti
+- SL.FAM.* (6): Children in employment, unpaid family workers, female (% of female chi
+- SL.SRV.* (6): Child employment in services, female (% of female economically active 
+- SP.REG.* (6): Completeness of birth registration, female (%)
+- DC.ODA.* (5): Net ODA provided, to the least developed countries (current US$)
+- EN.ATM.* (5): PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)
+- EN.POP.* (5): Population density (people per sq. km of land area)
+- FR.INR.* (5): Deposit interest rate (%)
+- SH.MED.* (5): Hospital beds (per 1,000 people)
+- SI.SPR.* (5): Survey mean consumption or income per capita, bottom 40% of population
+- SN.ITK.* (5): Prevalence of undernourishment (% of population)
+- AG.PRD.* (4): Cereal production (metric tons)
+- BX.TRF.* (4): Secondary income receipts (BoP, current US$)
+- EN.URB.* (4): Population in largest city
+- FI.RES.* (4): Total reserves (includes gold, current US$)
+- FM.LBL.* (4): Broad money (current LCU)
+- FS.AST.* (4): Claims on central government, etc. (% GDP)
+- IE.PPI.* (4): Investment in energy with private participation (current US$)
+- IE.PPN.* (4): Public private partnerships investment in energy (current US$)
+- NE.RSB.* (4): External balance on goods and services (current US$)
+- NY.GNS.* (4): Gross savings (current US$)
+- SE.ENR.* (4): School enrollment, primary (gross), gender parity index (GPI)
+- BN.GSR.* (3): Net primary income (BoP, current US$)
+- EG.CFT.* (3): Access to clean fuels and technologies for cooking, rural (% of rural 
+- ER.FSH.* (3): Aquaculture production (metric tons)
+- FB.CBK.* (3): Commercial bank branches (per 100,000 adults)
+- IS.AIR.* (3): Air transport, registered carrier departures worldwide
+- IS.RRS.* (3): Railways, goods transported (million ton-km)
+- NY.GDS.* (3): Gross domestic savings (current US$)
+- NY.GSR.* (3): Net primary income (Net income from abroad) (current US$)
+- NY.TAX.* (3): Taxes less subsidies on products (current US$)
+- NY.TRF.* (3): Net secondary income (Net current transfers from abroad) (current US$)
+- SH.ALC.* (3): Total alcohol consumption per capita, female (liters of pure alcohol, 
+- SH.ANM.* (3): Prevalence of anemia among women of reproductive age (% of women ages 
+- SH.IMM.* (3): Immunization, HepB3 (% of one-year-old children)
+- SH.MLR.* (3): Incidence of malaria (per 1,000 population at risk)
+- SH.MMR.* (3): Number of maternal deaths
+- SH.PRV.* (3): Prevalence of current tobacco use (% of adults)
+- SH.SGR.* (3): Risk of catastrophic expenditure for surgical care (% of people at ris
+- SH.SVR.* (3): Prevalence of severe wasting, weight for height, female (% of children
+- SH.TBS.* (3): Tuberculosis treatment success rate (% of new cases)
+- SL.IND.* (3): Employment in industry, female (% of female employment) (modeled ILO e
+- SL.MNF.* (3): Child employment in manufacturing, female (% of female economically ac
+- SL.SLF.* (3): Children in employment, self-employed, female (% of female children in
+- SL.WAG.* (3): Children in employment, wage workers, female (% of female children in 
+- SP.RUR.* (3): Rural population
+- SP.URB.* (3): Urban population growth (annual %)
+- VC.IHR.* (3): Intentional homicides, female (per 100,000 female)

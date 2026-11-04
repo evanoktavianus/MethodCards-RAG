@@ -1,0 +1,99 @@
+{
+ "id": "REER-02",
+ "family": "methodology",
+ "method": "reer_real_dep",
+ "style": "named",
+ "tier": "multi_step",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "In 2011, what was the real change in the value of the Costa Rica currency relative to the dollar, taking domestic price increases into account?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Measures real depreciation as nominal depreciation against the dollar (percentage fall in the dollar value of local currency) minus domestic inflation measured by the GDP deflator.",
+    "accept": "full = applies this definition (nominal depreciation minus GDP-deflator inflation); partial = nominal depreciation minus consumer-price inflation, or ratio/log forms that give a number within tolerance; no = uses an effective exchange rate index, subtracts US inflation as well, or reports only the nominal change.",
+    "supporting_passages": [
+     "e946326c-0415-4219-86ed-95f755ac9043#slovak2004_fn8_real_depreciation"
+    ]
+   },
+   {
+    "id": "c4",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Real appreciation of about 8.6% (positive = depreciation of the local currency)",
+    "accept": "sign and size of the verdict must match (direction exact)."
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses the official exchange rate (local currency per US dollar, annual average, e.g. WDI PA.NUS.FCRF) and a GDP deflator series (WEO NGDP_D, or the same deflator from WDI as an index or growth rate).",
+    "accept": "full = both sourced (the GDP deflator from WEO or WDI, as index or growth rate, counts); partial = CPI instead of the deflator; no = unrelated series."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Nominal depreciation of the local currency in 2011: -4.0% (from 525.8 to 505.7 local units per dollar).",
+    "accept": "full = within +-1.0 pp.",
+    "target": -3.99,
+    "tolerance_abs": 1.0
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Domestic GDP-deflator inflation in 2011: 4.6%; real depreciation = -4.0 - 4.6 = -8.6%.",
+    "accept": "full = within +-1.5 pp of -8.6.",
+    "target": -8.58,
+    "tolerance_abs": 1.5
+   }
+  ]
+ },
+ "grading": {
+  "tolerance_abs_pp": 1.5,
+  "tolerance_basis": 0.2,
+  "note": "Gold: real depreciation_y = (1 - E_{y-1}/E_y)*100 - (NGDP_D_y/NGDP_D_{y-1} - 1)*100, E = official exchange rate (local currency per US$, annual average, WDI 2026-10-08), NGDP_D = WEO Oct 2025 GDP deflator index; positive = depreciation of the local currency. Tolerance +-1.5 pp covers the log and ratio forms (checked: both within 1.5 pp of the gold for every item).",
+  "definitions": "Real depreciation = nominal depreciation (percentage fall in the dollar value of local currency) minus domestic inflation (GDP deflator); positive = local currency loses value. Foreign (US) inflation is NOT subtracted under this institutional definition."
+ },
+ "provenance": {
+  "source": "frozen WEO Oct 2025 + WDI 2026-10-08 (frozen_extra/)",
+  "generator": "scripts/ex_reer_gold.py",
+  "method_text": "Slovak Republic 2004 Article IV, DSA table footnote 8 (p34): 'Real depreciation is defined as nominal depreciation (measured by percentage fall in dollar value of local currency) minus domestic inflation (based on GDP deflator).'",
+  "validation": "No published country-year value found (definition only; the report uses it for a stress scenario). Internal check: log and ratio forms within 1.5 pp."
+ },
+ "method_doc_ids": [
+  "e946326c-0415-4219-86ed-95f755ac9043"
+ ],
+ "gold_report_ids": [],
+ "published_value": null,
+ "recomputed_value": -8.58,
+ "inputs": [
+  "PA.NUS.FCRF",
+  "NGDP_D"
+ ],
+ "validation_label": "formula-validated",
+ "method_kind": "institutional procedure",
+ "famous_method": false,
+ "distractors": [
+  "real effective exchange rate index (WDI PX.REX.REER) change",
+  "real bilateral rate with both CPIs (US inflation subtracted)",
+  "nominal depreciation only",
+  "purchasing-power-parity gap"
+ ],
+ "answer_summary": "Real appreciation of about 8.6% (positive = depreciation of the local currency) (Costa Rica, 2011; nominal -4.0%, inflation 4.6%)",
+ "gold_script": "scripts/ex_reer_gold.py",
+ "validation_note": "Definition-only validation; no published figure to match.",
+ "answer_country": "CRI",
+ "years": [
+  2011
+ ]
+}

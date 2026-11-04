@@ -1,0 +1,242 @@
+{
+  "id": "FSI-14",
+  "family": "methodology",
+  "method": "fsi",
+  "style": "claim_check",
+  "tier": "analytical",
+  "validation_label": "definition-validated (reduced index)",
+  "status": "validated",
+  "validation_tier": "definition-validated",
+  "procedure_kind": "institutional procedure",
+  "query": "A review says that in 2018 Georgia was at a level signalling stress on the cyclically adjusted primary balance, the share of foreign-currency debt in public debt and the interest-growth differential averaged over the next five years. Is that correct for all of them? Use only components that can be built from public IMF World Economic Outlook (October 2025), World Bank Public Sector Debt and World Development Indicators series.",
+  "claims": {
+    "text": [
+      {
+        "id": "c1",
+        "kind": "text",
+        "importance": "vital",
+        "text": "Identifies the threshold-based fiscal stress index of Baldacci, McHugh and Petrova, 'Assessing Fiscal Stress' (IMF WP/11/100): indicators in basic, asset-liability and long-term clusters, each compared with the threshold of Tables 5a/5b for advanced or emerging economies, weighted and summed; and applies it as a reduced index on the 8 indicators available from public series (6 for advanced economies), rescaled to the available weight.",
+        "accept": "full = names the threshold-and-weight index and applies the right group's thresholds and weights to the available indicators; partial = uses thresholds without the printed weights, or the wrong group's table; no = a debt-sustainability heat map, credit rating or crisis early-warning model."
+      },
+      {
+        "id": "c3",
+        "kind": "text",
+        "importance": "vital",
+        "text": "Judges the statement incorrect (the interest-growth differential averaged over the next five years was not beyond its threshold).",
+        "accept": "verdict must match (false)."
+      }
+    ],
+    "data": [
+      {
+        "id": "c9",
+        "kind": "data",
+        "importance": "okay",
+        "text": "Uses WEO debt, balances, structural balance, GDP and deflator; PSD general government short-term and foreign-currency debt; WDI short-term external debt, reserves and fertility (inputs listed in the item).",
+        "accept": "full = all families of series used; partial = most; no = other series."
+      }
+    ],
+    "computation": []
+  },
+  "grading": {
+    "computation_tolerance_points": 6.0,
+    "note": "Reduced index in points of 100; tolerance 6 points because proxies and the group classification are loose (a single indicator flipping would move the index by 3 to 24 points, so items were screened to keep every indicator at least 10% of its threshold, and 0.3 points for the cyclically adjusted balance, away from its threshold). Breached indicators are exact."
+  },
+  "provenance": {
+    "generator": "gold from gold_scripts/fsi/gold_fsi.py via item_gold.py",
+    "frozen_data": "WEO Oct 2025 csvs, psd_20261014_maturity_extract.psv, wdi_20261008_extract.psv in frozen_extra/",
+    "method_text": "IMF WP/11/100 'Assessing Fiscal Stress', Tables 5a/5b and index formula",
+    "subject": {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "year": 2018
+    }
+  },
+  "method_doc_ids": [
+    "b8ca4b08-f493-4848-9dfe-6d2cec1f8db5"
+  ],
+  "gold_report_ids": [],
+  "published_value": null,
+  "published_value_note": "The paper prints thresholds and weights but no per-country index values; there is nothing to compare with. Tier is definition-validated on a reduced index.",
+  "recomputed_value": {
+    "group": "EM",
+    "n_indicators": 8,
+    "available_weight": 69.9,
+    "raw_index": 38.9,
+    "reduced_index": 55.7
+  },
+  "indicator_detail": [
+    {
+      "indicator": "r_minus_g_5y",
+      "value": -8.73,
+      "threshold": 1.1,
+      "breach": 0,
+      "weight": 11.3
+    },
+    {
+      "indicator": "gross_debt",
+      "value": 38.22,
+      "threshold": 42.8,
+      "breach": 0,
+      "weight": 2.5
+    },
+    {
+      "indicator": "capb",
+      "value": -0.97,
+      "threshold": -0.5,
+      "breach": 1,
+      "weight": 9.9
+    },
+    {
+      "indicator": "gfn",
+      "value": 4.49,
+      "threshold": 20.6,
+      "breach": 0,
+      "weight": 2.8
+    },
+    {
+      "indicator": "st_debt_share",
+      "value": 8.72,
+      "threshold": 44.0,
+      "breach": 0,
+      "weight": 9.2
+    },
+    {
+      "indicator": "fx_debt_share",
+      "value": 78.07,
+      "threshold": 40.3,
+      "breach": 1,
+      "weight": 9.9
+    },
+    {
+      "indicator": "st_ext_debt_to_reserves",
+      "value": 70.46,
+      "threshold": 61.8,
+      "breach": 1,
+      "weight": 19.1
+    },
+    {
+      "indicator": "fertility_dev",
+      "value": 0.01,
+      "threshold": 1.3,
+      "breach": 0,
+      "weight": 5.2
+    }
+  ],
+  "inputs": [
+    {
+      "release": "WEO_2025_OCT_VINTAGE",
+      "code": "GGXWDG_NGDP"
+    },
+    {
+      "release": "WEO_2025_OCT_VINTAGE",
+      "code": "GGXONLB_NGDP"
+    },
+    {
+      "release": "WEO_2025_OCT_VINTAGE",
+      "code": "GGXCNL_NGDP"
+    },
+    {
+      "release": "WEO_2025_OCT_VINTAGE",
+      "code": "GGSB_NPGDP"
+    },
+    {
+      "release": "WEO_2025_OCT_VINTAGE",
+      "code": "NGDP"
+    },
+    {
+      "release": "WEO_2025_OCT_VINTAGE",
+      "code": "NGDP_D"
+    },
+    {
+      "release": "WEO_2025_OCT_VINTAGE",
+      "code": "NGDP_RPCH"
+    },
+    {
+      "release": "PSD_2026-10-14",
+      "code": "DP.DOD.DSTC.CR.GG"
+    },
+    {
+      "release": "PSD_2026-10-14",
+      "code": "DP.DOD.DLTC.CR.L1.GG"
+    },
+    {
+      "release": "PSD_2026-10-14",
+      "code": "DP.DOD.DECT.CR.GG"
+    },
+    {
+      "release": "PSD_2026-10-14",
+      "code": "DP.DOD.DECF.CR.GG"
+    },
+    {
+      "release": "WDI_2026-10-08",
+      "code": "DT.DOD.DSTC.CD"
+    },
+    {
+      "release": "WDI_2026-10-08",
+      "code": "FI.RES.TOTL.CD"
+    },
+    {
+      "release": "WDI_2026-10-08",
+      "code": "SP.DYN.TFRT.IN"
+    }
+  ],
+  "distractors": [
+    "Debt sustainability risk assessment with heat maps (market-access debt framework) or low-income country debt-carrying-capacity ratings",
+    "Early-warning signals approach for currency or banking crises (not fiscal stress thresholds)",
+    "Sovereign credit ratings or bond spreads as a stress gauge",
+    "Fiscal space measures (distance to a debt limit)",
+    "Debt-stabilising primary balance or fiscal gap indicators (a single-number sustainability gap)",
+    "Gross financing needs alone (one of the components)"
+  ],
+  "famous_method": false,
+  "strictness": {
+    "overall": "strict thresholds and weights, reduced indicator set, loose proxies",
+    "parameters": {
+      "thresholds_and_weights": "strict: printed in Tables 5a (advanced) and 5b (emerging) of WP/11/100; overall index = sum over indicators of the printed Index Weight x 1 if on the risk side of the threshold (the printed Index Weight already combines the cluster weight and the within-cluster weight: AE clusters 31.59 + 42.56 + 25.85, EM 23.72 + 43.56 + 32.73, each group sums to 100; document eq. block 85)",
+      "indicator_set": "reduced: the full index has 12 indicators for emerging markets and 11 for advanced economies (Table 5a has no foreign-currency debt or short-term external debt row); only 8 can be built from public series (6 for advanced economies, which lack foreign-currency debt share and short-term external debt, 8 for emerging markets). Missing long-term pension and health spending projections, weighted average maturity, non-resident share (advanced) and the 20-year-ahead dependency ratio",
+      "rescaling": "convention: reduced index = weight of breached indicators / weight of available indicators x 100; the raw sum of breached weights (max equal to the available weight) is accepted if the available weight is stated",
+      "group_assignment": "loose: advanced versus emerging thresholds follow the analyst's classification (gold: IMF advanced-economy list for advanced, all others emerging)",
+      "proxies": "loose: cyclically adjusted primary balance = WEO structural balance + interest (not the paper's potential-GDP definition); short-term external debt is original maturity (WDI); gross financing needs from WEO overall balance + PSD general government short-term and due-within-one-year debt; five-year forward r-g from WEO outturns and projections",
+      "vintage": "WEO October 2025, PSD 2026-10-14, WDI 2026-10-08"
+    }
+  },
+  "parameter_notes": {
+    "thresholds_and_weights": "strict: printed in Tables 5a (advanced) and 5b (emerging) of WP/11/100; overall index = sum over indicators of the printed Index Weight x 1 if on the risk side of the threshold (the printed Index Weight already combines the cluster weight and the within-cluster weight: AE clusters 31.59 + 42.56 + 25.85, EM 23.72 + 43.56 + 32.73, each group sums to 100; document eq. block 85)",
+    "indicator_set": "reduced: the full index has 12 indicators for emerging markets and 11 for advanced economies (Table 5a has no foreign-currency debt or short-term external debt row); only 8 can be built from public series (6 for advanced economies, which lack foreign-currency debt share and short-term external debt, 8 for emerging markets). Missing long-term pension and health spending projections, weighted average maturity, non-resident share (advanced) and the 20-year-ahead dependency ratio",
+    "rescaling": "convention: reduced index = weight of breached indicators / weight of available indicators x 100; the raw sum of breached weights (max equal to the available weight) is accepted if the available weight is stated",
+    "group_assignment": "loose: advanced versus emerging thresholds follow the analyst's classification (gold: IMF advanced-economy list for advanced, all others emerging)",
+    "proxies": "loose: cyclically adjusted primary balance = WEO structural balance + interest (not the paper's potential-GDP definition); short-term external debt is original maturity (WDI); gross financing needs from WEO overall balance + PSD general government short-term and due-within-one-year debt; five-year forward r-g from WEO outturns and projections",
+    "vintage": "WEO October 2025, PSD 2026-10-14, WDI 2026-10-08",
+    "review_flag": "Thresholds and weights are the author's transcription of Tables 5a/5b of WP/11/100; the printed cluster weights sum correctly (EM 11.3+2.5+9.9 = 23.7; AE 14.9+7.3+9.4 = 31.6). Rescaling to the available weight is the author's convention and is now stated in the query. Tolerance 6 points covers neither a missing indicator nor a different CAPB proxy; the vital breach-set claim carries the method."
+  },
+  "method_note": "Reduced index: 8 of the 12 indicators of the paper (emerging markets 8, advanced economies 6) can be built from public series.",
+  "gold_script": "gold_scripts/fsi/gold_fsi.py",
+  "gold_command": "python3 -I gold_scripts/fsi/item_gold.py GEO 2018   (run from the gold/ directory; summary lines: python3 -I gold_scripts/fsi/gold_fsi.py GEO)",
+  "validation_note": "Definition-validated; no published per-country values.",
+  "truth": false,
+  "claim_kind": "indicator breaches",
+  "stated_indicators": [
+    "capb",
+    "fx_debt_share",
+    "r_minus_g_5y"
+  ],
+  "gold": {
+    "truth": false,
+    "breached": [
+      "capb",
+      "fx_debt_share",
+      "st_ext_debt_to_reserves"
+    ],
+    "not_breached": [
+      "r_minus_g_5y",
+      "gross_debt",
+      "gfn",
+      "st_debt_share",
+      "fertility_dev"
+    ]
+  },
+  "doc_check": {
+    "document": "b8ca4b08 Assessing Fiscal Stress (IMF WP/11/100): Tables 5a block 121, 5b block 124, equation block 85, Appendix Table 5 blocks 233-234",
+    "verdict": "thresholds, weights, safe directions, indicator sets MATCH (all 8 EM and 6 AE values); text corrected for cluster-weight wording and AE indicator count; reduced-index rescaling is not in the document (stated in the query); proxies loose (short-term external debt definition, CAPB, group list)"
+  }
+}

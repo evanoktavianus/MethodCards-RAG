@@ -1,0 +1,77 @@
+{
+ "id": "OK-04",
+ "family": "methodology",
+ "pattern": "M-named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "formula-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "What unemployment rate would Sweden have had in 2020 if the economy had been running at its normal capacity? Convention: take the WEO output-gap estimate and assume that each 1% of output gap moves the unemployment rate by one-half percentage point in the opposite direction.",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the relationship between the output gap and the deviation of unemployment from its natural rate (Okun's law, coefficient about -1/2).",
+    "accept": "full = names Okun's law / output-gap-to-unemployment-gap link with coefficient near 0.5 (0.4-0.6 acceptable); no = simple regression of unemployment on growth without the gap"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO series: NGAP_NPGDP, LUR."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "implied natural (structural) unemployment rate SWE 2020 = 7.73 % of labour force",
+    "reference_value": 7.733,
+    "tolerance": 0.15,
+    "unit": "pp",
+    "accept": "full = within tolerance; output gap from WEO NGAP_NPGDP, coefficient -0.5 on (y - y*), natural rate = actual unemployment minus cyclical part"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "WEO Oct 2012 Box 4.1 (bc66194c, blocks 1880 and 1882-1884)",
+   "frozen WEO Oct 2025 (frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/growth_labour/gold_growth_labour.py",
+  "selection": "seeded draw (20261030), distinct country within style where possible"
+ },
+ "method": "okun_gap_cyclical_unemployment",
+ "method_doc_ids": [
+  "bc66194c-3b20-4007-95c3-b28b252fc286"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "No corpus report states these values; gold is recomputed from the frozen WEO vintage by formula (formula-validated, no published figure).",
+ "published_value": null,
+ "recomputed_value": 7.733,
+ "tolerance": 0.15,
+ "inputs": [
+  "NGAP_NPGDP",
+  "LUR"
+ ],
+ "style": "named",
+ "distractors": [
+  "potential-output estimation by HP filter alone",
+  "Phillips-curve / wage-inflation slack measure",
+  "fiscal cyclical adjustment (budget semi-elasticity)",
+  "unemployment-rate forecasting by autoregression"
+ ],
+ "famous_method": false,
+ "hidden_set_size": null,
+ "predicate": null,
+ "validation_label": "formula-validated",
+ "method_class": "institutional procedure"
+}

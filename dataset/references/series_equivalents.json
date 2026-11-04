@@ -1,0 +1,352 @@
+{
+  "imf_iip:P_MV": {
+    "equivalent": [],
+    "related": [],
+    "note": "no other catalogue series gives IIP portfolio investment liabilities"
+  },
+  "imf_weo:BCA_NGDPD": {
+    "equivalent": [
+      "imf_weo:BCA",
+      "wdi:BN.CAB.XOKA.GD.ZS",
+      "wdi:BN.CAB.XOKA.CD"
+    ],
+    "related": [],
+    "note": "current account balance as % of GDP, in USD, or WDI BoP"
+  },
+  "imf_weo:GGR_NGDP": {
+    "equivalent": [
+      "imf_weo:GGR"
+    ],
+    "related": [],
+    "note": "general government revenue, level vs % GDP; WDI revenue is central government and excludes grants"
+  },
+  "imf_weo:GGSB_NPGDP": {
+    "equivalent": [],
+    "related": [
+      "imf_weo:GGSB"
+    ],
+    "note": "structural balance; LCU level needs potential GDP to convert, so only related; not overall balance"
+  },
+  "imf_weo:GGXCNL_NGDP": {
+    "equivalent": [
+      "imf_weo:GGXCNL"
+    ],
+    "related": [
+      "wdi:GC.NLD.TOTL.GD.ZS"
+    ],
+    "note": "general government net lending, level vs % GDP; WDI is central government"
+  },
+  "imf_weo:GGXONLB_NGDP": {
+    "equivalent": [
+      "imf_weo:GGXONLB"
+    ],
+    "related": [],
+    "note": "general government primary balance, level vs % GDP"
+  },
+  "imf_weo:GGXWDG_NGDP": {
+    "equivalent": [
+      "imf_weo:GGXWDG"
+    ],
+    "related": [
+      "psd:DP.DOD.DECT.CR.GG.Z1",
+      "psd:DP.DOD.DECT.CR.GG",
+      "psd:DP.DOD.DECT.CR.GG.CD"
+    ],
+    "note": "gross general government debt; PSD general government gross debt is the same concept but a different source and coverage; not net debt"
+  },
+  "imf_weo:GGX_NGDP": {
+    "equivalent": [
+      "imf_weo:GGX"
+    ],
+    "related": [],
+    "note": "general government expenditure, level vs % GDP; WDI expense is central government"
+  },
+  "imf_weo:LE": {
+    "equivalent": [],
+    "related": [
+      "wdi:SL.EMP.TOTL.SP.ZS"
+    ],
+    "note": "employed persons; WDI gives only employment ratio"
+  },
+  "imf_weo:LP": {
+    "equivalent": [
+      "wdi:SP.POP.TOTL"
+    ],
+    "related": [],
+    "note": "total population"
+  },
+  "imf_weo:LUR": {
+    "equivalent": [
+      "wdi:SL.UEM.TOTL.ZS",
+      "wdi:SL.UEM.TOTL.NE.ZS"
+    ],
+    "related": [],
+    "note": "total unemployment rate, ILO modeled or national estimate"
+  },
+  "imf_weo:NGAP_NPGDP": {
+    "equivalent": [],
+    "related": [],
+    "note": "output gap, no other source"
+  },
+  "imf_weo:NGDP": {
+    "equivalent": [
+      "wdi:NY.GDP.MKTP.CN",
+      "wdi:NY.GDP.MKTP.CN.AD",
+      "imf_weo:NGDPD",
+      "wdi:NY.GDP.MKTP.CD"
+    ],
+    "related": [
+      "imf_weo:NGDP_FY"
+    ],
+    "note": "nominal GDP in LCU or USD"
+  },
+  "imf_weo:NGDPD": {
+    "equivalent": [
+      "wdi:NY.GDP.MKTP.CD",
+      "imf_weo:NGDP",
+      "wdi:NY.GDP.MKTP.CN",
+      "wdi:NY.GDP.MKTP.CN.AD"
+    ],
+    "related": [],
+    "note": "nominal GDP in USD or LCU"
+  },
+  "imf_weo:NGDP_D": {
+    "equivalent": [
+      "wdi:NY.GDP.DEFL.ZS",
+      "wdi:NY.GDP.DEFL.ZS.AD",
+      "wdi:NY.GDP.DEFL.KD.ZG",
+      "wdi:NY.GDP.DEFL.KD.ZG.AD"
+    ],
+    "related": [],
+    "note": "GDP deflator level and inflation"
+  },
+  "imf_weo:NGDP_R": {
+    "equivalent": [
+      "wdi:NY.GDP.MKTP.KN",
+      "imf_weo:NGDP_RPCH",
+      "wdi:NY.GDP.MKTP.KD.ZG"
+    ],
+    "related": [
+      "wdi:NY.GDP.MKTP.KD"
+    ],
+    "note": "level and growth of real GDP; constant US$ is a fixed-rate conversion"
+  },
+  "imf_weo:NGDP_RPCH": {
+    "equivalent": [
+      "wdi:NY.GDP.MKTP.KD.ZG",
+      "imf_weo:NGDP_R",
+      "wdi:NY.GDP.MKTP.KN",
+      "wdi:NY.GDP.MKTP.KD"
+    ],
+    "related": [],
+    "note": "real GDP growth, or real GDP levels from which it is computed"
+  },
+  "imf_weo:NGSD_NGDP": {
+    "equivalent": [
+      "wdi:NY.GNS.ICTR.ZS",
+      "wdi:NY.GNS.ICTR.CN",
+      "wdi:NY.GNS.ICTR.CD"
+    ],
+    "related": [
+      "wdi:NY.GDS.TOTL.ZS"
+    ],
+    "note": "gross national savings; gross domestic savings is a different concept"
+  },
+  "imf_weo:NID_NGDP": {
+    "equivalent": [
+      "wdi:NE.GDI.TOTL.ZS",
+      "wdi:NE.GDI.TOTL.CN",
+      "wdi:NE.GDI.TOTL.CD"
+    ],
+    "related": [
+      "wdi:NE.GDI.FTOT.ZS"
+    ],
+    "note": "gross capital formation (total investment); fixed capital formation excludes inventories"
+  },
+  "imf_weo:PCPIPCH": {
+    "equivalent": [
+      "wdi:FP.CPI.TOTL.ZG",
+      "imf_weo:PCPI",
+      "wdi:FP.CPI.TOTL"
+    ],
+    "related": [
+      "imf_weo:PCPIEPCH",
+      "imf_weo:PCPIE"
+    ],
+    "note": "period-average CPI inflation and CPI level; end-of-period is different"
+  },
+  "psd:DP.DOD.DECF.CR.GG": {
+    "equivalent": [
+      "psd:DP.DOD.DECF.CR.GG.CD",
+      "psd:DP.DOD.DECF.CR.GG.Z1"
+    ],
+    "related": [],
+    "note": "same PSD series in USD and % GDP; general government"
+  },
+  "psd:DP.DOD.DECT.CR.GG": {
+    "equivalent": [
+      "psd:DP.DOD.DECT.CR.GG.CD",
+      "psd:DP.DOD.DECT.CR.GG.Z1"
+    ],
+    "related": [
+      "imf_weo:GGXWDG",
+      "imf_weo:GGXWDG_NGDP"
+    ],
+    "note": "same PSD series in USD and % GDP; WEO gross debt is similar concept, other source"
+  },
+  "psd:DP.DOD.DLTC.CR.L1.CG": {
+    "equivalent": [
+      "psd:DP.DOD.DLTC.CR.L1.CG.CD",
+      "psd:DP.DOD.DLTC.CR.L1.CG.Z1"
+    ],
+    "related": [],
+    "note": "central government, long-term due within one year, other units"
+  },
+  "psd:DP.DOD.DLTC.CR.L1.GG": {
+    "equivalent": [
+      "psd:DP.DOD.DLTC.CR.L1.GG.CD",
+      "psd:DP.DOD.DLTC.CR.L1.GG.Z1"
+    ],
+    "related": [],
+    "note": "general government, long-term due within one year, other units"
+  },
+  "psd:DP.DOD.DSTC.CR.CG": {
+    "equivalent": [
+      "psd:DP.DOD.DSTC.CR.CG.CD",
+      "psd:DP.DOD.DSTC.CR.CG.Z1"
+    ],
+    "related": [],
+    "note": "central government short-term PSD, other units"
+  },
+  "psd:DP.DOD.DSTC.CR.GG": {
+    "equivalent": [
+      "psd:DP.DOD.DSTC.CR.GG.CD",
+      "psd:DP.DOD.DSTC.CR.GG.Z1"
+    ],
+    "related": [],
+    "note": "general government short-term PSD, other units"
+  },
+  "wdi:BX.GSR.GNFS.CD": {
+    "equivalent": [],
+    "related": [
+      "wdi:NE.EXP.GNFS.CD",
+      "wdi:NE.EXP.GNFS.CN",
+      "wdi:NE.EXP.GNFS.ZS"
+    ],
+    "note": "BoP exports; national-accounts exports are close but not identical"
+  },
+  "wdi:BX.TRF.PWKR.DT.GD.ZS": {
+    "equivalent": [
+      "wdi:BX.TRF.PWKR.CD.DT"
+    ],
+    "related": [],
+    "note": "personal remittances received, USD vs % GDP"
+  },
+  "wdi:DT.DOD.DSTC.CD": {
+    "equivalent": [],
+    "related": [
+      "wdi:DT.DOD.DSTC.ZS",
+      "wdi:DT.DOD.DSTC.IR.ZS",
+      "wdi:DT.DOD.DSTC.XP.ZS"
+    ],
+    "note": "short-term external debt; ratios need other denominators"
+  },
+  "wdi:FI.RES.TOTL.CD": {
+    "equivalent": [],
+    "related": [
+      "wdi:FI.RES.XGLD.CD",
+      "wdi:FI.RES.TOTL.MO"
+    ],
+    "note": "total reserves incl. gold; excluding gold differs"
+  },
+  "wdi:FM.LBL.BMNY.CN": {
+    "equivalent": [
+      "wdi:FM.LBL.BMNY.GD.ZS"
+    ],
+    "related": [
+      "wdi:FM.LBL.BMNY.ZG"
+    ],
+    "note": "broad money level, % GDP, growth"
+  },
+  "wdi:FM.LBL.BMNY.GD.ZS": {
+    "equivalent": [
+      "wdi:FM.LBL.BMNY.CN"
+    ],
+    "related": [],
+    "note": "broad money % GDP vs LCU level"
+  },
+  "wdi:FR.INR.LEND": {
+    "equivalent": [],
+    "related": [
+      "wdi:FR.INR.DPST",
+      "wdi:FR.INR.RINR"
+    ],
+    "note": "lending rate has no equivalent"
+  },
+  "wdi:IQ.CPA.IRAI.XQ": {
+    "equivalent": [],
+    "related": [],
+    "note": "no equivalent"
+  },
+  "wdi:NE.IMP.GNFS.CD": {
+    "equivalent": [
+      "wdi:NE.IMP.GNFS.CN",
+      "wdi:NE.IMP.GNFS.ZS"
+    ],
+    "related": [
+      "wdi:BM.GSR.GNFS.CD"
+    ],
+    "note": "imports of goods and services, USD, LCU, % GDP; BoP version is close but not identical"
+  },
+  "wdi:NY.GDP.DEFL.KD.ZG": {
+    "equivalent": [
+      "wdi:NY.GDP.DEFL.KD.ZG.AD",
+      "wdi:NY.GDP.DEFL.ZS",
+      "wdi:NY.GDP.DEFL.ZS.AD",
+      "imf_weo:NGDP_D"
+    ],
+    "related": [],
+    "note": "GDP deflator inflation and deflator level"
+  },
+  "wdi:NY.GDP.MKTP.CD": {
+    "equivalent": [
+      "imf_weo:NGDPD",
+      "wdi:NY.GDP.MKTP.CN",
+      "wdi:NY.GDP.MKTP.CN.AD",
+      "imf_weo:NGDP"
+    ],
+    "related": [],
+    "note": "nominal GDP in USD or LCU"
+  },
+  "wdi:NY.GDP.MKTP.CN": {
+    "equivalent": [
+      "wdi:NY.GDP.MKTP.CN.AD",
+      "imf_weo:NGDP",
+      "wdi:NY.GDP.MKTP.CD",
+      "imf_weo:NGDPD"
+    ],
+    "related": [],
+    "note": "nominal GDP in LCU or USD"
+  },
+  "wdi:NY.GNP.PCAP.CD": {
+    "equivalent": [
+      "wdi:NY.GNP.ATLS.CD"
+    ],
+    "related": [
+      "wdi:NY.GNP.MKTP.CD"
+    ],
+    "note": "Atlas GNI per capita and Atlas GNI total (with population)"
+  },
+  "wdi:PA.NUS.FCRF": {
+    "equivalent": [],
+    "related": [
+      "wdi:PA.NUS.ATLS"
+    ],
+    "note": "official exchange rate; no other source"
+  },
+  "wdi:SP.DYN.TFRT.IN": {
+    "equivalent": [],
+    "related": [],
+    "note": "total fertility rate; no equivalent"
+  }
+}

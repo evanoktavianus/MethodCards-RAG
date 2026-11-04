@@ -1,0 +1,172 @@
+{
+ "id": "DPATH-14",
+ "family": "methodology",
+ "method": "debt_path",
+ "style": "hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "Using the IMF World Economic Outlook (October 2025 vintage), take the one economy with general government gross debt at the end of 2012, % of GDP between 50 and 54; general government primary balance in 2013, % of GDP (negative = deficit) between -1.8 and -0.6. For that economy: how much of the 2013 change in the general government gross debt ratio is attributable to each of the primary deficit, the real interest rate paid on last year's debt and real GDP growth? Give each contribution in percentage points of GDP and say which one mattered most.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the change in the public debt ratio is attributed to its components by applying the debt-accumulation identity to the previous-year debt stock: primary deficit, an interest-rate term, a growth term (and, in the other published variant, a separate inflation term), as set out in Escolano (2010) 'A Practical Guide to Public Debt Dynamics...' (equations 24-28) and in the IMF (2013) Staff Guidance Note / MAC SRDSF (2021) debt-dynamics annex ('contribution from real interest rate', 'contribution from real GDP growth').",
+    "accept": "full = names the debt-dynamics decomposition (any of Escolano 2010, IMF 2013 Staff Guidance Note Annex I, MAC SRDSF 2021, or the IMF Public Debt Dynamics Tool) and applies it with the previous-year debt ratio; partial = describes an interest-growth-primary-balance attribution without a source; no = uses a stabilising-balance calculation or a naive deficit/interest split."
+   },
+   {
+    "id": "c6",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Names the real-interest-rate effect on last year's debt stock as the largest of the named contributions in 2013 (+1.4 percentage points).",
+    "accept": "full = identifies it as the dominant named driver with the sign (adds to / reduces debt) stated correctly; partial = right driver without sign or magnitude; no = otherwise."
+   }
+  ],
+  "data": [
+   {
+    "id": "c8",
+    "kind": "data",
+    "importance": "vital",
+    "text": "Identifies the economy as Slovakia (SVK) from the stated conditions.",
+    "accept": "full = names Slovakia; no = any other economy."
+   },
+   {
+    "id": "c7",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government gross debt (% of GDP), primary balance, interest paid (primary balance minus overall balance), nominal and real GDP (WEO), i.e. IMF WEO GGXWDG_NGDP, GGXONLB_NGDP, GGXCNL_NGDP, NGDP, NGDP_R.",
+    "accept": "full = debt, primary balance, interest or overall balance, and nominal/real GDP or growth+deflator all used; partial = most of them; no = other."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Slovakia: +1.2 percentage points of GDP in 2013 (primary deficit (positive = adds to debt)).",
+    "accept": "full = within 0.3 percentage points of +1.2; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 1.168,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Slovakia: +1.4 percentage points of GDP in 2013 (real-interest-rate effect on last year's debt stock).",
+    "accept": "full = within 0.3 percentage points of +1.4; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 1.418,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c4",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Slovakia: -0.4 percentage points of GDP in 2013 (real GDP growth effect).",
+    "accept": "full = within 0.3 percentage points of -0.4; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": -0.359,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c5",
+    "kind": "computation",
+    "importance": "okay",
+    "text": "Slovakia: +0.7 percentage points of GDP in 2013 (remainder (change not explained by those three; includes exchange-rate and other flows)).",
+    "accept": "full = within 0.3 percentage points of +0.7; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 0.696,
+    "tolerance_abs": 0.3
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 0.3,
+  "note": "Contributions are in percentage points of GDP in the target year; published tables round to 0.1 and use older WEO vintages, so 0.3 pp absolute. Gold from frozen WEO Oct 2025."
+ },
+ "provenance": {
+  "generator": "scripts/debt_path_build_items.py",
+  "frozen_data": "frozen_extra/weo_oct2025_*.csv (WEO Oct 2025 vintage)",
+  "method_text": "Escolano 2010 eqs 24-28 (decomposition of changes in the debt ratio); IMF 2013 Staff Guidance Note Fig. 1 footnotes 4-5 and Annex I",
+  "subject": {
+   "iso3": "SVK",
+   "country": "Slovakia",
+   "year": 2013
+  }
+ },
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [
+  "42e03540-074a-49aa-a458-e9bb5ed2d2b4"
+ ],
+ "published_value": [
+  {
+   "doc": "42e03540-074a-49aa-a458-e9bb5ed2d2b4",
+   "title": "Slovak Republic: Staff Report for the 2014 Article IV Consultation",
+   "table_block_sequence": 320,
+   "primary_deficit": 1.0,
+   "real_interest": 1.7,
+   "real_growth": -0.5,
+   "change_in_debt": 2.8
+  }
+ ],
+ "recomputed_value": {
+  "change": 2.923,
+  "primary_deficit": 1.168,
+  "real_interest_imf": 1.418,
+  "growth_imf": -0.359,
+  "interest_total": 1.693,
+  "inflation": -0.273,
+  "growth": -0.36,
+  "residual": 0.696,
+  "auto_imf": 1.059,
+  "eff_rate": 3.316,
+  "defl": 0.535,
+  "g": 0.702,
+  "d_prev": 51.688,
+  "d": 54.611
+ },
+ "inputs": [
+  "GGXWDG_NGDP",
+  "GGXONLB_NGDP",
+  "GGXCNL_NGDP",
+  "NGDP",
+  "NGDP_R"
+ ],
+ "distractors": [
+  "Debt-stabilising primary balance / required fiscal adjustment (answers a different question: what balance holds the ratio constant)",
+  "Fiscal-impulse or change in the cyclically adjusted primary balance (measures policy stance, not debt-ratio attribution)",
+  "Naive attribution that divides the change in debt by the deficit (ignores interest-growth interaction and the previous-year debt stock)",
+  "Gross financing needs projection (liquidity measure, includes amortisation)",
+  "Using the overall deficit as the 'fiscal' term and then also adding interest, which double counts the interest bill"
+ ],
+ "famous_method": false,
+ "gold_script": "scripts/debt_path_build_items.py",
+ "validation": {
+  "published_instances_matching": 1,
+  "tolerance_abs_pp": 0.3,
+  "note": "Every reported report table in gold_report_ids matches the recomputation on change in debt, primary deficit, real-interest and real-growth contributions within tolerance"
+ },
+ "hidden_condition": {
+  "text": "general government gross debt at the end of 2012, % of GDP between 50 and 54; general government primary balance in 2013, % of GDP (negative = deficit) between -1.8 and -0.6",
+  "intervals": {
+   "d1": [
+    50.0,
+    54.0
+   ],
+   "pb": [
+    -1.8,
+    -0.6
+   ]
+  },
+  "matches": [
+   "SVK"
+  ],
+  "set_size": 1
+ },
+ "decomposition_variant": "IMF real-interest / real-growth contributions",
+ "dominant_driver": "ri"
+}

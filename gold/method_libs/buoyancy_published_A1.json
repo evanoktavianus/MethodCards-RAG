@@ -1,0 +1,751 @@
+{
+ "AUS": {
+  "name": "Australia",
+  "group": "AE",
+  "lr": 0.953,
+  "lr_stars": 3,
+  "sr": 1.004
+ },
+ "AUT": {
+  "name": "Austria",
+  "group": "AE",
+  "lr": 1.0,
+  "lr_stars": 3,
+  "sr": 0.565
+ },
+ "BEL": {
+  "name": "Belgium",
+  "group": "AE",
+  "lr": 1.013,
+  "lr_stars": 3,
+  "sr": 0.965
+ },
+ "CAN": {
+  "name": "Canada",
+  "group": "AE",
+  "lr": 0.55,
+  "lr_stars": 2,
+  "sr": 1.179
+ },
+ "CYP": {
+  "name": "Cyprus",
+  "group": "AE",
+  "lr": 1.446,
+  "lr_stars": 3,
+  "sr": 2.415
+ },
+ "CZE": {
+  "name": "Czech Republic",
+  "group": "AE",
+  "lr": 1.016,
+  "lr_stars": 3,
+  "sr": 1.23
+ },
+ "DNK": {
+  "name": "Denmark",
+  "group": "AE",
+  "lr": 1.017,
+  "lr_stars": 3,
+  "sr": 0.898
+ },
+ "EST": {
+  "name": "Estonia",
+  "group": "AE",
+  "lr": 1.019,
+  "lr_stars": 3,
+  "sr": 0.841
+ },
+ "FIN": {
+  "name": "Finland",
+  "group": "AE",
+  "lr": 1.007,
+  "lr_stars": 3,
+  "sr": 0.947
+ },
+ "FRA": {
+  "name": "France",
+  "group": "AE",
+  "lr": 1.054,
+  "lr_stars": 3,
+  "sr": 1.317
+ },
+ "DEU": {
+  "name": "Germany",
+  "group": "AE",
+  "lr": 1.422,
+  "lr_stars": 3,
+  "sr": 1.921
+ },
+ "GRC": {
+  "name": "Greece",
+  "group": "AE",
+  "lr": 1.953,
+  "lr_stars": 3,
+  "sr": 1.048
+ },
+ "ISL": {
+  "name": "Iceland",
+  "group": "AE",
+  "lr": 0.929,
+  "lr_stars": 3,
+  "sr": 0.828
+ },
+ "IRL": {
+  "name": "Ireland",
+  "group": "AE",
+  "lr": 0.911,
+  "lr_stars": 3,
+  "sr": 1.045
+ },
+ "ISR": {
+  "name": "Israel",
+  "group": "AE",
+  "lr": 0.696,
+  "lr_stars": 3,
+  "sr": 1.471
+ },
+ "ITA": {
+  "name": "Italy",
+  "group": "AE",
+  "lr": 0.807,
+  "lr_stars": 3,
+  "sr": 0.593
+ },
+ "JPN": {
+  "name": "Japan",
+  "group": "AE",
+  "lr": 0.864,
+  "lr_stars": 3,
+  "sr": 1.054
+ },
+ "KOR": {
+  "name": "Korea",
+  "group": "AE",
+  "lr": 1.098,
+  "lr_stars": 3,
+  "sr": 1.347
+ },
+ "LUX": {
+  "name": "Luxembourg",
+  "group": "AE",
+  "lr": 0.459,
+  "lr_stars": 0,
+  "sr": 0.809
+ },
+ "NLD": {
+  "name": "Netherlands",
+  "group": "AE",
+  "lr": -0.757,
+  "lr_stars": 0,
+  "sr": 0.957
+ },
+ "NZL": {
+  "name": "New Zealand",
+  "group": "AE",
+  "lr": 7.792,
+  "lr_stars": 0,
+  "sr": 2.016
+ },
+ "NOR": {
+  "name": "Norway",
+  "group": "AE",
+  "lr": 3.872,
+  "lr_stars": 0,
+  "sr": 1.59
+ },
+ "PRT": {
+  "name": "Portugal",
+  "group": "AE",
+  "lr": 1.295,
+  "lr_stars": 3,
+  "sr": 1.993
+ },
+ "SGP": {
+  "name": "Singapore",
+  "group": "AE",
+  "lr": 0.84,
+  "lr_stars": 3,
+  "sr": 1.164
+ },
+ "SVK": {
+  "name": "Slovak Republic",
+  "group": "AE",
+  "lr": 0.798,
+  "lr_stars": 3,
+  "sr": 1.095
+ },
+ "SVN": {
+  "name": "Slovenia",
+  "group": "AE",
+  "lr": 1.017,
+  "lr_stars": 3,
+  "sr": 1.29
+ },
+ "ESP": {
+  "name": "Spain",
+  "group": "AE",
+  "lr": 0.491,
+  "lr_stars": 0,
+  "sr": 1.396
+ },
+ "SWE": {
+  "name": "Sweden",
+  "group": "AE",
+  "lr": 0.947,
+  "lr_stars": 3,
+  "sr": 1.177
+ },
+ "CHE": {
+  "name": "Switzerland",
+  "group": "AE",
+  "lr": 1.09,
+  "lr_stars": 3,
+  "sr": 0.752
+ },
+ "GBR": {
+  "name": "United Kingdom",
+  "group": "AE",
+  "lr": 1.006,
+  "lr_stars": 3,
+  "sr": 1.234
+ },
+ "USA": {
+  "name": "United States",
+  "group": "AE",
+  "lr": 1.407,
+  "lr_stars": 0,
+  "sr": 2.652
+ },
+ "DZA": {
+  "name": "Algeria",
+  "group": "EME",
+  "lr": 1.211,
+  "lr_stars": 3,
+  "sr": 1.849
+ },
+ "AGO": {
+  "name": "Angola",
+  "group": "EME",
+  "lr": 1.14,
+  "lr_stars": 3,
+  "sr": 1.471
+ },
+ "ARG": {
+  "name": "Argentina",
+  "group": "EME",
+  "lr": 1.144,
+  "lr_stars": 3,
+  "sr": 1.407
+ },
+ "AZE": {
+  "name": "Azerbaijan",
+  "group": "EME",
+  "lr": 0.981,
+  "lr_stars": 3,
+  "sr": 1.459
+ },
+ "BLR": {
+  "name": "Belarus",
+  "group": "EME",
+  "lr": 0.751,
+  "lr_stars": 0,
+  "sr": 1.131
+ },
+ "BRA": {
+  "name": "Brazil",
+  "group": "EME",
+  "lr": 0.976,
+  "lr_stars": 3,
+  "sr": 1.306
+ },
+ "CHL": {
+  "name": "Chile",
+  "group": "EME",
+  "lr": 1.157,
+  "lr_stars": 3,
+  "sr": 1.939
+ },
+ "CHN": {
+  "name": "China",
+  "group": "EME",
+  "lr": 1.238,
+  "lr_stars": 3,
+  "sr": 0.656
+ },
+ "COL": {
+  "name": "Colombia",
+  "group": "EME",
+  "lr": 1.249,
+  "lr_stars": 3,
+  "sr": 1.558
+ },
+ "HRV": {
+  "name": "Croatia",
+  "group": "EME",
+  "lr": 1.033,
+  "lr_stars": 3,
+  "sr": 1.302
+ },
+ "DOM": {
+  "name": "Dominican Republic",
+  "group": "EME",
+  "lr": 1.068,
+  "lr_stars": 3,
+  "sr": 0.887
+ },
+ "ECU": {
+  "name": "Ecuador",
+  "group": "EME",
+  "lr": 1.383,
+  "lr_stars": 3,
+  "sr": 0.861
+ },
+ "EGY": {
+  "name": "Egypt",
+  "group": "EME",
+  "lr": 0.974,
+  "lr_stars": 3,
+  "sr": 1.628
+ },
+ "HUN": {
+  "name": "Hungary",
+  "group": "EME",
+  "lr": 0.922,
+  "lr_stars": 3,
+  "sr": 0.431
+ },
+ "IND": {
+  "name": "India",
+  "group": "EME",
+  "lr": 1.104,
+  "lr_stars": 3,
+  "sr": 1.668
+ },
+ "IDN": {
+  "name": "Indonesia",
+  "group": "EME",
+  "lr": 1.109,
+  "lr_stars": 3,
+  "sr": 0.998
+ },
+ "IRN": {
+  "name": "Iran",
+  "group": "EME",
+  "lr": 1.028,
+  "lr_stars": 3,
+  "sr": 0.33
+ },
+ "KAZ": {
+  "name": "Kazakhstan",
+  "group": "EME",
+  "lr": 1.111,
+  "lr_stars": 3,
+  "sr": 2.023
+ },
+ "KWT": {
+  "name": "Kuwait",
+  "group": "EME",
+  "lr": 0.958,
+  "lr_stars": 3,
+  "sr": 1.997
+ },
+ "LBY": {
+  "name": "Libya",
+  "group": "EME",
+  "lr": 0.072,
+  "lr_stars": 0,
+  "sr": 0.933
+ },
+ "MEX": {
+  "name": "Mexico",
+  "group": "EME",
+  "lr": 1.001,
+  "lr_stars": 3,
+  "sr": 0.624
+ },
+ "MAR": {
+  "name": "Morocco",
+  "group": "EME",
+  "lr": 1.197,
+  "lr_stars": 3,
+  "sr": 0.604
+ },
+ "OMN": {
+  "name": "Oman",
+  "group": "EME",
+  "lr": 1.272,
+  "lr_stars": 3,
+  "sr": 0.241
+ },
+ "PAK": {
+  "name": "Pakistan",
+  "group": "EME",
+  "lr": 0.981,
+  "lr_stars": 3,
+  "sr": 0.909
+ },
+ "PER": {
+  "name": "Peru",
+  "group": "EME",
+  "lr": 1.142,
+  "lr_stars": 2,
+  "sr": 2.049
+ },
+ "PHL": {
+  "name": "Philippines",
+  "group": "EME",
+  "lr": 1.064,
+  "lr_stars": 3,
+  "sr": 2.267
+ },
+ "POL": {
+  "name": "Poland",
+  "group": "EME",
+  "lr": 1.071,
+  "lr_stars": 3,
+  "sr": 2.205
+ },
+ "QAT": {
+  "name": "Qatar",
+  "group": "EME",
+  "lr": 1.666,
+  "lr_stars": 3,
+  "sr": 0.389
+ },
+ "ROU": {
+  "name": "Romania",
+  "group": "EME",
+  "lr": 1.068,
+  "lr_stars": 3,
+  "sr": 1.185
+ },
+ "RUS": {
+  "name": "Russia",
+  "group": "EME",
+  "lr": 1.109,
+  "lr_stars": 3,
+  "sr": 1.326
+ },
+ "SAU": {
+  "name": "Saudi Arabia",
+  "group": "EME",
+  "lr": 0.799,
+  "lr_stars": 3,
+  "sr": 0.919
+ },
+ "ZAF": {
+  "name": "South Africa",
+  "group": "EME",
+  "lr": 1.072,
+  "lr_stars": 3,
+  "sr": 1.61
+ },
+ "THA": {
+  "name": "Thailand",
+  "group": "EME",
+  "lr": 1.208,
+  "lr_stars": 3,
+  "sr": 1.78
+ },
+ "TUR": {
+  "name": "Turkey",
+  "group": "EME",
+  "lr": 1.176,
+  "lr_stars": 3,
+  "sr": 1.554
+ },
+ "UKR": {
+  "name": "Ukraine",
+  "group": "EME",
+  "lr": 1.12,
+  "lr_stars": 3,
+  "sr": 1.114
+ },
+ "ARE": {
+  "name": "United Arab Emirates",
+  "group": "EME",
+  "lr": 1.347,
+  "lr_stars": 3,
+  "sr": 2.888
+ },
+ "URY": {
+  "name": "Uruguay",
+  "group": "EME",
+  "lr": 1.007,
+  "lr_stars": 3,
+  "sr": 1.231
+ },
+ "VEN": {
+  "name": "Venezuela",
+  "group": "EME",
+  "lr": 1.039,
+  "lr_stars": 3,
+  "sr": 0.897
+ },
+ "BOL": {
+  "name": "Bolivia",
+  "group": "LIC",
+  "lr": 1.281,
+  "lr_stars": 3,
+  "sr": 1.732
+ },
+ "BGD": {
+  "name": "Bangladesh",
+  "group": "LIC",
+  "lr": 1.198,
+  "lr_stars": 3,
+  "sr": 0.777
+ },
+ "BEN": {
+  "name": "Benin",
+  "group": "LIC",
+  "lr": 1.206,
+  "lr_stars": 3,
+  "sr": 0.932
+ },
+ "BFA": {
+  "name": "Burkina Faso",
+  "group": "LIC",
+  "lr": 1.435,
+  "lr_stars": 3,
+  "sr": 0.301
+ },
+ "CMR": {
+  "name": "Cameroon",
+  "group": "LIC",
+  "lr": 1.001,
+  "lr_stars": 3,
+  "sr": 3.814
+ },
+ "TCD": {
+  "name": "Chad",
+  "group": "LIC",
+  "lr": 1.638,
+  "lr_stars": 3,
+  "sr": 0.021
+ },
+ "COD": {
+  "name": "Congo, Dem Rep",
+  "group": "LIC",
+  "lr": 1.36,
+  "lr_stars": 3,
+  "sr": 0.524
+ },
+ "COG": {
+  "name": "Congo, Rep",
+  "group": "LIC",
+  "lr": 1.089,
+  "lr_stars": 3,
+  "sr": 0.372
+ },
+ "CIV": {
+  "name": "Cote Ivoire",
+  "group": "LIC",
+  "lr": 1.036,
+  "lr_stars": 3,
+  "sr": 1.874
+ },
+ "ETH": {
+  "name": "Ethiopia",
+  "group": "LIC",
+  "lr": 1.32,
+  "lr_stars": 3,
+  "sr": 0.455
+ },
+ "GHA": {
+  "name": "Ghana",
+  "group": "LIC",
+  "lr": 1.156,
+  "lr_stars": 3,
+  "sr": 0.913
+ },
+ "GIN": {
+  "name": "Guinea",
+  "group": "LIC",
+  "lr": 1.233,
+  "lr_stars": 3,
+  "sr": 1.35
+ },
+ "HTI": {
+  "name": "Haiti",
+  "group": "LIC",
+  "lr": 1.301,
+  "lr_stars": 3,
+  "sr": 0.974
+ },
+ "HND": {
+  "name": "Honduras",
+  "group": "LIC",
+  "lr": 1.031,
+  "lr_stars": 3,
+  "sr": 0.977
+ },
+ "KEN": {
+  "name": "Kenya",
+  "group": "LIC",
+  "lr": 1.133,
+  "lr_stars": 3,
+  "sr": 1.078
+ },
+ "KGZ": {
+  "name": "Kyrgyz",
+  "group": "LIC",
+  "lr": 1.181,
+  "lr_stars": 3,
+  "sr": 0.442
+ },
+ "LAO": {
+  "name": "Lao",
+  "group": "LIC",
+  "lr": 1.349,
+  "lr_stars": 3,
+  "sr": 0.489
+ },
+ "MDG": {
+  "name": "Madagascar",
+  "group": "LIC",
+  "lr": 1.039,
+  "lr_stars": 3,
+  "sr": 2.252
+ },
+ "MLI": {
+  "name": "Mali",
+  "group": "LIC",
+  "lr": 0.925,
+  "lr_stars": 3,
+  "sr": 0.325
+ },
+ "MDA": {
+  "name": "Moldova",
+  "group": "LIC",
+  "lr": 1.022,
+  "lr_stars": 3,
+  "sr": 0.779
+ },
+ "MOZ": {
+  "name": "Mozambique",
+  "group": "LIC",
+  "lr": 1.089,
+  "lr_stars": 3,
+  "sr": 0.878
+ },
+ "MMR": {
+  "name": "Myanmar",
+  "group": "LIC",
+  "lr": 1.358,
+  "lr_stars": 3,
+  "sr": 0.212
+ },
+ "NPL": {
+  "name": "Nepal",
+  "group": "LIC",
+  "lr": 1.409,
+  "lr_stars": 3,
+  "sr": 1.515
+ },
+ "NIC": {
+  "name": "Nicaragua",
+  "group": "LIC",
+  "lr": 1.223,
+  "lr_stars": 3,
+  "sr": 1.421
+ },
+ "NER": {
+  "name": "Niger",
+  "group": "LIC",
+  "lr": 1.528,
+  "lr_stars": 3,
+  "sr": 0.889
+ },
+ "NGA": {
+  "name": "Nigeria",
+  "group": "LIC",
+  "lr": 0.864,
+  "lr_stars": 3,
+  "sr": 0.228
+ },
+ "PNG": {
+  "name": "Papua New Guinea",
+  "group": "LIC",
+  "lr": 1.121,
+  "lr_stars": 3,
+  "sr": 1.093
+ },
+ "RWA": {
+  "name": "Rwanda",
+  "group": "LIC",
+  "lr": 1.275,
+  "lr_stars": 3,
+  "sr": 2.2
+ },
+ "SEN": {
+  "name": "Senegal",
+  "group": "LIC",
+  "lr": 1.193,
+  "lr_stars": 3,
+  "sr": 1.987
+ },
+ "SDN": {
+  "name": "Sudan",
+  "group": "LIC",
+  "lr": 0.598,
+  "lr_stars": 2,
+  "sr": 0.35
+ },
+ "TJK": {
+  "name": "Tajikistan",
+  "group": "LIC",
+  "lr": 1.134,
+  "lr_stars": 3,
+  "sr": 1.279
+ },
+ "TZA": {
+  "name": "Tanzania",
+  "group": "LIC",
+  "lr": 1.194,
+  "lr_stars": 3,
+  "sr": 2.312
+ },
+ "UGA": {
+  "name": "Uganda",
+  "group": "LIC",
+  "lr": 1.184,
+  "lr_stars": 3,
+  "sr": 0.258
+ },
+ "UZB": {
+  "name": "Uzbekistan",
+  "group": "LIC",
+  "lr": 0.904,
+  "lr_stars": 3,
+  "sr": 0.697
+ },
+ "VNM": {
+  "name": "Vietnam",
+  "group": "LIC",
+  "lr": 0.906,
+  "lr_stars": 3,
+  "sr": 1.309
+ },
+ "YEM": {
+  "name": "Yemen",
+  "group": "LIC",
+  "lr": 0.957,
+  "lr_stars": 3,
+  "sr": 0.809
+ },
+ "ZMB": {
+  "name": "Zambia",
+  "group": "LIC",
+  "lr": null,
+  "lr_stars": 0,
+  "sr": 1.756
+ },
+ "ZWE": {
+  "name": "Zimbabwe",
+  "group": "LIC",
+  "lr": 3.011,
+  "lr_stars": 1,
+  "sr": 5.451
+ }
+}

@@ -1,0 +1,174 @@
+{
+ "id": "MACDSA-13",
+ "family": "methodology",
+ "method": "mac_dsa_stress",
+ "style": "claim_check",
+ "tier": "analytical",
+ "validation_label": "definition-validated",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "A review of South Africa says that under an adverse interest-rate shock its general government gross debt would reach 104.1 percent of GDP in 2030. Is that correct to within five percentage points? Take the IMF World Economic Outlook (October 2025) projections as the baseline and treat it as a country with access to international capital markets.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the standardized public DSA stress tests of the IMF (2013) Staff Guidance Note for Public DSA in Market-Access Countries (also MAC SRDSF 2021) and applies the interest-rate shock: nominal rate raised by the larger of 200 bp and the gap between the highest real rate of the last ten years and the average projected real rate.",
+    "accept": "full = names the standardized stress tests and applies the stated size and links; partial = right test with a different size (for example a flat 1 point shock) or without the primary-balance, interest or inflation links; no = ad hoc sensitivity, a debt-stabilising balance or a stochastic fan chart."
+   },
+   {
+    "id": "c3",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Judges the statement incorrect (recomputed 2030 debt about 95.4% of GDP, more than five points from 104.1%).",
+    "accept": "verdict must match (false)."
+   }
+  ],
+  "data": [
+   {
+    "id": "c9",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO October 2025 general government gross debt, real GDP growth, GDP deflator, primary balance, overall balance (to derive interest) and revenue (WEO: GGXWDG_NGDP, NGDP_RPCH, NGDP_D, GGXONLB_NGDP, GGXCNL_NGDP, GGR_NGDP).",
+    "accept": "full = debt, growth, deflator and fiscal balances all used; partial = a subset with an assumed interest rate; no = other series."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "South Africa: recomputed 2030 stressed debt of about 95.4% of GDP.",
+    "accept": "full = within 5 of 95.4; partial = correct sign and within 10; no = otherwise.",
+    "target": 95.4,
+    "tolerance_abs": 5.0
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 5.0,
+  "note": "Stressed 2030 debt in percent of GDP. Tolerance 4 pp because the pass-through of the interest shock and the sample for the standard deviation are loose (new-issuance-only pass-through lowers the 2030 effect by several points; dropping the 25 bp link changes it by under 1 pp). Baseline reproduced from WEO Oct 2025 (gold 87.1 vs WEO 87.1)."
+ },
+ "provenance": {
+  "generator": "gold from gold_scripts/mac_dsa_stress/gold_mac_dsa_stress.py via item_gold.py",
+  "frozen_data": "WEO Oct 2025 csvs in frozen_extra/",
+  "method_text": "IMF (2013) Staff Guidance Note for Public DSA in Market-Access Countries, para 29-32 and shock table; MAC SRDSF (2021)",
+  "subject": {
+   "iso3": "ZAF",
+   "country": "South Africa",
+   "year": 2025,
+   "horizon": 2030
+  }
+ },
+ "method_doc_ids": [
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [],
+ "published_value": null,
+ "published_value_note": "No published number: stressed paths appear only in charts of country DSAs and the guidance note's example is a fictional country. Tier is definition-validated.",
+ "recomputed_value": {
+  "iso": "ZAF",
+  "sd_growth": 2.6,
+  "interest_shock_pp": 2.0,
+  "baseline_check_2030": 87.1,
+  "weo_2030": 87.096,
+  "growth_shock_2030": 95.0,
+  "interest_shock_2030": 95.4,
+  "combined_2030": 104.1,
+  "debt_2025": 77.341
+ },
+ "scenario": "interest",
+ "inputs": [
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "GGXWDG_NGDP"
+  },
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "NGDP_RPCH"
+  },
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "NGDP_D"
+  },
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "GGXONLB_NGDP"
+  },
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "GGXCNL_NGDP"
+  },
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "GGR_NGDP"
+  }
+ ],
+ "distractors": [
+  "Debt-stabilising primary balance or required adjustment (no shock applied)",
+  "Decomposition of past changes in the debt ratio",
+  "Stress tests of the low-income country debt framework (different shocks and thresholds)",
+  "Stochastic fan chart or probabilistic debt projection (random draws; the guidance's deterministic stress tests are not fan charts)",
+  "Gross financing needs projection (liquidity flow rather than debt stock)",
+  "Ad hoc sensitivity such as a uniform 1 percentage point change in growth or in the interest rate",
+  "Fiscal multiplier analysis of a consolidation"
+ ],
+ "famous_method": false,
+ "strictness": {
+  "overall": "strict shock sizes, loose pass-through and standard-deviation sample",
+  "parameters": {
+   "growth_shock_size": "strict: real GDP growth lower by one standard deviation of its past ten-year history for two consecutive years; the gold uses the population standard deviation of 2016-2025 growth (loose sample)",
+   "growth_shock_links": "strict (document Table 3): revenue-to-GDP ratio unchanged, non-interest spending LEVEL kept at the baseline, so the spending ratio rises with the cumulative GDP shortfall during the two shock years (the document's own example shows primary balance down 0.5 and 1.1 points in the two shock years, which this level effect reproduces: 29 x 1.9 percent = 0.56 and 29 x 3.7 percent = 1.07) and back at the baseline from year 3; +25 bp on the interest rate per 1 pp of GDP worsening of the deficit; inflation 0.25 pp lower per 1 pp lower growth",
+   "interest_shock_size": "strict: nominal rate up by the larger of 200 bp and (highest real rate in the last ten years minus average projected real rate)",
+   "interest_shock_pass_through": "loose: the document says the nominal interest rate increases by the shock size, but its example table shows the effective rate rising gradually (about 0.5, 0.8, 1.3, 1.4 points over four years); the gold applies the whole shock to the effective rate from 2026 (upper bound); a gradual pass-through (25, 40, 65, 70, 75 percent) lowers the 2030 debt by 2.1 to 4.6 points (see doc_check)",
+   "combined_shock": "strict (document para 32): the combined shock takes the largest effect of the individual shocks on each variable (growth, inflation, primary balance, interest rate), without double counting; the gold takes the growth leg for growth, inflation and primary balance, and for the interest rate the larger of the 200 bp-type interest shock and the 25 bp link, not their sum",
+   "exchange_rate_shock": "omitted (needs real-exchange-rate overvaluation, not a frozen series); the questions do not ask for it",
+   "baseline": "strict: IMF WEO October 2025 projections 2025-2030, reproduced exactly by a stock-flow residual",
+   "base_and_end_year": "base 2025, horizon 2030",
+   "review_flag": "Document check against 2dea3fb1 Staff Guidance Note (blocks 136-138 Table 3, 153-154 example tables, 157 para 32): shock sizes (growth -1 SD 2 years; interest max(200 bp, max real rate 10y minus mean projected real rate); primary balance, exchange rate not used), links (25 bp per 1 pp, inflation 0.25) and the combined rule MATCH; spending-ratio persistence resolved (none after shock years); interest pass-through not defined in text (loose)."
+  }
+ },
+ "parameter_notes": {
+  "growth_shock_size": "strict: real GDP growth lower by one standard deviation of its past ten-year history for two consecutive years; the gold uses the population standard deviation of 2016-2025 growth (loose sample)",
+  "growth_shock_links": "strict (document Table 3): revenue-to-GDP ratio unchanged, non-interest spending LEVEL kept at the baseline, so the spending ratio rises with the cumulative GDP shortfall during the two shock years (the document's own example shows primary balance down 0.5 and 1.1 points in the two shock years, which this level effect reproduces: 29 x 1.9 percent = 0.56 and 29 x 3.7 percent = 1.07) and back at the baseline from year 3; +25 bp on the interest rate per 1 pp of GDP worsening of the deficit; inflation 0.25 pp lower per 1 pp lower growth",
+  "interest_shock_size": "strict: nominal rate up by the larger of 200 bp and (highest real rate in the last ten years minus average projected real rate)",
+  "interest_shock_pass_through": "loose: the document says the nominal interest rate increases by the shock size, but its example table shows the effective rate rising gradually (about 0.5, 0.8, 1.3, 1.4 points over four years); the gold applies the whole shock to the effective rate from 2026 (upper bound); a gradual pass-through (25, 40, 65, 70, 75 percent) lowers the 2030 debt by 2.1 to 4.6 points (see doc_check)",
+  "combined_shock": "strict (document para 32): the combined shock takes the largest effect of the individual shocks on each variable (growth, inflation, primary balance, interest rate), without double counting; the gold takes the growth leg for growth, inflation and primary balance, and for the interest rate the larger of the 200 bp-type interest shock and the 25 bp link, not their sum",
+  "exchange_rate_shock": "omitted (needs real-exchange-rate overvaluation, not a frozen series); the questions do not ask for it",
+  "baseline": "strict: IMF WEO October 2025 projections 2025-2030, reproduced exactly by a stock-flow residual",
+  "base_and_end_year": "base 2025, horizon 2030",
+  "review_flag": "Document check against 2dea3fb1 Staff Guidance Note (blocks 136-138 Table 3, 153-154 example tables, 157 para 32): shock sizes (growth -1 SD 2 years; interest max(200 bp, max real rate 10y minus mean projected real rate); primary balance, exchange rate not used), links (25 bp per 1 pp, inflation 0.25) and the combined rule MATCH; spending-ratio persistence resolved (none after shock years); interest pass-through not defined in text (loose)."
+ },
+ "gold_script": "gold_scripts/mac_dsa_stress/gold_mac_dsa_stress.py",
+ "gold_command": "python3 -I gold_scripts/mac_dsa_stress/item_gold.py ZAF   (run from the gold/ directory; same numbers: python3 -I gold_scripts/mac_dsa_stress/gold_mac_dsa_stress.py ZAF)",
+ "validation_note": "Definition-validated: baseline reproduces the WEO debt path exactly; the shocked paths follow the printed rules.",
+ "truth": false,
+ "stated_value": 104.1,
+ "gold": {
+  "truth": false,
+  "stated": 104.1,
+  "recomputed": 95.4,
+  "tolerance_pp": 5.0
+ },
+ "doc_check": {
+  "document": "2dea3fb1 Staff Guidance Note (blocks 136-138 Table 3, 153-154 example tables, 157 para 32)",
+  "gold": "gold_scripts/mac_dsa_stress/gold_mac_dsa_stress_v2.py",
+  "v2_values": {
+   "iso": "ZAF",
+   "sd_growth": 2.6,
+   "interest_shock_pp": 2.0,
+   "baseline_check_2030": 87.1,
+   "weo_2030": 87.096,
+   "growth_shock_2030": 96.2,
+   "interest_shock_2030": 95.4,
+   "combined_2030": 104.7,
+   "interest_shock_2030_gradual": 91.6,
+   "combined_2030_gradual": 100.6,
+   "debt_2025": 77.341
+  },
+  "status": "checked"
+ }
+}

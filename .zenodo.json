@@ -1,0 +1,13 @@
+{
+  "title": "MethodCards-RAG: method cards for agentic retrieval-augmented generation on public-finance statistics",
+  "upload_type": "software",
+  "description": "Code, 440 public-finance questions with answer keys, the builders of the method cards and of the document index, frozen official statistics, stored results of the evaluated systems, and the human check of the automatic judge. Everything in the paper's tables can be rebuilt from the stored results without a model call or an API key; model runs need an OpenRouter key.",
+  "creators": [
+    {"name": "Oktavianus, Evan", "affiliation": "Faculty of Computer Science, Universitas Indonesia"},
+    {"name": "Sensuse, Dana Indra", "affiliation": "Faculty of Computer Science, Universitas Indonesia"},
+    {"name": "Eitiveni, Imairi", "affiliation": "Faculty of Computer Science, Universitas Indonesia"}
+  ],
+  "keywords": ["retrieval-augmented generation", "LLM agents", "public finance", "debt sustainability", "method cards", "benchmark"],
+  "license": "apache-2.0",
+  "access_right": "open"
+}

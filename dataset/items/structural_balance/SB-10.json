@@ -1,0 +1,83 @@
+{
+ "id": "SB-10",
+ "family": "methodology",
+ "pattern": "M-hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "One economy saw real GDP contract by more than 3.5% in 2006 while running a general government deficit larger than 5% of GDP. What was its deficit that year with the economy adjusted to its normal capacity level, in percent of GDP at that level?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the answer requires cyclically adjusting the budget balance (potential-output gap from a statistical trend, then removing the cyclical budget component).",
+    "accept": "full = names cyclically adjusted / structural balance approach with an output-gap estimate; acceptable alternatives: OECD or EC semi-elasticity approach, production-function output gap; no = raw balance only"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government revenue, expenditure and real GDP series from the WEO (GGR_NGDP, GGX_NGDP, NGDP_R, GGXCNL_NGDP)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Underlying (capacity-level) balance GRD 2006 = -6.02 % of potential GDP",
+    "reference_value": -6.023,
+    "tolerance": 0.3,
+    "unit": "pp",
+    "accept": "full = within tolerance; the output gap is the HP-filter (lambda=100) cycle of log real GDP, revenue elasticity 1, expenditure elasticity 0"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "Fiscal Monitor Oct 2012 / Oct 2013 data-conventions note (CAB: HP potential output, revenue elasticity 1, expenditure elasticity 0)",
+   "frozen WEO Oct 2025 (+frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/structural_balance/gold_structural_balance.py"
+ },
+ "method": "cyclically_adjusted_balance_hp_filter",
+ "method_doc_ids": [
+  "afa3529e-c97c-45cb-a668-d1a133131d8c",
+  "9a9aeb9c-3a8b-4e2e-a459-aa8143f05d3f"
+ ],
+ "method_doc_alternatives": [
+  "5bc9162b-f850-4bd4-a964-d3632f04cb9b (multivariate filter, alternative output-gap method)"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "No corpus country report states these values; published value is the IMF WEO Oct 2025 GGSB_NPGDP series (frozen), not a corpus document, so nothing needs withholding.",
+ "published_value": -6.147,
+ "recomputed_value": -6.023,
+ "tolerance": 0.3,
+ "inputs": [
+  "GGR_NGDP",
+  "GGX_NGDP",
+  "NGDP_R",
+  "GGXCNL_NGDP"
+ ],
+ "style": "hidden",
+ "distractors": [
+  "debt-stabilising primary balance",
+  "fiscal multiplier / fiscal impulse from multipliers",
+  "revenue buoyancy",
+  "fiscal rule calibration"
+ ],
+ "famous_method": true,
+ "hidden_set_size": 1,
+ "predicate": [
+  "real GDP contraction of more than 3.5% in 2006",
+  "deficit larger than 5% of GDP in 2006"
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "id": "PC-12",
+ "family": "methodology",
+ "pattern": "M-claim",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "A country note says that over 2012-2023, rising (or falling) employment relative to population added about -0.5 percentage points a year to growth in income per person in Canada. Is that accurate?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the decomposition of GDP-per-capita growth into labour productivity (GDP per worker) and the employment rate (employment per capita).",
+    "accept": "full = log-difference decomposition into productivity and employment-to-population (working-age share lumped in employment rate acceptable)"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO series: NGDP_R, LE, LP."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Recomputed CAN 2012-2023: emp = 0.10 pp per year",
+    "reference_value": 0.105,
+    "tolerance": 0.15,
+    "unit": "pp",
+    "accept": "full = within tolerance; employment-rate contribution = annualised dln(LE/LP)"
+   },
+   {
+    "id": "c2",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Verdict: statement is FALSE (stated -0.5 vs recomputed +0.10; threshold 0.5 pp)",
+    "accept": "full = correct verdict"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "San Marino 2023 Art IV (a507cd39, blocks 568-570), after Jaumotte et al. 2016",
+   "frozen WEO Oct 2025 (frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/growth_labour/gold_growth_labour.py",
+  "selection": "seeded draw (20261030), distinct country within style where possible"
+ },
+ "method": "gdp_per_capita_growth_decomposition",
+ "method_doc_ids": [
+  "a507cd39-1045-434b-96b9-38bb047b94a9"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "No corpus report states these values; gold is recomputed from the frozen WEO vintage by formula (formula-validated, no published figure).",
+ "published_value": -0.5,
+ "recomputed_value": 0.105,
+ "tolerance": 0.15,
+ "inputs": [
+  "NGDP_R",
+  "LE",
+  "LP"
+ ],
+ "style": "claim_check",
+ "distractors": [
+  "Cobb-Douglas growth accounting with capital and TFP",
+  "dependency-ratio / demographic dividend",
+  "fiscal sustainability",
+  "unemployment gap analysis"
+ ],
+ "famous_method": true,
+ "hidden_set_size": null,
+ "predicate": null,
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity",
+ "claim_truth": false
+}

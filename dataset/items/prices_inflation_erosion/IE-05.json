@@ -1,0 +1,85 @@
+{
+ "id": "IE-05",
+ "family": "methodology",
+ "pattern": "M-hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "Among the twenty largest economies (by 2024 dollar GDP), take the one with the lightest public debt burden relative to GDP at the end of 2021. Output prices rose 18.2% and nominal output 16.5% in 2022. Holding the nominal debt stock fixed, by how many points of GDP did the price rise alone lower that burden in 2022?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that price rises lower the debt ratio through the nominal-growth term gamma/(1+gamma)=pi/(1+gamma)+g/(1+g), so the inflation part is pi/(1+gamma) times last year's debt ratio.",
+    "accept": "names the accepted approach; "
+   }
+  ],
+  "data": [
+   {
+    "id": "c2",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO nominal GDP and GDP deflator series and general government gross debt (GGXWDG_NGDP, NGDP, NGDP_D)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Inflation erosion of debt ratio RUS 2022 = 2.58 pp of GDP",
+    "reference_value": 2.58,
+    "tolerance": 0.15,
+    "unit": "pp",
+    "accept": "full = within tolerance"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "Escolano (2010) A Practical Guide to Public Debt Dynamics (doc 55319ff9-c45c-4e8d-99e4-5562a1158bf2)",
+   "frozen WEO Oct 2025 (frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/prices/gold_prices.py",
+  "selection": "seeded draw over top-20 economies by 2024 USD GDP (frozen), one per country-year"
+ },
+ "method": "inflation_erosion_of_debt_ratio",
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "Published value is WEO series or none; no corpus report states it, nothing to withhold.",
+ "published_value": null,
+ "published_value_note": "no published value; identity",
+ "recomputed_value": 2.58,
+ "tolerance": 0.15,
+ "inputs": [
+  "GGXWDG_NGDP",
+  "NGDP",
+  "NGDP_D"
+ ],
+ "style": "hidden",
+ "distractors": [
+  "debt-stabilising primary balance",
+  "full debt-dynamics decomposition (interest, growth, primary balance)",
+  "real interest rate calculation",
+  "debt sustainability stress test",
+  "exchange-rate valuation effect on foreign-currency debt"
+ ],
+ "famous_method": true,
+ "hidden_set_size": 1,
+ "predicate": {
+  "universe": "top-20 by NGDPD 2024",
+  "year": 2021,
+  "rule": "argmin",
+  "series": "GGXWDG_NGDP"
+ },
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity"
+}

@@ -1,0 +1,126 @@
+{
+ "id": "DPATH-19",
+ "family": "methodology",
+ "method": "debt_path",
+ "style": "claim_check",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "A staff report on Comoros states that in 2020, the primary deficit contributed +2.9 percentage points to the change in the debt ratio (general government gross debt, percent of GDP; contributions measured against the previous year's debt stock). Is this statement accurate? Verify it with the data and give the correct figure.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the debt-ratio decomposition (primary deficit / interest-rate / growth / inflation terms applied to previous-year debt) as the method for checking the statement, per Escolano (2010) or the IMF (2013) debt-dynamics annex.",
+    "accept": "full = names the decomposition from an institutional source and uses it; partial = does the calculation without sourcing; no = other method."
+   },
+   {
+    "id": "c3",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Verdict: the statement is FALSE.",
+    "accept": "full = verdict matches (false) and the correct figure is given; partial = verdict only; no = wrong verdict."
+   }
+  ],
+  "data": [
+   {
+    "id": "c4",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO general government gross debt, primary balance, interest (primary minus overall balance), nominal and real GDP.",
+    "accept": "full = all series; partial = most; no = other."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Correct value of the stated quantity for Comoros 2020: +0.3 percentage points.",
+    "accept": "full = within 0.3 pp of +0.3; partial = within 1.0 pp; no = otherwise.",
+    "target": 0.266,
+    "tolerance_abs": 0.3
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 0.3,
+  "note": "Contributions are in percentage points of GDP in the target year; published tables round to 0.1 and use older WEO vintages, so 0.3 pp absolute. Gold from frozen WEO Oct 2025."
+ },
+ "provenance": {
+  "generator": "scripts/debt_path_build_items.py",
+  "frozen_data": "frozen_extra/weo_oct2025_*.csv (WEO Oct 2025 vintage)",
+  "method_text": "Escolano 2010 eqs 24-28 (decomposition of changes in the debt ratio); IMF 2013 Staff Guidance Note Fig. 1 footnotes 4-5 and Annex I",
+  "subject": {
+   "iso3": "COM",
+   "country": "Comoros",
+   "year": 2020
+  }
+ },
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [
+  "68d095b0-5246-487a-bb82-0acdc7c51234"
+ ],
+ "published_value": [
+  {
+   "doc": "68d095b0-5246-487a-bb82-0acdc7c51234",
+   "title": "Union of the Comoros: Staff Report for the 2023 Article IV Consultation, First Review Under the Extended Credit Facility Arrangement, Requests for Waivers of Nonobservance of Performance Criteria, and Modifications of Performance Criteria—Debt Sustainability Analysis",
+   "table_block_sequence": 135,
+   "primary_deficit": 0.0,
+   "real_interest": 0.1,
+   "real_growth": 0.0,
+   "change_in_debt": 3.3
+  }
+ ],
+ "recomputed_value": {
+  "change": 3.087,
+  "primary_deficit": 0.266,
+  "real_interest_imf": 0.091,
+  "growth_imf": 0.041,
+  "interest_total": 0.25,
+  "inflation": -0.159,
+  "growth": 0.042,
+  "residual": 2.688,
+  "auto_imf": 0.133,
+  "eff_rate": 1.184,
+  "defl": 0.753,
+  "g": -0.196,
+  "d_prev": 21.229,
+  "d": 24.316
+ },
+ "inputs": [
+  "GGXWDG_NGDP",
+  "GGXONLB_NGDP",
+  "GGXCNL_NGDP",
+  "NGDP",
+  "NGDP_R"
+ ],
+ "distractors": [
+  "Debt-stabilising primary balance / required fiscal adjustment (answers a different question: what balance holds the ratio constant)",
+  "Fiscal-impulse or change in the cyclically adjusted primary balance (measures policy stance, not debt-ratio attribution)",
+  "Naive attribution that divides the change in debt by the deficit (ignores interest-growth interaction and the previous-year debt stock)",
+  "Gross financing needs projection (liquidity measure, includes amortisation)",
+  "Using the overall deficit as the 'fiscal' term and then also adding interest, which double counts the interest bill"
+ ],
+ "famous_method": false,
+ "gold_script": "scripts/debt_path_build_items.py",
+ "validation": {
+  "published_instances_matching": 1,
+  "tolerance_abs_pp": 0.3,
+  "note": "Every reported report table in gold_report_ids matches the recomputation on change in debt, primary deficit, real-interest and real-growth contributions within tolerance"
+ },
+ "statement": {
+  "quantity": "pd",
+  "stated": 2.9,
+  "truth": false,
+  "correct_value": 0.266
+ },
+ "decomposition_variant": "IMF"
+}

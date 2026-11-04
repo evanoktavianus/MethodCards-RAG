@@ -1,0 +1,97 @@
+{
+ "id": "OKUN-08",
+ "family": "methodology",
+ "method": "okun_difference",
+ "style": "hidden",
+ "tier": "medium",
+ "status": "validated",
+ "validation_tier": "formula-validated",
+ "procedure_kind": "textbook identity",
+ "validation_label": "formula-validated",
+ "method_kind": "textbook identity",
+ "famous_method": true,
+ "query": "There is exactly one economy in the IMF World Economic Outlook database (October 2025) for which its unemployment rate changed by below 0 percentage points between 2008 and 2009 and its average annual real GDP growth over 1993 to 2019 was below 2 percent. Suppose its real GDP were to change by -4 percent in one year. Based on the relationship between growth and the change in the unemployment rate in annual data from 1993 to 2019, how many percentage points would you expect its unemployment rate to move? Show how you obtained the figure.",
+ "claims": {
+  "text": [
+   {
+    "id": "T1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the applicable methodology: a simple regression of the annual change in the unemployment rate on real GDP growth (the output-unemployment relationship, Okun-type law, difference form).",
+    "accept": "Okun-type difference-form regression of change in unemployment rate on real GDP growth (levels-gap form acceptable only if it reproduces the same quantity from the same data); NOT a Phillips curve, NOT an employment-elasticity or output-gap calculation.",
+    "supporting_passages": [
+     "89d05760-b533-4e9d-b20b-baf123bafa80 p.89-91 eq.(2); p.117-118 (Delta u = alpha + beta Delta y)"
+    ]
+   }
+  ],
+  "data": [
+   {
+    "id": "D1",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO unemployment rate (LUR) and real GDP growth (NGDP_RPCH), annual, 1993 to 2019 (change in unemployment needs LUR from 1992)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "C1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Gold fitted change in unemployment (pp) for the stated growth for DEU: 0.802 (tolerance +-0.25).",
+    "target": 0.802,
+    "tolerance_abs": 0.25
+   }
+  ]
+ },
+ "grading": {
+  "tolerance": "absolute 0.25 percentage points; OLS with intercept, one regressor (growth), annual, 1993-2019 inclusive; slope reported as a positive number = pp rise in unemployment per 1pp slower growth",
+  "sensitivity_note": "see sens fields in validation"
+ },
+ "provenance": {
+  "frozen_data": "frozen_extra/weo_oct2025_lur.csv, weo_oct2025_ngdp_rpch.csv (WEO Oct 2025)",
+  "gold_script": "scripts/gr_okun_gold.py (lib scripts/gr_okun_lib.py)"
+ },
+ "method_doc_ids": [
+  "89d05760-b533-4e9d-b20b-baf123bafa80"
+ ],
+ "gold_report_ids": [],
+ "published_value": null,
+ "published_note": "No published figure for these exact data/window; Nicaragua 2022 Article IV (bbf21b8d-fcdf-4423-8f2c-9ab49d0d9713 p53) quotes quarterly Okun coefficients (advanced economies about -0.3, CAPDR about -0.16) which are in the same range as our annual slopes but not a like-for-like match.",
+ "recomputed_value": 0.8021,
+ "quantity": "fitted change in unemployment (pp) for the stated growth",
+ "country_iso3": "DEU",
+ "inputs": [
+  "LUR",
+  "NGDP_RPCH"
+ ],
+ "distractors": [
+  "Phillips-curve wage/inflation relation",
+  "output-gap based natural-rate (NAIRU) estimation",
+  "employment elasticity of growth",
+  "fiscal multiplier / sensitivity of the budget to growth"
+ ],
+ "gold_script": "scripts/gr_okun_gold.py",
+ "alpha": 0.1084,
+ "beta_slope": -0.1734,
+ "r2": 0.21,
+ "n_obs": 27,
+ "validation": {
+  "sens_1995_2019_beta": 0.161,
+  "sens_1993_2024_beta": 0.155
+ },
+ "scenario_growth_pct": -4,
+ "hidden_condition": [
+  [
+   "du2009",
+   "<",
+   0
+  ],
+  [
+   "avg_g",
+   "<",
+   2
+  ]
+ ],
+ "hidden_set_size": 1,
+ "answer_summary": "For DEU, about +0.80 percentage points."
+}

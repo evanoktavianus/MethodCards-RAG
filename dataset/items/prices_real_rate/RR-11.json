@@ -1,0 +1,86 @@
+{
+ "id": "RR-11",
+ "family": "methodology",
+ "pattern": "M-claim",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "A report says Turkey's government borrowing at 3.5% in 2015 carried an effective cost of -4.0% once the rise in the price of the economy's total output (not consumer prices) is taken out. Is that right?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the real interest rate is the nominal rate deflated by inflation, r=(1+i)/(1+pi)-1 with pi the GDP deflator change.",
+    "accept": "names the accepted approach; alternative: report both deflator-based and note CPI-based as a variant; gold uses GDP deflator"
+   }
+  ],
+  "data": [
+   {
+    "id": "c2",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO nominal GDP and GDP deflator series (NGDP_D, (nominal rate stated in query))."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Real rate TUR 2015 i=3.5% = -4.06 %; statement -4.0% is within tolerance",
+    "reference_value": -4.061,
+    "tolerance": 0.2,
+    "unit": "pp",
+    "accept": "full = within tolerance"
+   },
+   {
+    "id": "c3",
+    "kind": "answer",
+    "importance": "vital",
+    "text": "Verdict: statement is TRUE under the recomputed value.",
+    "accept": "full = correct verdict"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "Escolano (2010) A Practical Guide to Public Debt Dynamics (doc 55319ff9-c45c-4e8d-99e4-5562a1158bf2)",
+   "frozen WEO Oct 2025 (frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/prices/gold_prices.py",
+  "selection": "seeded draw over top-20 economies by 2024 USD GDP (frozen), one per country-year"
+ },
+ "method": "real_interest_rate_fisher_gdp_deflator",
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "Published value is WEO series or none; no corpus report states it, nothing to withhold.",
+ "published_value": null,
+ "published_value_note": "no published value; textbook identity",
+ "recomputed_value": -4.061,
+ "tolerance": 0.2,
+ "inputs": [
+  "NGDP_D",
+  "(nominal rate stated in query)"
+ ],
+ "style": "claim",
+ "distractors": [
+  "debt-stabilising primary balance",
+  "interest-growth differential (r-g) assessment",
+  "CPI-based ex-post real rate",
+  "Taylor-rule neutral rate",
+  "real effective exchange rate"
+ ],
+ "famous_method": true,
+ "hidden_set_size": null,
+ "predicate": null,
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity"
+}

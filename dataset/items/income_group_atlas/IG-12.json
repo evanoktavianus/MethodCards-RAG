@@ -1,0 +1,86 @@
+{
+  "id": "IG-12",
+  "family": "methodology",
+  "pattern": "M-claim",
+  "tier": "analytical",
+  "status": "validated",
+  "validation_tier": "formula-validated",
+  "procedure_kind": "institutional procedure",
+  "query": "A debt-restructuring brief states: \"In 2011, Guyana was an upper-middle-income economy.\" Is the brief right?",
+  "claims": {
+    "text": [
+      {
+        "id": "c0",
+        "kind": "text",
+        "importance": "vital",
+        "text": "Identifies that the answer applies the World Bank country income classification: Atlas-method GNI per capita compared against the annual low / lower-middle / upper-middle / high income cut-offs.",
+        "accept": "full = names the World Bank income classification by GNI per capita cut-offs; acceptable alternative: IDA / Paris Club eligibility lens built on the same income tiers; no = ranks by GDP per capita without cut-offs or by IMF advanced/emerging grouping"
+      },
+      {
+        "id": "cv",
+        "kind": "text",
+        "importance": "vital",
+        "text": "Judges the statement TRUE: the 2011 bracket is upper-middle-income.",
+        "accept": "full = bracket matches (upper-middle-income) and, for claim items, TRUE/FALSE verdict matches"
+      }
+    ],
+    "data": [
+      {
+        "id": "cd",
+        "kind": "data",
+        "importance": "okay",
+        "text": "Uses World Bank Atlas GNI per capita (current US dollars, NY.GNP.PCAP.CD) for 2011."
+      }
+    ],
+    "computation": [
+      {
+        "id": "c1",
+        "kind": "computation",
+        "importance": "okay",
+        "text": "Atlas-method GNI per capita of Guyana in 2011 = 4860 US dollars",
+        "reference_value": 4860.0,
+        "tolerance": 146,
+        "unit": "USD",
+        "accept": "full = within 3 percent (vintage revisions of the Atlas series)"
+      }
+    ]
+  },
+  "grading": {
+    "method": "answer_recall"
+  },
+  "provenance": {
+    "assembled_from": [
+      "IMF External Debt Statistics Guide (2013) glossary: cut-offs for 2011",
+      "frozen WDI NY.GNP.PCAP.CD (frozen_extra/wdi_20261008_ara_ig_extract.psv)"
+    ],
+    "gold_script": "gold_scripts/ext_procedures/build_income_group.py",
+    "selection": "drawn from 168 countries with 2011 Atlas GNI per capita at least 8 percent away from every cut-off (robust to data revision); seeded draw; one per country"
+  },
+  "method": "world_bank_income_classification_atlas",
+  "method_doc_ids": [
+    "bc5f813b-b3a4-4001-8f4a-bab531649fce"
+  ],
+  "method_doc_alternatives": [],
+  "gold_report_ids": [],
+  "gold_report_note": "The classification rule is printed in the IMF guide (not a country report); nothing to withhold. Implementation check: same rule with the 2024 cut-offs reproduces the current World Bank grouping for 194 of 198 countries (wb_classifications.csv); the misses are within 1 percent of a cut-off.",
+  "published_value": 4860.0,
+  "recomputed_value": 4860.0,
+  "tolerance": 146,
+  "inputs": [
+    "NY.GNP.PCAP.CD"
+  ],
+  "style": "claim",
+  "distractors": [
+    "GDP per capita at market prices",
+    "IMF advanced-vs-emerging grouping",
+    "PRGT eligibility test",
+    "debt-carrying-capacity classification"
+  ],
+  "famous_method": true,
+  "hidden_set_size": null,
+  "predicate": null,
+  "method_class": "institutional procedure",
+  "validation_label": "formula-validated",
+  "iso3": "GUY",
+  "year": 2011
+}

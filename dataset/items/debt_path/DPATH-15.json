@@ -1,0 +1,126 @@
+{
+ "id": "DPATH-15",
+ "family": "methodology",
+ "method": "debt_path",
+ "style": "claim_check",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "A staff report on Germany states that in 2019, real GDP growth contributed -0.6 percentage points to the change in the debt ratio (general government gross debt, percent of GDP; contributions measured against the previous year's debt stock). Is this statement accurate? Verify it with the data and give the correct figure.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the debt-ratio decomposition (primary deficit / interest-rate / growth / inflation terms applied to previous-year debt) as the method for checking the statement, per Escolano (2010) or the IMF (2013) debt-dynamics annex.",
+    "accept": "full = names the decomposition from an institutional source and uses it; partial = does the calculation without sourcing; no = other method."
+   },
+   {
+    "id": "c3",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Verdict: the statement is TRUE.",
+    "accept": "full = verdict matches (true) and the correct figure is given; partial = verdict only; no = wrong verdict."
+   }
+  ],
+  "data": [
+   {
+    "id": "c4",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO general government gross debt, primary balance, interest (primary minus overall balance), nominal and real GDP.",
+    "accept": "full = all series; partial = most; no = other."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Correct value of the stated quantity for Germany 2019: -0.6 percentage points.",
+    "accept": "full = within 0.3 pp of -0.6; partial = within 1.0 pp; no = otherwise.",
+    "target": -0.574,
+    "tolerance_abs": 0.3
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 0.3,
+  "note": "Contributions are in percentage points of GDP in the target year; published tables round to 0.1 and use older WEO vintages, so 0.3 pp absolute. Gold from frozen WEO Oct 2025."
+ },
+ "provenance": {
+  "generator": "scripts/debt_path_build_items.py",
+  "frozen_data": "frozen_extra/weo_oct2025_*.csv (WEO Oct 2025 vintage)",
+  "method_text": "Escolano 2010 eqs 24-28 (decomposition of changes in the debt ratio); IMF 2013 Staff Guidance Note Fig. 1 footnotes 4-5 and Annex I",
+  "subject": {
+   "iso3": "DEU",
+   "country": "Germany",
+   "year": 2019
+  }
+ },
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [
+  "8a31792f-6fe1-4036-b591-6a9eadc8553c"
+ ],
+ "published_value": [
+  {
+   "doc": "8a31792f-6fe1-4036-b591-6a9eadc8553c",
+   "title": "Germany: 2021 Article IV Consultation-Press Release; Staff Report; and Statement by the Executive Director for Germany",
+   "table_block_sequence": 403,
+   "primary_deficit": -2.1,
+   "real_interest": -0.5,
+   "real_growth": -0.3,
+   "change_in_debt": -2.1
+  }
+ ],
+ "recomputed_value": {
+  "change": -2.076,
+  "primary_deficit": -1.918,
+  "real_interest_imf": -0.609,
+  "growth_imf": -0.574,
+  "interest_total": 0.591,
+  "inflation": -1.188,
+  "growth": -0.585,
+  "residual": 1.024,
+  "auto_imf": -1.182,
+  "eff_rate": 1.002,
+  "defl": 2.014,
+  "g": 0.973,
+  "d_prev": 60.758,
+  "d": 58.682
+ },
+ "inputs": [
+  "GGXWDG_NGDP",
+  "GGXONLB_NGDP",
+  "GGXCNL_NGDP",
+  "NGDP",
+  "NGDP_R"
+ ],
+ "distractors": [
+  "Debt-stabilising primary balance / required fiscal adjustment (answers a different question: what balance holds the ratio constant)",
+  "Fiscal-impulse or change in the cyclically adjusted primary balance (measures policy stance, not debt-ratio attribution)",
+  "Naive attribution that divides the change in debt by the deficit (ignores interest-growth interaction and the previous-year debt stock)",
+  "Gross financing needs projection (liquidity measure, includes amortisation)",
+  "Using the overall deficit as the 'fiscal' term and then also adding interest, which double counts the interest bill"
+ ],
+ "famous_method": false,
+ "gold_script": "scripts/debt_path_build_items.py",
+ "validation": {
+  "published_instances_matching": 1,
+  "tolerance_abs_pp": 0.3,
+  "note": "Every reported report table in gold_report_ids matches the recomputation on change in debt, primary deficit, real-interest and real-growth contributions within tolerance"
+ },
+ "statement": {
+  "quantity": "gr",
+  "stated": -0.6,
+  "truth": true,
+  "correct_value": -0.574
+ },
+ "decomposition_variant": "IMF"
+}

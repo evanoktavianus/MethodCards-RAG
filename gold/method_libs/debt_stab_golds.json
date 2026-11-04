@@ -1,0 +1,202 @@
+[
+ {
+  "id": "DSTAB-01",
+  "iso": "HUN",
+  "year": 2019,
+  "kind": "required",
+  "style": "named",
+  "answer": "-4.1",
+  "sensitivity_spread": 0.082,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-02",
+  "iso": "SRB",
+  "year": 2018,
+  "kind": "required",
+  "style": "named",
+  "answer": "-1.4",
+  "sensitivity_spread": 0.025,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-03",
+  "iso": "IND",
+  "year": 2022,
+  "kind": "gap",
+  "style": "named",
+  "answer": "+1.3",
+  "sensitivity_spread": 0.552,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-04",
+  "iso": "ROU",
+  "year": 2023,
+  "kind": "gap",
+  "style": "named",
+  "answer": "+1.3",
+  "sensitivity_spread": 0.263,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-05",
+  "iso": "DEU",
+  "year": 2024,
+  "kind": "path",
+  "style": "named",
+  "answer": "68.7 (rising)",
+  "sensitivity_spread": 0.187,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-06",
+  "iso": "USA",
+  "year": 2023,
+  "kind": "path",
+  "style": "named",
+  "answer": "121.0 (rising)",
+  "sensitivity_spread": 1.008,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-07",
+  "iso": "ALB",
+  "year": 2018,
+  "kind": "target",
+  "style": "named",
+  "answer": "-0.6",
+  "sensitivity_spread": 0.039,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-08",
+  "iso": "SVN",
+  "year": 2023,
+  "kind": "required",
+  "style": "hidden",
+  "answer": "-7.5",
+  "sensitivity_spread": 0.034,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-09",
+  "iso": "CHN",
+  "year": 2022,
+  "kind": "gap",
+  "style": "hidden",
+  "answer": "-3.9",
+  "sensitivity_spread": 0.107,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-10",
+  "iso": "ARM",
+  "year": 2018,
+  "kind": "gap",
+  "style": "hidden",
+  "answer": "+2.6",
+  "sensitivity_spread": 0.097,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-11",
+  "iso": "KAZ",
+  "year": 2018,
+  "kind": "required",
+  "style": "hidden",
+  "answer": "-3.2",
+  "sensitivity_spread": 0.109,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-12",
+  "iso": "CHL",
+  "year": 2017,
+  "kind": "path",
+  "style": "hidden",
+  "answer": "29.5 (rising)",
+  "sensitivity_spread": 0.329,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-13",
+  "iso": "JAM",
+  "year": 2024,
+  "kind": "path",
+  "style": "hidden",
+  "answer": "45.7 (falling)",
+  "sensitivity_spread": 0.516,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-14",
+  "iso": "EST",
+  "year": 2022,
+  "kind": "required",
+  "style": "hidden",
+  "answer": "-2.4",
+  "sensitivity_spread": 0.011,
+  "published_value": -0.4
+ },
+ {
+  "id": "DSTAB-15",
+  "iso": "GTM",
+  "year": 2023,
+  "kind": "verdict",
+  "style": "claim_check",
+  "answer": "TRUE",
+  "sensitivity_spread": 0.056,
+  "published_value": 0.0
+ },
+ {
+  "id": "DSTAB-16",
+  "iso": "FJI",
+  "year": 2019,
+  "kind": "verdict",
+  "style": "claim_check",
+  "answer": "FALSE",
+  "sensitivity_spread": 0.186,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-17",
+  "iso": "OMN",
+  "year": 2019,
+  "kind": "numeric",
+  "style": "claim_check",
+  "answer": "TRUE",
+  "sensitivity_spread": 0.023,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-18",
+  "iso": "BWA",
+  "year": 2019,
+  "kind": "numeric",
+  "style": "claim_check",
+  "answer": "FALSE",
+  "sensitivity_spread": 0.076,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-19",
+  "iso": "RUS",
+  "year": 2018,
+  "kind": "verdict",
+  "style": "claim_check",
+  "answer": "FALSE",
+  "sensitivity_spread": 0.036,
+  "published_value": null
+ },
+ {
+  "id": "DSTAB-20",
+  "iso": "THA",
+  "year": 2016,
+  "kind": "numeric",
+  "style": "claim_check",
+  "answer": "TRUE",
+  "sensitivity_spread": 0.034,
+  "published_value": null
+ }
+]

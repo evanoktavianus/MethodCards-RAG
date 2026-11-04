@@ -1,0 +1,116 @@
+{
+ "id": "EXP-09",
+ "family": "methodology",
+ "pattern": "M-hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "In 2012, exactly one economy in the IMF's country data combined an external surplus above 1% of GDP and a general government deficit between 6% and 20% of GDP. How much of that economy's external balance was accounted for by its private sector, as a share of GDP, and does the private sector add to or offset the external balance?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the sectoral balances identity: current account balance = private saving-investment balance + government saving-investment balance, so the private balance is the current account minus government net lending.",
+    "accept": "full = sectoral balances / twin-deficit identity CAB = (Sp-Ip)+(Sg-Ig); no = single fiscal or external indicator alone"
+   },
+   {
+    "id": "c3",
+    "kind": "text",
+    "importance": "okay",
+    "text": "Identifies the economy as Aruba.",
+    "accept": "full = correct country"
+   },
+   {
+    "id": "c2",
+    "kind": "text",
+    "importance": "vital",
+    "text": "States that the private sector is a net lender (adds to the external surplus).",
+    "accept": "full = correct sign"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO current account balance and general government net lending (BCA_NGDPD, GGXCNL_NGDP)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Private-sector saving-investment balance Aruba 2012 = 12.56 % of GDP",
+    "reference_value": 12.557,
+    "tolerance": 0.15,
+    "unit": "pp",
+    "accept": "full = within tolerance of CA minus government balance"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "BPM6 ch.14 (doc 712b0ad9, block 3197): \"CAB = (S_p - I_p) + (S_g - I_g).\" (government saving-investment balance = general government net lending).",
+   "frozen WEO Oct 2025 (release/official_benchmark/reference_data)"
+  ],
+  "gold_script": "gold_scripts/external_sector/gold_external.py",
+  "selection": "seeded; hidden set size exactly 1 asserted by gold script"
+ },
+ "method": "private_public_sector_balance_split",
+ "method_doc_ids": [
+  "712b0ad9-7e38-4e33-afc8-de1de9422d0d"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "Gold is a printed identity applied to frozen WEO series; no corpus report states these values, nothing to withhold.",
+ "published_value": null,
+ "published_value_note": "private balance not published",
+ "recomputed_value": 12.557,
+ "tolerance": 0.15,
+ "inputs": [
+  "BCA_NGDPD",
+  "GGXCNL_NGDP"
+ ],
+ "style": "hidden",
+ "distractors": [
+  "cyclically adjusted fiscal balance",
+  "debt-stabilising primary balance",
+  "EBA current account gap regression",
+  "fiscal impulse",
+  "trade balance"
+ ],
+ "famous_method": true,
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity",
+ "formula_quote": "BPM6 ch.14 (doc 712b0ad9, block 3197): \"CAB = (S_p - I_p) + (S_g - I_g).\" (government saving-investment balance = general government net lending).",
+ "instance": {
+  "iso3": "ABW",
+  "year": 2012,
+  "predicate_cols": [
+   [
+    "B",
+    ">",
+    1
+   ],
+   [
+    "G",
+    "<",
+    -6
+   ],
+   [
+    "G",
+    ">",
+    -20
+   ]
+  ]
+ },
+ "claim_truth": null,
+ "hidden_set_size": 1,
+ "predicate": "an external surplus above 1% of GDP and a general government deficit larger than 6% of GDP"
+}

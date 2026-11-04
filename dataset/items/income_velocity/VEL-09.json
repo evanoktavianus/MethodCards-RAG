@@ -1,0 +1,131 @@
+{
+ "id": "VEL-09",
+ "family": "methodology",
+ "pattern": "M-claim",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "A staff paper states that in 2018 each unit of broad money in the Philippines supported about 1.34 units of annual nominal GDP. Does that hold up against the data?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the applicable approach: income velocity of money, i.e. nominal GDP divided by the broad money stock (equivalently 100 divided by broad money as a percent of GDP); change over time = nominal income growth relative to money growth.",
+    "accept": "full = names income velocity / GDP-to-broad-money turnover and uses nominal GDP over M2; partial = reports only M2/GDP without the inversion; no = unrelated approach (money multiplier, seigniorage, credit gap)."
+   }
+  ],
+  "data": [
+   {
+    "id": "c2",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Retrieves the input series: NY.GDP.MKTP.CN, FM.LBL.BMNY.CN.",
+    "accept": "full = all inputs retrieved with values close to the frozen ones; partial = some; no = none.",
+    "requires": [
+     {
+      "indicator": "NY.GDP.MKTP.CN",
+      "source": "WDI",
+      "iso3": "PHL",
+      "years": [
+       2016,
+       2018
+      ]
+     },
+     {
+      "indicator": "FM.LBL.BMNY.CN",
+      "source": "WDI",
+      "iso3": "PHL",
+      "years": [
+       2016,
+       2018
+      ]
+     }
+    ]
+   }
+  ],
+  "computation": [
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Income velocity of broad money in 2018 is about 1.34 (GDP divided by broad money).",
+    "accept": "full = within +/-3 percent of 1.342; partial = within +/-10 percent; no = otherwise.",
+    "statistic": "V = NY.GDP.MKTP.CN / FM.LBL.BMNY.CN",
+    "resolves": {
+     "value": 1.342,
+     "targets": [
+      {
+       "name": "value",
+       "kind": "number",
+       "value": 1.342,
+       "unit": "turns per year",
+       "tolerance": 0.04,
+       "tolerance_source": "identity recomputed from frozen WDI; rounding and vintage"
+      }
+     ]
+    }
+   }
+  ],
+  "answer": [
+   {
+    "id": "c4",
+    "kind": "answer",
+    "importance": "vital",
+    "text": "The statement is true on the recomputed value (recomputed 1.342).",
+    "accept": "full = verdict true; no = opposite verdict.",
+    "value": "true"
+   }
+  ]
+ },
+ "grading": {
+  "method": "claim_recall",
+  "tolerance": 0.04,
+  "note": "Definition: velocity = nominal GDP / broad money (both LCU). Tolerance 3 percent of level, 1.0 pp for changes."
+ },
+ "provenance": {
+  "assembled_from": [
+   "WDI 2026-10-08 (frozen_extra/wdi_20261008_monetary_other.psv)"
+  ],
+  "gold_script": "scripts/mo_build.py",
+  "validation": "recompute with scripts/mo_build.py; WDI ratio consistency checked on 8,360 country-years, 0 mismatches above 0.5",
+  "published_value_source": "see published_value_note"
+ },
+ "method": "income_velocity",
+ "validation_label": "formula-validated",
+ "method_kind": "textbook identity",
+ "method_doc_ids": [
+  "eafc73b3-c1d9-4b2c-bc09-4d9d7bd6297a"
+ ],
+ "method_doc_cite": "WEO April 1985, p.130 (Chart 2-2): \"Narrow and Broad Money Velocity (Quarterly GNP at annual rates/average stock of money during quarter)\"; p.131-132 relate target money growth to expected nominal GDP growth to get the implied change in velocity.",
+ "gold_report_ids": [],
+ "published_value": 1.3420083031173027,
+ "published_value_note": "Derived from the published WDI series FM.LBL.BMNY.GD.ZS: 100 / (M2 as percent of GDP) = 1.342",
+ "recomputed_value": 1.342,
+ "tolerance": 0.04,
+ "inputs": [
+  "NY.GDP.MKTP.CN",
+  "FM.LBL.BMNY.CN",
+  "FM.LBL.BMNY.GD.ZS"
+ ],
+ "style": "claim_check",
+ "subject": {
+  "iso3": "PHL",
+  "kind": "level",
+  "year0": 2018,
+  "year1": 2018
+ },
+ "distractors": [
+  "Money multiplier / reserve-money analysis",
+  "Financial depth ratio read on its own (M2 to GDP) without turning it into turnover",
+  "Seigniorage or inflation-tax revenue",
+  "Real money demand regression",
+  "Credit-to-GDP gap"
+ ],
+ "famous_method": false,
+ "gold_script": "scripts/mo_build.py",
+ "claim_truth": true,
+ "claim_stated": 1.34
+}

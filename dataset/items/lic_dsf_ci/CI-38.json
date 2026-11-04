@@ -1,0 +1,177 @@
+{
+ "id": "CI-38",
+ "family": "methodology",
+ "pattern": "M-claim_check",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "A report excerpt claims Cabo Verde received a score of 3.65 in the 2019 round and was rated strong for its ability to carry debt. Is the excerpt correct?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the applicable methodology: the IMF-World Bank debt-sustainability framework for low-income countries, in which a composite indicator (CPIA, real growth, reserve import cover, remittances, world growth) classifies debt-carrying capacity as weak, medium or strong.",
+    "accept": "full = names the low-income-country debt sustainability framework / composite indicator and its components; partial = says only 'debt capacity classification' with CPIA but no composite; no = uses a market-access DSA, reserve adequacy or other method."
+   }
+  ],
+  "data": [
+   {
+    "id": "c2",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses the composite-indicator inputs for CPV: CPIA (10-yr avg to 2018), real GDP growth (2014-2023), reserves-to-imports, remittances, world growth.",
+    "accept": "full = cites at least three of the five inputs with values near gold; partial = fewer; no = none.",
+    "requires": [
+     {
+      "indicator": "IQ.CPA.IRAI.XQ",
+      "source": "WDI",
+      "iso3": "CPV",
+      "years": [
+       2009,
+       2023
+      ]
+     },
+     {
+      "indicator": "NGDP_RPCH",
+      "source": "WEO",
+      "iso3": "CPV",
+      "years": [
+       2009,
+       2023
+      ]
+     },
+     {
+      "indicator": "FI.RES.TOTL.CD",
+      "source": "WDI",
+      "iso3": "CPV",
+      "years": [
+       2009,
+       2023
+      ]
+     },
+     {
+      "indicator": "NE.IMP.GNFS.CD",
+      "source": "WDI",
+      "iso3": "CPV",
+      "years": [
+       2009,
+       2023
+      ]
+     },
+     {
+      "indicator": "BX.TRF.PWKR.DT.GD.ZS",
+      "source": "WDI",
+      "iso3": "CPV",
+      "years": [
+       2009,
+       2023
+      ]
+     }
+    ]
+   }
+  ],
+  "computation": [
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "The composite indicator score is about 3.20.",
+    "accept": "full = within +/-0.10 of 3.203; partial = within +/-0.25; no = otherwise.",
+    "statistic": "CI = 0.385*CPIA + 2.719*g + 4.052*IC - 3.990*IC^2 + 2.022*REM + 13.520*WG",
+    "resolves": {
+     "value": 3.203,
+     "targets": [
+      {
+       "name": "value",
+       "kind": "number",
+       "value": 3.203,
+       "unit": "index",
+       "tolerance": 0.1,
+       "tolerance_source": "validation vs published"
+      }
+     ]
+    },
+    "components": {
+     "cpia": 1.5047,
+     "g": 0.0761,
+     "ic": 1.8224,
+     "ic2": -0.807,
+     "rem": 0.1923,
+     "wg": 0.4147
+    }
+   }
+  ],
+  "answer": [
+   {
+    "id": "c4",
+    "kind": "answer",
+    "importance": "vital",
+    "text": "Correct verdict: the statement is FALSE (recomputed score 3.20, class strong).",
+    "accept": "full = verdict FALSE with recomputed score within +/-0.10; no = wrong verdict.",
+    "value": false
+   }
+  ]
+ },
+ "grading": {
+  "method": "claim_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "WEO Oct 2025 (frozen_extra), WDI 2026-10-08 (frozen_extra/wdi_20261008_*)"
+  ],
+  "gold_script": "gold_scripts/lic_dsf_ci/make_items_ext.py",
+  "validation": "gold_scripts/lic_dsf_ci/validate.py; gold_scripts/lic_dsf_ci/select_extension.py",
+  "published_value_source": "gold_scripts/lic_dsf_ci/published_ci.json"
+ },
+ "method": "lic_dsf_composite_indicator",
+ "method_doc_ids": [
+  "d7658e96-9694-4cd0-8f26-465f0f9ab0aa",
+  "968df4c6-cc90-48f9-95c5-af0a8eb49597"
+ ],
+ "gold_report_ids": [
+  "55fdb5d7-48fc-4767-a0a1-242c26c4c2a2"
+ ],
+ "published_value": 3.28,
+ "recomputed_value": 3.203,
+ "tolerance": 0.1,
+ "inputs": [
+  "NGDP_RPCH",
+  "IQ.CPA.IRAI.XQ",
+  "FI.RES.TOTL.CD",
+  "NE.IMP.GNFS.CD",
+  "BX.TRF.PWKR.DT.GD.ZS",
+  "NGDPRPPPPC",
+  "LP"
+ ],
+ "style": "claim_check",
+ "subject": {
+  "iso3": "CPV",
+  "year": 2019,
+  "components": {
+   "cpia": 3.9083,
+   "g": 2.7988,
+   "ic": 44.9741,
+   "rem": 9.5093,
+   "wg": 3.0675
+  }
+ },
+ "distractors": [
+  "Public DSA for market-access countries (debt-stabilising primary balance, stress tests)",
+  "IMF reserve adequacy (ARA) metric",
+  "World Bank CPIA score read on its own",
+  "External Balance Assessment",
+  "Debt-to-GDP threshold from memory (e.g. 60 percent)"
+ ],
+ "famous_method": false,
+ "instance_extension": true,
+ "extension_of": "CI-18",
+ "claim_under_test": {
+  "stated_value": 3.65,
+  "stated_class": "strong",
+  "truth": false
+ },
+ "grading_note": "Score the class (weak<2.69<=medium<3.05<=strong) on the recomputed value, not the published one; recomputed values within 0.10 of a cutoff straddle it."
+}

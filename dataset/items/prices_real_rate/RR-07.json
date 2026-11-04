@@ -1,0 +1,84 @@
+{
+ "id": "RR-07",
+ "family": "methodology",
+ "pattern": "M-hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "Take the one of the twenty largest economies (by 2024 dollar GDP) whose output prices rose the least, or fell the most, in 2015. If its government borrowed at 7.0% that year, what was the real cost of borrowing?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the real interest rate is the nominal rate deflated by inflation, r=(1+i)/(1+pi)-1 with pi the GDP deflator change.",
+    "accept": "names the accepted approach; alternative: report both deflator-based and note CPI-based as a variant; gold uses GDP deflator"
+   }
+  ],
+  "data": [
+   {
+    "id": "c2",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO nominal GDP and GDP deflator series (NGDP_D, (nominal rate stated in query))."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Real interest rate SAU 2015 at i=7.0% = 27.12 %",
+    "reference_value": 27.119,
+    "tolerance": 0.2,
+    "unit": "pp",
+    "accept": "full = within tolerance"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "Escolano (2010) A Practical Guide to Public Debt Dynamics (doc 55319ff9-c45c-4e8d-99e4-5562a1158bf2)",
+   "frozen WEO Oct 2025 (frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/prices/gold_prices.py",
+  "selection": "seeded draw over top-20 economies by 2024 USD GDP (frozen), one per country-year"
+ },
+ "method": "real_interest_rate_fisher_gdp_deflator",
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "Published value is WEO series or none; no corpus report states it, nothing to withhold.",
+ "published_value": null,
+ "published_value_note": "no published value; textbook identity",
+ "recomputed_value": 27.119,
+ "tolerance": 0.2,
+ "inputs": [
+  "NGDP_D",
+  "(nominal rate stated in query)"
+ ],
+ "style": "hidden",
+ "distractors": [
+  "debt-stabilising primary balance",
+  "interest-growth differential (r-g) assessment",
+  "CPI-based ex-post real rate",
+  "Taylor-rule neutral rate",
+  "real effective exchange rate"
+ ],
+ "famous_method": true,
+ "hidden_set_size": 1,
+ "predicate": {
+  "universe": "top-20 by NGDPD 2024",
+  "year": 2015,
+  "rule": "argmin",
+  "series": "NGDP_D change"
+ },
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity"
+}

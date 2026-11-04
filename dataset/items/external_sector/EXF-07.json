@@ -1,0 +1,107 @@
+{
+ "id": "EXF-07",
+ "family": "methodology",
+ "pattern": "M-hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "In 2020, exactly one economy in the IMF's country data had nominal GDP above US$ 3 billion and an external deficit wider than 32% of GDP. Roughly how much net foreign financing, in total and in US dollars, did that economy have to raise over the five years 2016 to 2020 to fund its external deficits?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the balance-of-payments financing identity: a current account deficit must be matched by net external financing (net borrowing from abroad, NLB = CAB + KAB = NFA), so cumulative financing = sum of annual current account balances converted to US dollars.",
+    "accept": "full = BoP financing identity (current account + capital account = net financial account); acceptable alternative: change in net international investment position; no = government financing needs"
+   },
+   {
+    "id": "c3",
+    "kind": "text",
+    "importance": "okay",
+    "text": "Identifies the economy as Maldives.",
+    "accept": "full = correct country"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO current account balance (% GDP) and nominal GDP in US dollars (BCA_NGDPD, NGDPD)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Cumulative net external financing Maldives 2016-2020 = US$ 6.3 bn",
+    "reference_value": 6.32,
+    "tolerance": 0.3,
+    "unit": "US$ billion",
+    "accept": "full = within tolerance (3% relative, floor 0.3)"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "BPM6 ch.14 (doc 712b0ad9, blocks 3204/3214): \"NLB = CAB + KAB = NFA\"; \"the net provision of resources to or from the rest of the world, as measured by the current and capital account balances, must-by definition-be matched by a change in net claims on the rest of the world.\" Capital account balance treated as negligible; current account in US$ = BCA_NGDPD x NGDPD.",
+   "frozen WEO Oct 2025 (release/official_benchmark/reference_data)"
+  ],
+  "gold_script": "gold_scripts/external_sector/gold_external.py",
+  "selection": "seeded; hidden set size exactly 1 (evaluated in final year) asserted by gold script"
+ },
+ "method": "cumulative_external_financing_need",
+ "method_doc_ids": [
+  "712b0ad9-7e38-4e33-afc8-de1de9422d0d"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "Gold is a printed identity applied to frozen WEO series; no corpus report states these values, nothing to withhold.",
+ "published_value": null,
+ "published_value_note": "no published cumulative",
+ "recomputed_value": 6.32,
+ "tolerance": 0.3,
+ "inputs": [
+  "BCA_NGDPD",
+  "NGDPD"
+ ],
+ "style": "hidden",
+ "distractors": [
+  "debt-stabilising current account",
+  "reserve adequacy / import cover",
+  "gross financing needs of the government",
+  "external debt dynamics",
+  "balance-of-payments adjustment to terms of trade"
+ ],
+ "famous_method": false,
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity",
+ "formula_quote": "BPM6 ch.14 (doc 712b0ad9, blocks 3204/3214): \"NLB = CAB + KAB = NFA\"; \"the net provision of resources to or from the rest of the world, as measured by the current and capital account balances, must-by definition-be matched by a change in net claims on the rest of the world.\" Capital account balance treated as negligible; current account in US$ = BCA_NGDPD x NGDPD.",
+ "instance": {
+  "iso3": "MDV",
+  "y0": 2016,
+  "y1": 2020,
+  "year": 2020,
+  "absolute": true,
+  "predicate_cols": [
+   [
+    "D",
+    ">",
+    3
+   ],
+   [
+    "B",
+    "<",
+    -32
+   ]
+  ]
+ },
+ "claim_truth": null,
+ "hidden_set_size": 1,
+ "predicate": "nominal GDP above US$ 3 billion and an external deficit wider than 32% of GDP"
+}

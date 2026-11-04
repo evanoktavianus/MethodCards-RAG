@@ -1,0 +1,189 @@
+{
+ "id": "CI-08",
+ "family": "methodology",
+ "pattern": "M-hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "Consider the economy that in 2023 had current account balance above 18 percent of GDP and GDP per capita below 3900 US dollars. How would you rate its underlying capacity to carry external debt as of the 2024 assessment round (weak, medium or strong), and what score supports that?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the applicable methodology: the IMF-World Bank debt-sustainability framework for low-income countries, in which a composite indicator (CPIA, real growth, reserve import cover, remittances, world growth) classifies debt-carrying capacity as weak, medium or strong.",
+    "accept": "full = names the low-income-country debt sustainability framework / composite indicator and its components; partial = says only 'debt capacity classification' with CPIA but no composite; no = uses a market-access DSA, reserve adequacy or other method."
+   }
+  ],
+  "data": [
+   {
+    "id": "c2",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses the composite-indicator inputs for DJI: CPIA (10-yr avg to 2023), real GDP growth (2019-2028), reserves-to-imports, remittances, world growth.",
+    "accept": "full = cites at least three of the five inputs with values near gold; partial = fewer; no = none.",
+    "requires": [
+     {
+      "indicator": "IQ.CPA.IRAI.XQ",
+      "source": "WDI",
+      "iso3": "DJI",
+      "years": [
+       2014,
+       2028
+      ]
+     },
+     {
+      "indicator": "NGDP_RPCH",
+      "source": "WEO",
+      "iso3": "DJI",
+      "years": [
+       2014,
+       2028
+      ]
+     },
+     {
+      "indicator": "FI.RES.TOTL.CD",
+      "source": "WDI",
+      "iso3": "DJI",
+      "years": [
+       2014,
+       2028
+      ]
+     },
+     {
+      "indicator": "NE.IMP.GNFS.CD",
+      "source": "WDI",
+      "iso3": "DJI",
+      "years": [
+       2014,
+       2028
+      ]
+     },
+     {
+      "indicator": "BX.TRF.PWKR.DT.GD.ZS",
+      "source": "WDI",
+      "iso3": "DJI",
+      "years": [
+       2014,
+       2028
+      ]
+     }
+    ]
+   }
+  ],
+  "computation": [
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "The composite indicator score is about 2.22.",
+    "accept": "full = within +/-0.10 of 2.217; partial = within +/-0.25; no = otherwise.",
+    "statistic": "CI = 0.385*CPIA + 2.719*g + 4.052*IC - 3.990*IC^2 + 2.022*REM + 13.520*WG",
+    "resolves": {
+     "value": 2.217,
+     "targets": [
+      {
+       "name": "value",
+       "kind": "number",
+       "value": 2.217,
+       "unit": "index",
+       "tolerance": 0.1,
+       "tolerance_source": "validation vs published"
+      }
+     ]
+    },
+    "components": {
+     "cpia": 1.1852,
+     "g": 0.146,
+     "ic": 0.5227,
+     "ic2": -0.0664,
+     "rem": 0.0374,
+     "wg": 0.3919
+    }
+   }
+  ],
+  "answer": [
+   {
+    "id": "c4",
+    "kind": "answer",
+    "importance": "vital",
+    "text": "Debt-carrying capacity is weak (cutoffs: weak below 2.69, strong above 3.05).",
+    "accept": "full = weak; no = any other class.",
+    "value": "weak"
+   }
+  ]
+ },
+ "grading": {
+  "method": "claim_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "WEO Oct 2025 (frozen_extra), WDI 2026-10-08 (frozen_extra/wdi_20261008_*)"
+  ],
+  "gold_script": "gold_scripts/lic_dsf_ci/make_items.py",
+  "validation": "gold_scripts/lic_dsf_ci/validate.py"
+ },
+ "method": "lic_dsf_composite_indicator",
+ "method_doc_ids": [
+  "d7658e96-9694-4cd0-8f26-465f0f9ab0aa",
+  "968df4c6-cc90-48f9-95c5-af0a8eb49597"
+ ],
+ "gold_report_ids": [
+  "782f89ea-a41d-4d0f-83cf-850b7c5289ed"
+ ],
+ "published_value": 2.16,
+ "recomputed_value": 2.217,
+ "tolerance": 0.1,
+ "inputs": [
+  "NGDP_RPCH",
+  "IQ.CPA.IRAI.XQ",
+  "FI.RES.TOTL.CD",
+  "NE.IMP.GNFS.CD",
+  "BX.TRF.PWKR.DT.GD.ZS",
+  "NGDPRPPPPC",
+  "LP"
+ ],
+ "style": "hidden",
+ "subject": {
+  "iso3": "DJI",
+  "year": 2024,
+  "components": {
+   "cpia": 3.0783,
+   "g": 5.3714,
+   "ic": 12.8988,
+   "rem": 1.848,
+   "wg": 2.899
+  }
+ },
+ "distractors": [
+  "Public DSA for market-access countries (debt-stabilising primary balance, stress tests)",
+  "IMF reserve adequacy (ARA) metric",
+  "World Bank CPIA score read on its own",
+  "External Balance Assessment",
+  "Debt-to-GDP threshold from memory (e.g. 60 percent)"
+ ],
+ "famous_method": false,
+ "hidden_predicate": {
+  "conditions": [
+   {
+    "feature": "current account balance (% of GDP)",
+    "op": ">",
+    "threshold": 18,
+    "year": 2023
+   },
+   {
+    "feature": "GDP per capita (current US$)",
+    "op": "<",
+    "threshold": 3900,
+    "year": 2023
+   }
+  ],
+  "universe": "all WEO Oct 2025 economies with complete data for the features (192)",
+  "set_size": 1,
+  "members": [
+   "DJI"
+  ]
+ }
+}

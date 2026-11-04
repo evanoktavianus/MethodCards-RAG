@@ -1,0 +1,79 @@
+{
+ "id": "PC-07",
+ "family": "methodology",
+ "pattern": "M-hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "Over 2005-2019, exactly one economy in the 27 advanced economies with an IMF World Economic Outlook output-gap estimate (Australia, Austria, Belgium, Canada, Cyprus, Denmark, Estonia, Finland, France, Germany, Greece, Ireland, Italy, Japan, Korea, Luxembourg, Malta, the Netherlands, New Zealand, Norway, Portugal, Slovakia, Slovenia, Spain, Sweden, the United Kingdom, the United States) had population growth above 2.0% a year. On average per year, how many percentage points of that economy's growth in real income per person came from changes in the share of the population in work, as opposed to output per worker?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the decomposition of GDP-per-capita growth into labour productivity (GDP per worker) and the employment rate (employment per capita).",
+    "accept": "full = log-difference decomposition into productivity and employment-to-population (working-age share lumped in employment rate acceptable)"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO series: NGDP_R, LE, LP."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "LUX 2005-2019: emp = 0.86 pp per year",
+    "reference_value": 0.865,
+    "tolerance": 0.15,
+    "unit": "pp",
+    "accept": "full = within tolerance; employment-rate contribution = annualised dln(LE/LP); correct country identification required (hidden)"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "San Marino 2023 Art IV (a507cd39, blocks 568-570), after Jaumotte et al. 2016",
+   "frozen WEO Oct 2025 (frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/growth_labour/gold_growth_labour.py",
+  "selection": "seeded draw (20261030), distinct country within style where possible"
+ },
+ "method": "gdp_per_capita_growth_decomposition",
+ "method_doc_ids": [
+  "a507cd39-1045-434b-96b9-38bb047b94a9"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "No corpus report states these values; gold is recomputed from the frozen WEO vintage by formula (formula-validated, no published figure).",
+ "published_value": null,
+ "recomputed_value": 0.865,
+ "tolerance": 0.15,
+ "inputs": [
+  "NGDP_R",
+  "LE",
+  "LP"
+ ],
+ "style": "hidden",
+ "distractors": [
+  "Cobb-Douglas growth accounting with capital and TFP",
+  "dependency-ratio / demographic dividend",
+  "fiscal sustainability",
+  "unemployment gap analysis"
+ ],
+ "famous_method": true,
+ "hidden_set_size": 1,
+ "predicate": "among the 27 economies with WEO employment data, average population growth (LP) > 2.0% per year over 2005-2019",
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity",
+ "hidden_answer_country": "LUX"
+}

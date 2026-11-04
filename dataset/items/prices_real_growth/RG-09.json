@@ -1,0 +1,86 @@
+{
+ "id": "RG-09",
+ "family": "methodology",
+ "pattern": "M-claim",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "A staff report states that after removing price changes, Saudi Arabia's output rose 4.6% in 2015, given nominal output growth of -11.9% and a deflator increase of -15.8%. Is the statement right?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that real growth is obtained by stripping the price change (GDP deflator) out of nominal GDP growth: 1+gamma=(1+g)(1+pi).",
+    "accept": "names the accepted approach; "
+   }
+  ],
+  "data": [
+   {
+    "id": "c2",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO nominal GDP and GDP deflator series (NGDP, NGDP_D)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Real GDP growth SAU 2015 = 4.66 %; statement of 4.6% is within tolerance",
+    "reference_value": 4.655,
+    "tolerance": 0.15,
+    "unit": "pp",
+    "accept": "full = within tolerance"
+   },
+   {
+    "id": "c3",
+    "kind": "answer",
+    "importance": "vital",
+    "text": "Verdict: statement is TRUE under the recomputed value.",
+    "accept": "full = correct verdict"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "Escolano (2010) A Practical Guide to Public Debt Dynamics (doc 55319ff9-c45c-4e8d-99e4-5562a1158bf2)",
+   "frozen WEO Oct 2025 (frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/prices/gold_prices.py",
+  "selection": "seeded draw over top-20 economies by 2024 USD GDP (frozen), one per country-year"
+ },
+ "method": "real_growth_from_nominal_growth_and_deflator",
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "Published value is WEO series or none; no corpus report states it, nothing to withhold.",
+ "published_value": 4.655,
+ "published_value_note": "WEO NGDP_RPCH Oct 2025 (frozen)",
+ "recomputed_value": 4.655,
+ "tolerance": 0.15,
+ "inputs": [
+  "NGDP",
+  "NGDP_D"
+ ],
+ "style": "claim",
+ "distractors": [
+  "simple CPI deflation of nominal growth",
+  "per-capita growth analysis",
+  "potential-growth / output-gap estimation",
+  "growth accounting",
+  "nominal exchange-rate conversion"
+ ],
+ "famous_method": true,
+ "hidden_set_size": null,
+ "predicate": null,
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity"
+}

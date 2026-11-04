@@ -1,0 +1,87 @@
+{
+ "id": "SB-13",
+ "family": "methodology",
+ "pattern": "M-claim",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "A report on Thailand states: 'About three quarters of the 4.5%-of-GDP general government deficit in 2020 was cyclical, i.e. it would disappear with the economy at its normal capacity level.' Is that statement accurate?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the answer requires cyclically adjusting the budget balance (potential-output gap from a statistical trend, then removing the cyclical budget component).",
+    "accept": "full = names cyclically adjusted / structural balance approach with an output-gap estimate; acceptable alternatives: OECD or EC semi-elasticity approach, production-function output gap; no = raw balance only"
+   },
+   {
+    "id": "c4",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Judges the statement NOT accurate.",
+    "accept": "verdict must match; reasoning must cite the recomputed value"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government revenue, expenditure and real GDP series from the WEO (GGR_NGDP, GGX_NGDP, NGDP_R, GGXCNL_NGDP)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Cyclical share of the THA 2020 deficit = 0.17",
+    "reference_value": 0.169,
+    "tolerance": 0.15,
+    "unit": "share",
+    "accept": "full = within tolerance; the output gap is the HP-filter (lambda=100) cycle of log real GDP, revenue elasticity 1, expenditure elasticity 0"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "Fiscal Monitor Oct 2012 / Oct 2013 data-conventions note (CAB: HP potential output, revenue elasticity 1, expenditure elasticity 0)",
+   "frozen WEO Oct 2025 (+frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/structural_balance/gold_structural_balance.py"
+ },
+ "method": "cyclically_adjusted_balance_hp_filter",
+ "method_doc_ids": [
+  "afa3529e-c97c-45cb-a668-d1a133131d8c",
+  "9a9aeb9c-3a8b-4e2e-a459-aa8143f05d3f"
+ ],
+ "method_doc_alternatives": [
+  "5bc9162b-f850-4bd4-a964-d3632f04cb9b (multivariate filter, alternative output-gap method)"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "No corpus country report states these values; published value is the IMF WEO Oct 2025 GGSB_NPGDP series (frozen), not a corpus document, so nothing needs withholding.",
+ "published_value": 0.203,
+ "recomputed_value": 0.169,
+ "tolerance": 0.15,
+ "inputs": [
+  "GGR_NGDP",
+  "GGX_NGDP",
+  "NGDP_R",
+  "GGXCNL_NGDP"
+ ],
+ "style": "claim",
+ "distractors": [
+  "debt-stabilising primary balance",
+  "fiscal multiplier / fiscal impulse from multipliers",
+  "revenue buoyancy",
+  "fiscal rule calibration"
+ ],
+ "famous_method": true,
+ "hidden_set_size": null,
+ "predicate": null
+}

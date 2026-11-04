@@ -1,0 +1,85 @@
+{
+ "id": "EXF-03",
+ "family": "methodology",
+ "pattern": "M-named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "Roughly how much net foreign financing, in total and in US dollars, did Colombia have to raise over the five years 2014 to 2018 to fund its external deficits?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the balance-of-payments financing identity: a current account deficit must be matched by net external financing (net borrowing from abroad, NLB = CAB + KAB = NFA), so cumulative financing = sum of annual current account balances converted to US dollars.",
+    "accept": "full = BoP financing identity (current account + capital account = net financial account); acceptable alternative: change in net international investment position; no = government financing needs"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO current account balance (% GDP) and nominal GDP in US dollars (BCA_NGDPD, NGDPD)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Cumulative net external financing Colombia 2014-2018 = US$ 75.1 bn",
+    "reference_value": 75.069,
+    "tolerance": 2.25,
+    "unit": "US$ billion",
+    "accept": "full = within tolerance (3% relative, floor 0.3)"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "BPM6 ch.14 (doc 712b0ad9, blocks 3204/3214): \"NLB = CAB + KAB = NFA\"; \"the net provision of resources to or from the rest of the world, as measured by the current and capital account balances, must-by definition-be matched by a change in net claims on the rest of the world.\" Capital account balance treated as negligible; current account in US$ = BCA_NGDPD x NGDPD.",
+   "frozen WEO Oct 2025 (release/official_benchmark/reference_data)"
+  ],
+  "gold_script": "gold_scripts/external_sector/gold_external.py",
+  "selection": "seeded draw (seed 3303); five consecutive deficit years, cumulative >= US$5 bn; one per country"
+ },
+ "method": "cumulative_external_financing_need",
+ "method_doc_ids": [
+  "712b0ad9-7e38-4e33-afc8-de1de9422d0d"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "Gold is a printed identity applied to frozen WEO series; no corpus report states these values, nothing to withhold.",
+ "published_value": null,
+ "published_value_note": "no published cumulative; annual BCA and NGDPD are WEO published values",
+ "recomputed_value": 75.069,
+ "tolerance": 2.25,
+ "inputs": [
+  "BCA_NGDPD",
+  "NGDPD"
+ ],
+ "style": "named",
+ "distractors": [
+  "debt-stabilising current account",
+  "reserve adequacy / import cover",
+  "gross financing needs of the government",
+  "external debt dynamics",
+  "balance-of-payments adjustment to terms of trade"
+ ],
+ "famous_method": false,
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity",
+ "formula_quote": "BPM6 ch.14 (doc 712b0ad9, blocks 3204/3214): \"NLB = CAB + KAB = NFA\"; \"the net provision of resources to or from the rest of the world, as measured by the current and capital account balances, must-by definition-be matched by a change in net claims on the rest of the world.\" Capital account balance treated as negligible; current account in US$ = BCA_NGDPD x NGDPD.",
+ "instance": {
+  "iso3": "COL",
+  "y0": 2014,
+  "y1": 2018,
+  "absolute": true
+ },
+ "claim_truth": null
+}

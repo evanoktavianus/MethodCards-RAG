@@ -1,0 +1,130 @@
+{
+ "id": "RIR-02",
+ "family": "methodology",
+ "pattern": "M-named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "After stripping out price inflation, what interest rate did borrowers from banks in Indonesia actually pay in 2019?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the applicable approach: ex post real interest rate, the nominal lending rate deflated by inflation (GDP deflator), r = (i - pi)/(1 + pi) or approximately i - pi.",
+    "accept": "full = deflates the nominal lending rate by GDP-deflator (or economy-wide) inflation; partial = deflates with CPI inflation or reports the nominal rate only; no = unrelated method (natural rate model, Taylor rule)."
+   }
+  ],
+  "data": [
+   {
+    "id": "c2",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Retrieves the input series: FR.INR.LEND, NY.GDP.DEFL.KD.ZG.",
+    "accept": "full = all inputs retrieved with values close to the frozen ones; partial = some; no = none.",
+    "requires": [
+     {
+      "indicator": "FR.INR.LEND",
+      "source": "WDI",
+      "iso3": "IDN",
+      "years": [
+       2019,
+       2019
+      ]
+     },
+     {
+      "indicator": "NY.GDP.DEFL.KD.ZG",
+      "source": "WDI",
+      "iso3": "IDN",
+      "years": [
+       2019,
+       2019
+      ]
+     }
+    ]
+   }
+  ],
+  "computation": [
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "The real lending rate in 2019 is about 8.6 percent (lending rate 10.4 percent deflated by GDP-deflator inflation 1.6 percent).",
+    "accept": "full = within +/-1.5 percentage points of 8.63 (the simple difference i - pi = 8.77 is therefore also accepted); partial = within +/-3 more; no = otherwise.",
+    "statistic": "r = (FR.INR.LEND - NY.GDP.DEFL.KD.ZG) / (1 + NY.GDP.DEFL.KD.ZG/100)",
+    "resolves": {
+     "value": 8.629,
+     "targets": [
+      {
+       "name": "value",
+       "kind": "number",
+       "value": 8.629,
+       "unit": "percent",
+       "tolerance": 1.5,
+       "tolerance_source": "identity recomputed from frozen WDI; rounding and vintage"
+      }
+     ]
+    }
+   }
+  ],
+  "answer": [
+   {
+    "id": "c4",
+    "kind": "answer",
+    "importance": "vital",
+    "text": "The real return/cost is positive (borrowers face a positive real rate).",
+    "accept": "full = correct sign; no = wrong sign.",
+    "value": "positive"
+   }
+  ]
+ },
+ "grading": {
+  "method": "claim_recall",
+  "tolerance": 1.5,
+  "note": "Definition: r = (i - pi)/(1+pi) with pi = GDP deflator inflation. Tolerance = max(1.5, |exact - simple difference| + 0.3) pp so that both forms are accepted."
+ },
+ "provenance": {
+  "assembled_from": [
+   "WDI 2026-10-08 (frozen_extra/wdi_20261008_monetary_other.psv)"
+  ],
+  "gold_script": "scripts/mo_build.py",
+  "validation": "identity reproduces WDI FR.INR.RINR",
+  "published_value_source": "see published_value_note"
+ },
+ "method": "real_interest_rate",
+ "validation_label": "formula-validated",
+ "method_kind": "textbook identity",
+ "method_doc_ids": [
+  "0343a0da-0a3a-4e01-8b5c-408816ccb412"
+ ],
+ "method_doc_cite": "AMRO 2023 Annual Consultation Report on Japan, p.65 (Annex 4, note): \"short-term real interest rates are calculated by subtracting ... actual inflation rates from the ... rates\". Exact form used by WDI (FR.INR.RINR): (i - pi)/(1 + pi), pi = GDP deflator inflation.",
+ "gold_report_ids": [],
+ "published_value": 8.629,
+ "published_value_note": "WDI FR.INR.RINR (real interest rate, %), published by the World Bank; recomputed identity matches to 0.05 on 4,771 country-years",
+ "recomputed_value": 8.629,
+ "tolerance": 1.5,
+ "inputs": [
+  "FR.INR.LEND",
+  "NY.GDP.DEFL.KD.ZG",
+  "FR.INR.RINR"
+ ],
+ "style": "named",
+ "subject": {
+  "iso3": "IDN",
+  "year": 2019,
+  "lending_rate": 10.3658333333333,
+  "deflator_inflation": 1.59848849984144,
+  "simple_difference": 8.767
+ },
+ "distractors": [
+  "Neutral/natural rate estimation (HLW-type model)",
+  "Taylor-rule prescription",
+  "Debt-dynamics interest-growth differential",
+  "Effective interest rate on public debt",
+  "Policy-rate stance read in nominal terms"
+ ],
+ "famous_method": false,
+ "gold_script": "scripts/mo_build.py"
+}

@@ -1,0 +1,118 @@
+{
+ "id": "MC-03",
+ "family": "methodology",
+ "pattern": "M-named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "formula-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "In 2018, would Denmark have passed the public-finance and price-stability tests a European Union member must meet before adopting the euro? Use October 2025 WEO annual-average CPI inflation as the price measure, take the 27 current EU members as the comparison group, and apply the criteria strictly with no leeway for improving trends.",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the answer applies the Maastricht (euro-adoption) convergence criteria: deficit at or below 3 percent of GDP, debt at or below 60 percent, inflation within 1.5 pp of the three best performers.",
+    "accept": "full = names the Maastricht / euro convergence criteria; acceptable alternatives: EMU entry tests; no = Stability and Growth Pact fiscal rules only, debt sustainability analysis, or fiscal-rule calibration"
+   },
+   {
+    "id": "cv",
+    "kind": "text",
+    "importance": "vital",
+    "text": "States deficit met; debt met; inflation met (3 of 3 tests met: deficit, debt, inflation)",
+    "accept": "full = verdict per test matches the recomputation"
+   }
+  ],
+  "data": [
+   {
+    "id": "cd",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO general government net lending/borrowing (GGXCNL_NGDP), gross debt (GGXWDG_NGDP) and CPI inflation (PCPIPCH) for EU27."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Euro-entry inflation limit in 2018 = mean of the three lowest EU inflation rates plus 1.5 pp = 2.23 %",
+    "reference_value": 2.228,
+    "tolerance": 0.3,
+    "unit": "percent",
+    "accept": "full = within 0.3 pp (simple average of three lowest EU rates, consumer prices)"
+   },
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Denmark inflation minus that limit in 2018 = -1.52 pp",
+    "reference_value": -1.519,
+    "tolerance": 0.3,
+    "unit": "pp",
+    "accept": "full = within tolerance; sign matters"
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Denmark general government deficit in 2018 = -0.81 % of GDP (limit 3)",
+    "reference_value": -0.81,
+    "tolerance": 0.3,
+    "unit": "percent of GDP",
+    "accept": "full = within tolerance"
+   },
+   {
+    "id": "c4",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Denmark gross public debt in 2018 = 38.5 % of GDP (limit 60)",
+    "reference_value": 38.54,
+    "tolerance": 1.0,
+    "unit": "percent of GDP",
+    "accept": "full = within tolerance"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "IMF WEO Oct 1996 (EMU and the World Economy), convergence-table notes",
+   "frozen WEO Oct 2025 (reference_data + frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/ext_procedures/build_convergence.py",
+  "selection": "EU27 country-years 2012-2024 where deficit is 0.4pp+ from 3, debt 3pp+ from 60, inflation 0.4pp+ from the limit; seeded draw; one per country"
+ },
+ "method": "maastricht_convergence_criteria",
+ "method_doc_ids": [
+  "e3b52b4e-bd1c-4659-b48e-6cf3c5b854c6"
+ ],
+ "method_doc_alternatives": [],
+ "gold_report_ids": [],
+ "gold_report_note": "No corpus country report is the gold source; values are recomputed from frozen WEO. Proxy caveat: consumer-price inflation (PCPIPCH) stands in for the treaty HICP measure, and the three lowest rates are taken over all EU27 without outlier screening (the note says a simple average of the three is used for illustration).",
+ "published_value": 2.228,
+ "recomputed_value": 2.228,
+ "tolerance": 0.3,
+ "inputs": [
+  "GGXCNL_NGDP",
+  "GGXWDG_NGDP",
+  "PCPIPCH"
+ ],
+ "style": "named",
+ "distractors": [
+  "Stability and Growth Pact fiscal-rule compliance",
+  "debt-stabilising primary balance",
+  "public debt sustainability analysis",
+  "fiscal-rule calibration"
+ ],
+ "famous_method": true,
+ "hidden_set_size": null,
+ "predicate": null,
+ "method_class": "institutional procedure",
+ "validation_label": "formula-validated",
+ "iso3": "DNK",
+ "year": 2018
+}

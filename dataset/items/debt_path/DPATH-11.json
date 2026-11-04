@@ -1,0 +1,181 @@
+{
+ "id": "DPATH-11",
+ "family": "methodology",
+ "method": "debt_path",
+ "style": "hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "Using the IMF World Economic Outlook (October 2025 vintage), take the one economy with general government gross debt at the end of 2011, % of GDP between 35 and 43; GDP-deflator inflation in 2012, % between 1 and 1.6. For that economy: split the 2012 change in the general government gross debt ratio into the primary deficit, the nominal interest bill, the effect of GDP-deflator inflation and the effect of real GDP growth, each in percentage points of GDP, and say which of these four moved the ratio most.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the change in the public debt ratio is attributed to its components by applying the debt-accumulation identity to the previous-year debt stock: primary deficit, an interest-rate term, a growth term (and, in the other published variant, a separate inflation term), as set out in Escolano (2010) 'A Practical Guide to Public Debt Dynamics...' (equations 24-28) and in the IMF (2013) Staff Guidance Note / MAC SRDSF (2021) debt-dynamics annex ('contribution from real interest rate', 'contribution from real GDP growth').",
+    "accept": "full = names the debt-dynamics decomposition (any of Escolano 2010, IMF 2013 Staff Guidance Note Annex I, MAC SRDSF 2021, or the IMF Public Debt Dynamics Tool) and applies it with the previous-year debt ratio; partial = describes an interest-growth-primary-balance attribution without a source; no = uses a stabilising-balance calculation or a naive deficit/interest split."
+   },
+   {
+    "id": "c7",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Names the primary deficit as the largest of the named contributions in 2012 (+2.8 percentage points).",
+    "accept": "full = identifies it as the dominant named driver with the sign (adds to / reduces debt) stated correctly; partial = right driver without sign or magnitude; no = otherwise."
+   }
+  ],
+  "data": [
+   {
+    "id": "c9",
+    "kind": "data",
+    "importance": "vital",
+    "text": "Identifies the economy as Czech Republic (CZE) from the stated conditions.",
+    "accept": "full = names Czech Republic; no = any other economy."
+   },
+   {
+    "id": "c8",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government gross debt (% of GDP), primary balance, interest paid (primary balance minus overall balance), nominal and real GDP (WEO), i.e. IMF WEO GGXWDG_NGDP, GGXONLB_NGDP, GGXCNL_NGDP, NGDP, NGDP_R.",
+    "accept": "full = debt, primary balance, interest or overall balance, and nominal/real GDP or growth+deflator all used; partial = most of them; no = other."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Czech Republic: +2.8 percentage points of GDP in 2012 (primary deficit (positive = adds to debt)).",
+    "accept": "full = within 0.3 percentage points of +2.8; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 2.766,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Czech Republic: +1.2 percentage points of GDP in 2012 (nominal interest bill (interest paid divided by last year's GDP-adjusted debt)).",
+    "accept": "full = within 0.3 percentage points of +1.2; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 1.152,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c4",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Czech Republic: -0.5 percentage points of GDP in 2012 (GDP-deflator inflation effect).",
+    "accept": "full = within 0.3 percentage points of -0.5; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": -0.526,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c5",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Czech Republic: +0.3 percentage points of GDP in 2012 (real GDP growth effect).",
+    "accept": "full = within 0.3 percentage points of +0.3; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 0.306,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c6",
+    "kind": "computation",
+    "importance": "okay",
+    "text": "Czech Republic: +0.7 percentage points of GDP in 2012 (remainder (change not explained by those three; includes exchange-rate and other flows)).",
+    "accept": "full = within 0.3 percentage points of +0.7; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 0.735,
+    "tolerance_abs": 0.3
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 0.3,
+  "note": "Contributions are in percentage points of GDP in the target year; published tables round to 0.1 and use older WEO vintages, so 0.3 pp absolute. Gold from frozen WEO Oct 2025."
+ },
+ "provenance": {
+  "generator": "scripts/debt_path_build_items.py",
+  "frozen_data": "frozen_extra/weo_oct2025_*.csv (WEO Oct 2025 vintage)",
+  "method_text": "Escolano 2010 eqs 24-28 (decomposition of changes in the debt ratio); IMF 2013 Staff Guidance Note Fig. 1 footnotes 4-5 and Annex I",
+  "subject": {
+   "iso3": "CZE",
+   "country": "Czech Republic",
+   "year": 2012
+  }
+ },
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [
+  "e942754e-c67e-4c78-8fc1-a9096fe4a5a2"
+ ],
+ "published_value": [
+  {
+   "doc": "e942754e-c67e-4c78-8fc1-a9096fe4a5a2",
+   "title": "Czech Republic: Staff Report for the 2014 Article IV Consultation",
+   "table_block_sequence": 270,
+   "primary_deficit": 2.9,
+   "real_interest": 0.8,
+   "real_growth": 0.4,
+   "change_in_debt": 4.7
+  }
+ ],
+ "recomputed_value": {
+  "change": 4.433,
+  "primary_deficit": 2.766,
+  "real_interest_imf": 0.63,
+  "growth_imf": 0.302,
+  "interest_total": 1.152,
+  "inflation": -0.526,
+  "growth": 0.306,
+  "residual": 0.735,
+  "auto_imf": 0.932,
+  "eff_rate": 2.94,
+  "defl": 1.343,
+  "g": -0.771,
+  "d_prev": 39.402,
+  "d": 43.835
+ },
+ "inputs": [
+  "GGXWDG_NGDP",
+  "GGXONLB_NGDP",
+  "GGXCNL_NGDP",
+  "NGDP",
+  "NGDP_R"
+ ],
+ "distractors": [
+  "Debt-stabilising primary balance / required fiscal adjustment (answers a different question: what balance holds the ratio constant)",
+  "Fiscal-impulse or change in the cyclically adjusted primary balance (measures policy stance, not debt-ratio attribution)",
+  "Naive attribution that divides the change in debt by the deficit (ignores interest-growth interaction and the previous-year debt stock)",
+  "Gross financing needs projection (liquidity measure, includes amortisation)",
+  "Using the overall deficit as the 'fiscal' term and then also adding interest, which double counts the interest bill"
+ ],
+ "famous_method": false,
+ "gold_script": "scripts/debt_path_build_items.py",
+ "validation": {
+  "published_instances_matching": 1,
+  "tolerance_abs_pp": 0.3,
+  "note": "Every reported report table in gold_report_ids matches the recomputation on change in debt, primary deficit, real-interest and real-growth contributions within tolerance"
+ },
+ "hidden_condition": {
+  "text": "general government gross debt at the end of 2011, % of GDP between 35 and 43; GDP-deflator inflation in 2012, % between 1 and 1.6",
+  "intervals": {
+   "d1": [
+    35.0,
+    43.0
+   ],
+   "pi": [
+    1.0,
+    1.6
+   ]
+  },
+  "matches": [
+   "CZE"
+  ],
+  "set_size": 1
+ },
+ "decomposition_variant": "Escolano eq. 26 split",
+ "dominant_driver": "pd"
+}

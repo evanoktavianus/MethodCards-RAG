@@ -1,0 +1,148 @@
+{
+ "id": "DPATH-04",
+ "family": "methodology",
+ "method": "debt_path",
+ "style": "named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "For Slovakia: how much of the 2018 change in the general government gross debt ratio is attributable to each of the primary deficit, the real interest rate paid on last year's debt and real GDP growth? Give each contribution in percentage points of GDP and say which one mattered most.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the change in the public debt ratio is attributed to its components by applying the debt-accumulation identity to the previous-year debt stock: primary deficit, an interest-rate term, a growth term (and, in the other published variant, a separate inflation term), as set out in Escolano (2010) 'A Practical Guide to Public Debt Dynamics...' (equations 24-28) and in the IMF (2013) Staff Guidance Note / MAC SRDSF (2021) debt-dynamics annex ('contribution from real interest rate', 'contribution from real GDP growth').",
+    "accept": "full = names the debt-dynamics decomposition (any of Escolano 2010, IMF 2013 Staff Guidance Note Annex I, MAC SRDSF 2021, or the IMF Public Debt Dynamics Tool) and applies it with the previous-year debt ratio; partial = describes an interest-growth-primary-balance attribution without a source; no = uses a stabilising-balance calculation or a naive deficit/interest split."
+   },
+   {
+    "id": "c6",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Names the real GDP growth effect as the largest of the named contributions in 2018 (-2.0 percentage points).",
+    "accept": "full = identifies it as the dominant named driver with the sign (adds to / reduces debt) stated correctly; partial = right driver without sign or magnitude; no = otherwise."
+   }
+  ],
+  "data": [
+   {
+    "id": "c7",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government gross debt (% of GDP), primary balance, interest paid (primary balance minus overall balance), nominal and real GDP (WEO), i.e. IMF WEO GGXWDG_NGDP, GGXONLB_NGDP, GGXCNL_NGDP, NGDP, NGDP_R.",
+    "accept": "full = debt, primary balance, interest or overall balance, and nominal/real GDP or growth+deflator all used; partial = most of them; no = other."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Slovakia: -0.1 percentage points of GDP in 2018 (primary deficit (positive = adds to debt)).",
+    "accept": "full = within 0.3 percentage points of -0.1; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": -0.143,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Slovakia: +0.1 percentage points of GDP in 2018 (real-interest-rate effect on last year's debt stock).",
+    "accept": "full = within 0.3 percentage points of +0.1; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 0.087,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c4",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Slovakia: -2.0 percentage points of GDP in 2018 (real GDP growth effect).",
+    "accept": "full = within 0.3 percentage points of -2.0; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": -1.964,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c5",
+    "kind": "computation",
+    "importance": "okay",
+    "text": "Slovakia: -0.1 percentage points of GDP in 2018 (remainder (change not explained by those three; includes exchange-rate and other flows)).",
+    "accept": "full = within 0.3 percentage points of -0.1; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": -0.092,
+    "tolerance_abs": 0.3
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 0.3,
+  "note": "Contributions are in percentage points of GDP in the target year; published tables round to 0.1 and use older WEO vintages, so 0.3 pp absolute. Gold from frozen WEO Oct 2025."
+ },
+ "provenance": {
+  "generator": "scripts/debt_path_build_items.py",
+  "frozen_data": "frozen_extra/weo_oct2025_*.csv (WEO Oct 2025 vintage)",
+  "method_text": "Escolano 2010 eqs 24-28 (decomposition of changes in the debt ratio); IMF 2013 Staff Guidance Note Fig. 1 footnotes 4-5 and Annex I",
+  "subject": {
+   "iso3": "SVK",
+   "country": "Slovakia",
+   "year": 2018
+  }
+ },
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [
+  "b4a005a4-9cf2-4200-ae03-5d5294783f77"
+ ],
+ "published_value": [
+  {
+   "doc": "b4a005a4-9cf2-4200-ae03-5d5294783f77",
+   "title": "Slovak Republic: 2019 Article IV Consultation—Press Release; Staff Report",
+   "table_block_sequence": 343,
+   "primary_deficit": -0.4,
+   "real_interest": 0.3,
+   "real_growth": -2.0,
+   "change_in_debt": -2.1
+  }
+ ],
+ "recomputed_value": {
+  "change": -2.112,
+  "primary_deficit": -0.143,
+  "real_interest_imf": 0.087,
+  "growth_imf": -1.964,
+  "interest_total": 1.149,
+  "inflation": -1.02,
+  "growth": -2.005,
+  "residual": -0.092,
+  "auto_imf": -1.877,
+  "eff_rate": 2.376,
+  "defl": 2.11,
+  "g": 4.062,
+  "d_prev": 51.382,
+  "d": 49.27
+ },
+ "inputs": [
+  "GGXWDG_NGDP",
+  "GGXONLB_NGDP",
+  "GGXCNL_NGDP",
+  "NGDP",
+  "NGDP_R"
+ ],
+ "distractors": [
+  "Debt-stabilising primary balance / required fiscal adjustment (answers a different question: what balance holds the ratio constant)",
+  "Fiscal-impulse or change in the cyclically adjusted primary balance (measures policy stance, not debt-ratio attribution)",
+  "Naive attribution that divides the change in debt by the deficit (ignores interest-growth interaction and the previous-year debt stock)",
+  "Gross financing needs projection (liquidity measure, includes amortisation)",
+  "Using the overall deficit as the 'fiscal' term and then also adding interest, which double counts the interest bill"
+ ],
+ "famous_method": false,
+ "gold_script": "scripts/debt_path_build_items.py",
+ "validation": {
+  "published_instances_matching": 1,
+  "tolerance_abs_pp": 0.3,
+  "note": "Every reported report table in gold_report_ids matches the recomputation on change in debt, primary deficit, real-interest and real-growth contributions within tolerance"
+ },
+ "decomposition_variant": "IMF real-interest / real-growth contributions",
+ "dominant_driver": "gr"
+}

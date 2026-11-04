@@ -1,0 +1,117 @@
+{
+ "id": "CAID-05",
+ "family": "methodology",
+ "method": "caid",
+ "style": "named",
+ "tier": "multi_step",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "Between 2012 and 2017 the external position of Bosnia and Herzegovina changed by +3.9 percentage points of GDP. Which domestic macro aggregate was mainly responsible, and how large was each side's contribution?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the national-accounts identity that the current account balance equals national saving minus domestic investment (so the change in the balance equals the change in saving minus the change in investment) as the way to attribute the change.",
+    "accept": "full = decomposes the change in the balance into the change in gross national saving and the change in investment (% of GDP); partial = discusses saving and investment qualitatively without the numbers; no = decomposes by trade components (exports, imports, income, transfers), by sector (government vs private) only, or by real exchange rate.",
+    "supporting_passages": [
+     "8c217509-8bad-4e78-8ed3-6445dbd63e6a#romania2019_box1_dCA_eq_dS_minus_dI",
+     "e5c757ab-1961-49e4-a76b-162d757fc70b#weo2005_ch2_saving_investment"
+    ]
+   },
+   {
+    "id": "c4",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Most of the change came from saving.",
+    "accept": "verdict (which side dominated, or correct/incorrect for the statement) must match the recomputed decomposition."
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses gross national saving and total investment (% of GDP) and the current account balance (WEO Oct 2025: NGSD_NGDP, NID_NGDP, BCA_NGDPD).",
+    "accept": "full = both saving and investment sourced; partial = one of them or a proxy; no = unrelated series."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Change in gross national saving 2012 to 2017: +6.5 pp of GDP.",
+    "accept": "full = within +-0.3 pp; no otherwise.",
+    "target": 6.53,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Change in investment 2012 to 2017: +2.7 pp of GDP.",
+    "accept": "full = within +-0.3 pp; no otherwise.",
+    "target": 2.68,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c6",
+    "kind": "computation",
+    "importance": "okay",
+    "text": "Change in the current account balance: +3.9 pp of GDP (from -8.6% to -4.8%), equal to the change in saving minus the change in investment.",
+    "accept": "full = within +-0.3 pp.",
+    "target": 3.85,
+    "tolerance_abs": 0.3
+   }
+  ]
+ },
+ "grading": {
+  "tolerance_abs_pp": 0.3,
+  "tolerance_basis": 0.2,
+  "note": "Vital computation tolerance +-0.3 pp of GDP. Gold: change in the current account balance = (S_y2 - I_y2) - (S_y1 - I_y1), S = WEO NGSD_NGDP, I = WEO NID_NGDP; driver = the side with the larger absolute contribution (saving contributes +dS, investment contributes -dI); the gap between the two contributions is at least 1.5 pp for every item. Only country-years where S - I equals the WEO current account balance (BCA_NGDPD) within 0.05 pp in both years are used.",
+  "definitions": "Saving and investment are gross national saving and total investment as % of GDP (WEO definitions). Current account in % of GDP is S - I by the national-accounts identity. A rising balance counts as an improvement."
+ },
+ "provenance": {
+  "source": "frozen WEO Oct 2025 (frozen_extra/)",
+  "generator": "scripts/ex_caid_gold.py",
+  "method_text": "Romania 2019 Article IV, Box 1 (p14): 'DeltaCA = DeltaS - DeltaI' decomposition table; WEO Sept 2005 ch.2 (p112 ff.) saving-investment perspective",
+  "validation": "scripts/ex_caid_validation.json"
+ },
+ "method_doc_ids": [
+  "8c217509-8bad-4e78-8ed3-6445dbd63e6a",
+  "e5c757ab-1961-49e4-a76b-162d757fc70b"
+ ],
+ "gold_report_ids": [],
+ "published_value": null,
+ "recomputed_value": {
+  "dS": 6.53,
+  "dI": 2.68,
+  "dCA": 3.85,
+  "driver": "saving"
+ },
+ "inputs": [
+  "NGSD_NGDP",
+  "NID_NGDP",
+  "BCA_NGDPD"
+ ],
+ "validation_label": "formula-validated",
+ "method_kind": "textbook identity",
+ "famous_method": true,
+ "distractors": [
+  "decomposing the change by trade components (exports, imports, net income, transfers)",
+  "public versus private sector balances only",
+  "real exchange rate or terms-of-trade explanation",
+  "external debt dynamics"
+ ],
+ "answer_summary": "Most of the change came from saving. (country Bosnia and Herzegovina, 2012 to 2017; driver is saving: saving moved +6.5 pp and investment +2.7 pp of GDP, so the balance changed +3.9 pp)",
+ "gold_script": "scripts/ex_caid_gold.py",
+ "validation": "Identity check against WEO BCA_NGDPD within 0.05 pp in both years; Romania published decomposition reproduced for 2004-07 (see scripts/ex_caid_validation.json).",
+ "answer_country": "BIH",
+ "years": [
+  2012,
+  2017
+ ]
+}

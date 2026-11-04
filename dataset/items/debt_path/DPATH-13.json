@@ -1,0 +1,185 @@
+{
+ "id": "DPATH-13",
+ "family": "methodology",
+ "method": "debt_path",
+ "style": "hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "Using the IMF World Economic Outlook (October 2025 vintage), take the one economy with general government gross debt at the end of 2017, % of GDP between 24 and 54; real GDP growth in 2018, % between 1.9 and 3.9; GDP-deflator inflation in 2018, % between 3.3 and 4.5. For that economy: split the 2018 change in the general government gross debt ratio into the primary deficit, the nominal interest bill, the effect of GDP-deflator inflation and the effect of real GDP growth, each in percentage points of GDP, and say which of these four moved the ratio most.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the change in the public debt ratio is attributed to its components by applying the debt-accumulation identity to the previous-year debt stock: primary deficit, an interest-rate term, a growth term (and, in the other published variant, a separate inflation term), as set out in Escolano (2010) 'A Practical Guide to Public Debt Dynamics...' (equations 24-28) and in the IMF (2013) Staff Guidance Note / MAC SRDSF (2021) debt-dynamics annex ('contribution from real interest rate', 'contribution from real GDP growth').",
+    "accept": "full = names the debt-dynamics decomposition (any of Escolano 2010, IMF 2013 Staff Guidance Note Annex I, MAC SRDSF 2021, or the IMF Public Debt Dynamics Tool) and applies it with the previous-year debt ratio; partial = describes an interest-growth-primary-balance attribution without a source; no = uses a stabilising-balance calculation or a naive deficit/interest split."
+   },
+   {
+    "id": "c7",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Names the GDP-deflator inflation effect as the largest of the named contributions in 2018 (-1.4 percentage points).",
+    "accept": "full = identifies it as the dominant named driver with the sign (adds to / reduces debt) stated correctly; partial = right driver without sign or magnitude; no = otherwise."
+   }
+  ],
+  "data": [
+   {
+    "id": "c9",
+    "kind": "data",
+    "importance": "vital",
+    "text": "Identifies the economy as North Macedonia (MKD) from the stated conditions.",
+    "accept": "full = names North Macedonia; no = any other economy."
+   },
+   {
+    "id": "c8",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government gross debt (% of GDP), primary balance, interest paid (primary balance minus overall balance), nominal and real GDP (WEO), i.e. IMF WEO GGXWDG_NGDP, GGXONLB_NGDP, GGXCNL_NGDP, NGDP, NGDP_R.",
+    "accept": "full = debt, primary balance, interest or overall balance, and nominal/real GDP or growth+deflator all used; partial = most of them; no = other."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "North Macedonia: +0.6 percentage points of GDP in 2018 (primary deficit (positive = adds to debt)).",
+    "accept": "full = within 0.3 percentage points of +0.6; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 0.59,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "North Macedonia: +1.2 percentage points of GDP in 2018 (nominal interest bill (interest paid divided by last year's GDP-adjusted debt)).",
+    "accept": "full = within 0.3 percentage points of +1.2; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 1.165,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c4",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "North Macedonia: -1.4 percentage points of GDP in 2018 (GDP-deflator inflation effect).",
+    "accept": "full = within 0.3 percentage points of -1.4; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": -1.446,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c5",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "North Macedonia: -1.1 percentage points of GDP in 2018 (real GDP growth effect).",
+    "accept": "full = within 0.3 percentage points of -1.1; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": -1.103,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c6",
+    "kind": "computation",
+    "importance": "okay",
+    "text": "North Macedonia: +1.8 percentage points of GDP in 2018 (remainder (change not explained by those three; includes exchange-rate and other flows)).",
+    "accept": "full = within 0.3 percentage points of +1.8; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 1.836,
+    "tolerance_abs": 0.3
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 0.3,
+  "note": "Contributions are in percentage points of GDP in the target year; published tables round to 0.1 and use older WEO vintages, so 0.3 pp absolute. Gold from frozen WEO Oct 2025."
+ },
+ "provenance": {
+  "generator": "scripts/debt_path_build_items.py",
+  "frozen_data": "frozen_extra/weo_oct2025_*.csv (WEO Oct 2025 vintage)",
+  "method_text": "Escolano 2010 eqs 24-28 (decomposition of changes in the debt ratio); IMF 2013 Staff Guidance Note Fig. 1 footnotes 4-5 and Annex I",
+  "subject": {
+   "iso3": "MKD",
+   "country": "North Macedonia",
+   "year": 2018
+  }
+ },
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [
+  "a7e0ff96-ed2d-4005-8ed3-ce76a70832dc"
+ ],
+ "published_value": [
+  {
+   "doc": "a7e0ff96-ed2d-4005-8ed3-ce76a70832dc",
+   "title": "Republic of North Macedonia: 2019 Article IV Consultation—Press Release; Staff Report; and Statement by the Executive Director for North Macedonia",
+   "table_block_sequence": 238,
+   "primary_deficit": 0.6,
+   "real_interest": -0.2,
+   "real_growth": -1.0,
+   "change_in_debt": 1.2
+  }
+ ],
+ "recomputed_value": {
+  "change": 1.042,
+  "primary_deficit": 0.59,
+  "real_interest_imf": -0.323,
+  "growth_imf": -1.061,
+  "interest_total": 1.165,
+  "inflation": -1.446,
+  "growth": -1.103,
+  "residual": 1.836,
+  "auto_imf": -1.384,
+  "eff_rate": 3.163,
+  "defl": 3.926,
+  "g": 2.881,
+  "d_prev": 39.383,
+  "d": 40.425
+ },
+ "inputs": [
+  "GGXWDG_NGDP",
+  "GGXONLB_NGDP",
+  "GGXCNL_NGDP",
+  "NGDP",
+  "NGDP_R"
+ ],
+ "distractors": [
+  "Debt-stabilising primary balance / required fiscal adjustment (answers a different question: what balance holds the ratio constant)",
+  "Fiscal-impulse or change in the cyclically adjusted primary balance (measures policy stance, not debt-ratio attribution)",
+  "Naive attribution that divides the change in debt by the deficit (ignores interest-growth interaction and the previous-year debt stock)",
+  "Gross financing needs projection (liquidity measure, includes amortisation)",
+  "Using the overall deficit as the 'fiscal' term and then also adding interest, which double counts the interest bill"
+ ],
+ "famous_method": false,
+ "gold_script": "scripts/debt_path_build_items.py",
+ "validation": {
+  "published_instances_matching": 1,
+  "tolerance_abs_pp": 0.3,
+  "note": "Every reported report table in gold_report_ids matches the recomputation on change in debt, primary deficit, real-interest and real-growth contributions within tolerance"
+ },
+ "hidden_condition": {
+  "text": "general government gross debt at the end of 2017, % of GDP between 24 and 54; real GDP growth in 2018, % between 1.9 and 3.9; GDP-deflator inflation in 2018, % between 3.3 and 4.5",
+  "intervals": {
+   "d1": [
+    24.0,
+    54.0
+   ],
+   "g": [
+    1.9,
+    3.9
+   ],
+   "pi": [
+    3.3,
+    4.5
+   ]
+  },
+  "matches": [
+   "MKD"
+  ],
+  "set_size": 1
+ },
+ "decomposition_variant": "Escolano eq. 26 split",
+ "dominant_driver": "inf"
+}

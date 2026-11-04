@@ -1,0 +1,175 @@
+{
+ "id": "GFN-10",
+ "family": "methodology",
+ "method": "gfn",
+ "style": "hidden",
+ "tier": "analytical",
+ "validation_label": "published-validated",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "Among the economies in the IMF World Economic Outlook database (October 2025 vintage), take the one whose general government gross debt at the end of 2012 was between 65.5 and 68 percent of GDP, and whose real GDP growth in 2013 was between 3.5 and 5 percent, and whose overall fiscal balance in 2013 was between -5 and -3.5 percent of GDP, and whose primary balance in 2013 was between -2 and -0.5 percent of GDP. How large were that economy's gross financing needs in 2013 as a share of GDP? Use IMF World Economic Outlook (October 2025) general government balances and World Bank Public Sector Debt maturity data for central government debt.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that gross financing needs are the debt falling due in the year (amortization) plus the overall deficit (interest plus the primary deficit), i.e. amortization + interest - primary balance, as a share of GDP, as set out in the IMF (2025) 'A Guide and Tool for Projecting Public Gross Financing Needs' (the same definition appears in the IMF 2013 Staff Guidance Note for public DSA and the 2021 MAC SRDSF).",
+    "accept": "full = states the definition (amortization of debt falling due plus overall deficit) and applies it; partial = adds only the interest bill or only the deficit, or uses a debt-stock proxy for amortization; no = reports the deficit alone, a debt-stabilising balance or an external financing need."
+   },
+   {
+    "id": "c5",
+    "kind": "text",
+    "importance": "okay",
+    "text": "Identifies the economy as Israel.",
+    "accept": "full = names Israel; no = another economy (then the numeric claims are not creditable)."
+   }
+  ],
+  "data": [
+   {
+    "id": "c9",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government overall balance (% of GDP) and nominal GDP from the WEO October 2025 vintage, and short-term debt plus long-term debt due within one year (central government, end of the previous year) from World Bank Public Sector Debt, or an equivalent maturity table.",
+    "accept": "full = overall balance, nominal GDP and a maturity-based amortization measure all used; partial = amortization approximated; no = other series."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Israel 2013: gross financing needs of about 13.4% of GDP.",
+    "accept": "full = within 1 of 13.4; partial = correct sign and within 2; no = otherwise. Tolerance reflects the loose amortization source.",
+    "target": 13.392,
+    "tolerance_abs": 1.0
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "okay",
+    "text": "Israel 2013: debt falling due of about 9.3% of GDP.",
+    "accept": "full = within 1 of 9.3; partial = correct sign and within 2; no = otherwise.",
+    "target": 9.33,
+    "tolerance_abs": 1.0
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 1.0,
+  "note": "GFN in percent of GDP; the frozen gold matches the published public-sector value within 1 pp for this country-year (published 12.5, recomputed 13.39). Tolerance 1.0 pp because the amortization source and perimeter are loose."
+ },
+ "provenance": {
+  "generator": "gold from gold_scripts/gfn/gold_gfn.py via item_gold.py",
+  "frozen_data": "WEO_2025_OCT_VINTAGE csvs and psd_20261014_maturity_extract.psv in frozen_extra/",
+  "method_text": "IMF (2025) Guide and Tool for Projecting Public Gross Financing Needs, section III eq. 1-2",
+  "subject": {
+   "iso3": "ISR",
+   "country": "Israel",
+   "year": 2013
+  }
+ },
+ "method_doc_ids": [
+  "4315e3d9-f42f-4814-be24-d9b0218011ab",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [
+  "621217ae-7841-4f07-8e83-55e1410ab740"
+ ],
+ "published_value": [
+  {
+   "doc": "621217ae-7841-4f07-8e83-55e1410ab740",
+   "title": "Israel: Staff Report for the 2015 Article IV Consultation",
+   "report_year": 2015,
+   "published_gfn": 12.5,
+   "recomputed_minus_published": 0.89
+  }
+ ],
+ "recomputed_value": {
+  "iso3": "ISR",
+  "year": 2013,
+  "gfn": 13.392,
+  "amortization": 9.33,
+  "overall_deficit": 4.062
+ },
+ "inputs": [
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "GGXCNL_NGDP"
+  },
+  {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "code": "NGDP"
+  },
+  {
+   "release": "PSD_2026-10-14",
+   "code": "DP.DOD.DSTC.CR.CG"
+  },
+  {
+   "release": "PSD_2026-10-14",
+   "code": "DP.DOD.DLTC.CR.L1.CG"
+  }
+ ],
+ "distractors": [
+  "Overall deficit or primary deficit alone (leaves out amortization of debt falling due)",
+  "Debt-stabilising primary balance (the balance that holds the debt ratio constant, a different question)",
+  "Debt-dynamics decomposition of the change in the debt ratio (a stock accounting, not a financing flow)",
+  "Gross external financing need of the balance of payments (current account deficit plus external amortization)",
+  "Debt maturity profile or average maturity of debt (stock structure without the deficit)",
+  "Interest bill as a share of GDP (only one component)"
+ ],
+ "famous_method": false,
+ "strictness": {
+  "overall": "strict definition, loose amortization source and perimeter",
+  "parameters": {
+   "definition": "strict: gross financing need = amortization falling due + interest - primary balance = amortization - overall balance, as a share of the same year's nominal GDP (guide eq. 1-2)",
+   "amortization_source": "loose: analyst may use a redemption schedule, a maturity table or amortization rate x debt stock; the frozen gold uses World Bank Public Sector Debt short-term debt plus long-term debt due within one year, central government, end of the previous year, divided by the year's nominal GDP",
+   "perimeter": "loose: the gold combines the WEO general government overall balance with central government maturity data; it matched published public-sector GFN only for the validated countries",
+   "vintage": "WEO October 2025 and PSD 2026-10-14 (frozen)"
+  }
+ },
+ "parameter_notes": {
+  "definition": "strict: gross financing need = amortization falling due + interest - primary balance = amortization - overall balance, as a share of the same year's nominal GDP (guide eq. 1-2)",
+  "amortization_source": "loose: analyst may use a redemption schedule, a maturity table or amortization rate x debt stock; the frozen gold uses World Bank Public Sector Debt short-term debt plus long-term debt due within one year, central government, end of the previous year, divided by the year's nominal GDP",
+  "perimeter": "loose: the gold combines the WEO general government overall balance with central government maturity data; it matched published public-sector GFN only for the validated countries",
+  "vintage": "WEO October 2025 and PSD 2026-10-14 (frozen)"
+ },
+ "gold_script": "gold_scripts/gfn/gold_gfn.py",
+ "gold_command": "python3 -I gold_scripts/gfn/item_gold.py ISR 2013   (run from the gold/ directory; full validation table: python3 -I gold_scripts/gfn/gold_gfn.py)",
+ "validation_note": "Validated country: recomputed GFN matches published public gross financing needs within 1 pp for this country-year; countries ITA, JPN, BRA, CHN, CYP, NZL, MLT excluded as unmatched.",
+ "hidden_set_size": 1,
+ "conditions": [
+  {
+   "kind": "debt",
+   "year": 2012,
+   "low": 65.5,
+   "high": 68.0
+  },
+  {
+   "kind": "rg",
+   "year": 2013,
+   "low": 3.5,
+   "high": 5.0
+  },
+  {
+   "kind": "bal",
+   "year": 2013,
+   "low": -5.0,
+   "high": -3.5
+  },
+  {
+   "kind": "pb",
+   "year": 2013,
+   "low": -2.0,
+   "high": -0.5
+  }
+ ],
+ "hidden_subject": "ISR",
+ "withhold_also_candidates": [
+  "66f953a8-6bd8-4842-a1ad-a835e22b7d65",
+  "c04658e9-c2aa-42ad-a39c-4217178d98ee",
+  "e3336dcd-d2d7-4eb4-ac36-a9c1e5de6e4a"
+ ]
+}

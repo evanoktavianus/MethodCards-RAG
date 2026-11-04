@@ -1,0 +1,22 @@
+MethodCards-RAG
+Copyright 2026 Evan Oktavianus
+
+Software (scripts/, tools/ code, experiments/ code, gold/, tests/) is licensed under the Apache License 2.0 (LICENSE).
+Questions, answer keys, method cards, stored results and the human check (dataset/, eval/, tools/bank/cards_final.jsonl,
+experiments/main_run/results_*, experiments/main_run/metrics/) are licensed under Creative Commons Attribution 4.0 International (LICENSE-DATA.txt).
+If you use them, credit the author(s) of the article that accompanies this repository.
+
+Third-party material. The grants above cover our own work only. The following remain under the terms of their owners:
+
+- Statistical series in tools/data/store/ and data/frozen_extra/: IMF World Economic Outlook (October 2025 vintage),
+  World Bank World Development Indicators and Public Sector Debt statistics (extracted 2026-10-08 and 2026-10-14),
+  IMF International Investment Position (extracted 2026-10-29), World Bank country income classification (data/wb_classifications.csv).
+  Use them under the terms of the IMF and the World Bank. They are included as frozen snapshots so that results can be reproduced.
+- Method cards. The cards (tools/bank/cards_final.jsonl, with quotations) and the passages and tables copied from documents are not
+  part of this repository; tools/bank/card_index.jsonl lists the cards by identifier, document and page only. The documents they come from
+  (410 documents, titles in data/corpus_index.json) remain the property of their publishers.
+- Documents. The documents behind the method cards are not redistributed here. This repository is a derivative work: it holds
+  the method cards, the questions and the results built from them, and the code. Obtain the documents from their publishers
+  under their terms.
+- Everything else produced by language models in this repository (answers and traces in the stored results) is data collected from the models
+  named in the README, under the terms of their providers.

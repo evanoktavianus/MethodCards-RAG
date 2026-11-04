@@ -1,0 +1,173 @@
+{
+ "id": "CI-25",
+ "family": "methodology",
+ "pattern": "M-named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "How would an analyst classify Vanuatu's capacity to take on debt in the 2023 round (weak, medium or strong), and with what score?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the applicable methodology: the IMF-World Bank debt-sustainability framework for low-income countries, in which a composite indicator (CPIA, real growth, reserve import cover, remittances, world growth) classifies debt-carrying capacity as weak, medium or strong.",
+    "accept": "full = names the low-income-country debt sustainability framework / composite indicator and its components; partial = says only 'debt capacity classification' with CPIA but no composite; no = uses a market-access DSA, reserve adequacy or other method."
+   }
+  ],
+  "data": [
+   {
+    "id": "c2",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses the composite-indicator inputs for VUT: CPIA (10-yr avg to 2022), real GDP growth (2018-2027), reserves-to-imports, remittances, world growth.",
+    "accept": "full = cites at least three of the five inputs with values near gold; partial = fewer; no = none.",
+    "requires": [
+     {
+      "indicator": "IQ.CPA.IRAI.XQ",
+      "source": "WDI",
+      "iso3": "VUT",
+      "years": [
+       2013,
+       2027
+      ]
+     },
+     {
+      "indicator": "NGDP_RPCH",
+      "source": "WEO",
+      "iso3": "VUT",
+      "years": [
+       2013,
+       2027
+      ]
+     },
+     {
+      "indicator": "FI.RES.TOTL.CD",
+      "source": "WDI",
+      "iso3": "VUT",
+      "years": [
+       2013,
+       2027
+      ]
+     },
+     {
+      "indicator": "NE.IMP.GNFS.CD",
+      "source": "WDI",
+      "iso3": "VUT",
+      "years": [
+       2013,
+       2027
+      ]
+     },
+     {
+      "indicator": "BX.TRF.PWKR.DT.GD.ZS",
+      "source": "WDI",
+      "iso3": "VUT",
+      "years": [
+       2013,
+       2027
+      ]
+     }
+    ]
+   }
+  ],
+  "computation": [
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "The composite indicator score is about 2.95.",
+    "accept": "full = within +/-0.10 of 2.951; partial = within +/-0.25; no = otherwise.",
+    "statistic": "CI = 0.385*CPIA + 2.719*g + 4.052*IC - 3.990*IC^2 + 2.022*REM + 13.520*WG",
+    "resolves": {
+     "value": 2.951,
+     "targets": [
+      {
+       "name": "value",
+       "kind": "number",
+       "value": 2.951,
+       "unit": "index",
+       "tolerance": 0.1,
+       "tolerance_source": "validation vs published"
+      }
+     ]
+    },
+    "components": {
+     "cpia": 1.3032,
+     "g": 0.0409,
+     "ic": 2.3487,
+     "ic2": -1.3405,
+     "rem": 0.2012,
+     "wg": 0.3972
+    }
+   }
+  ],
+  "answer": [
+   {
+    "id": "c4",
+    "kind": "answer",
+    "importance": "vital",
+    "text": "Debt-carrying capacity is medium (cutoffs: weak below 2.69, strong above 3.05).",
+    "accept": "full = medium; no = any other class.",
+    "value": "medium"
+   }
+  ]
+ },
+ "grading": {
+  "method": "claim_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "WEO Oct 2025 (frozen_extra), WDI 2026-10-08 (frozen_extra/wdi_20261008_*)"
+  ],
+  "gold_script": "gold_scripts/lic_dsf_ci/make_items_ext.py",
+  "validation": "gold_scripts/lic_dsf_ci/validate.py; gold_scripts/lic_dsf_ci/select_extension.py",
+  "published_value_source": "gold_scripts/lic_dsf_ci/published_ci_extension.json"
+ },
+ "method": "lic_dsf_composite_indicator",
+ "method_doc_ids": [
+  "d7658e96-9694-4cd0-8f26-465f0f9ab0aa",
+  "968df4c6-cc90-48f9-95c5-af0a8eb49597"
+ ],
+ "gold_report_ids": [
+  "07a8f5ac-3ba0-4858-a885-21e7fb40f2df",
+  "bed4b9d0-d9bf-4a03-af9b-f25348e39034"
+ ],
+ "published_value": 2.99,
+ "recomputed_value": 2.951,
+ "tolerance": 0.1,
+ "inputs": [
+  "NGDP_RPCH",
+  "IQ.CPA.IRAI.XQ",
+  "FI.RES.TOTL.CD",
+  "NE.IMP.GNFS.CD",
+  "BX.TRF.PWKR.DT.GD.ZS",
+  "NGDPRPPPPC",
+  "LP"
+ ],
+ "style": "named",
+ "subject": {
+  "iso3": "VUT",
+  "year": 2023,
+  "components": {
+   "cpia": 3.385,
+   "g": 1.5025,
+   "ic": 57.963,
+   "rem": 9.9492,
+   "wg": 2.9376
+  }
+ },
+ "distractors": [
+  "Public DSA for market-access countries (debt-stabilising primary balance, stress tests)",
+  "IMF reserve adequacy (ARA) metric",
+  "World Bank CPIA score read on its own",
+  "External Balance Assessment",
+  "Debt-to-GDP threshold from memory (e.g. 60 percent)"
+ ],
+ "famous_method": false,
+ "instance_extension": true,
+ "extension_of": "CI-04",
+ "grading_note": "Score the class (weak<2.69<=medium<3.05<=strong) on the recomputed value, not the published one; recomputed values within 0.10 of a cutoff straddle it."
+}

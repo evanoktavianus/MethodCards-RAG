@@ -1,0 +1,92 @@
+{
+ "id": "EXS-05",
+ "family": "methodology",
+ "pattern": "M-named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "In 2022, Croatia's gross national saving came to 22.6% of GDP while gross investment reached 26.1% of GDP. What does that imply for the economy's balance with the rest of the world, as a share of GDP, and was it a net lender or a net borrower?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the external balance follows from the national accounts identity: current account balance = gross national saving minus gross investment (the saving-investment gap).",
+    "accept": "full = saving-investment gap / current account identity (CAB = S - I); acceptable alternative: expenditure identity CAB = GNDY - C - G - I; no = trade balance only or regression-based norm"
+   },
+   {
+    "id": "c2",
+    "kind": "text",
+    "importance": "vital",
+    "text": "States the economy is a net borrower to the rest of the world.",
+    "accept": "full = correct sign/direction"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses national saving, gross investment and current account balance series from the WEO (NGSD_NGDP, NID_NGDP, BCA_NGDPD)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "External balance Croatia 2022 = -3.47 % of GDP (deficit)",
+    "reference_value": -3.468,
+    "tolerance": 0.15,
+    "unit": "pp",
+    "accept": "full = within tolerance of saving minus investment"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "BPM6 ch.14 (doc 712b0ad9, block 3187): \"S - I = CAB. That is, the current account balance is the gap between saving and investment.\" EBA note (doc 5319b022, block 30): \"the current account as the gap between aggregate saving and investment (the so-called 'IS' relation)\".",
+   "frozen WEO Oct 2025 (release/official_benchmark/reference_data)"
+  ],
+  "gold_script": "gold_scripts/external_sector/gold_external.py",
+  "selection": "seeded draw (seed 1101); WEO identity S-I equals published BCA within 0.01pp; |CA|>=2pp; one per country"
+ },
+ "method": "saving_investment_gap_current_account",
+ "method_doc_ids": [
+  "712b0ad9-7e38-4e33-afc8-de1de9422d0d",
+  "5319b022-7886-44bd-ab1f-b230330aa9df"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "Gold is a printed identity applied to frozen WEO series; no corpus report states these values, nothing to withhold.",
+ "published_value": -3.468,
+ "published_value_note": "IMF WEO Oct 2025 BCA_NGDPD (published current account, % GDP); matches S-I within 0.01pp",
+ "recomputed_value": -3.468,
+ "tolerance": 0.15,
+ "inputs": [
+  "NGSD_NGDP",
+  "NID_NGDP",
+  "BCA_NGDPD"
+ ],
+ "style": "named",
+ "distractors": [
+  "trade-balance (net exports) calculation",
+  "external-debt stabilising current account",
+  "EBA regression norm / current account gap",
+  "reserve adequacy metrics",
+  "terms-of-trade effect"
+ ],
+ "famous_method": true,
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity",
+ "formula_quote": "BPM6 ch.14 (doc 712b0ad9, block 3187): \"S - I = CAB. That is, the current account balance is the gap between saving and investment.\" EBA note (doc 5319b022, block 30): \"the current account as the gap between aggregate saving and investment (the so-called 'IS' relation)\".",
+ "instance": {
+  "iso3": "HRV",
+  "year": 2022
+ },
+ "claim_truth": null
+}

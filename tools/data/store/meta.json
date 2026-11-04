@@ -1,0 +1,101 @@
+{
+ "created": "2026-10-31T05:28:36+00:00",
+ "embedding_model": "openai/text-embedding-3-small",
+ "embedding_dim": 1536,
+ "releases": {
+  "imf_weo": {
+   "release": "WEO_2025_OCT_VINTAGE",
+   "release_id": 24
+  },
+  "wdi": {
+   "release": "WDI_2026-10-08",
+   "release_id": 62
+  },
+  "psd": {
+   "release": "PSD_2026-10-08",
+   "release_id": 63
+  },
+  "imf_iip": {
+   "release": "IMF_IIP_API_2026-10-29",
+   "release_id": null,
+   "file": "imf_iip_20261029_portfolio_other_liab.psv"
+  }
+ },
+ "sources": {
+  "imf_weo": {
+   "codes": 45,
+   "rows": 326569,
+   "countries": 194,
+   "file": "data_imf_weo.csv.gz"
+  },
+  "wdi": {
+   "codes": 1497,
+   "rows": 7505749,
+   "countries": 217,
+   "file": "data_wdi.csv.gz"
+  },
+  "psd": {
+   "codes": 564,
+   "rows": 1264822,
+   "countries": 107,
+   "file": "data_psd.csv.gz"
+  },
+  "imf_iip": {
+   "codes": 1,
+   "rows": 3011,
+   "countries": 173,
+   "file": "data_imf_iip.csv.gz"
+  }
+ },
+ "dropped_catalog": {
+  "imf_gfs_soo": 232,
+  "imf_weo(code not stored)": 101,
+  "oecd_rsglobal": 111,
+  "oecd_sngf_munifi": 29,
+  "wdi(code not stored)": 1
+ },
+ "weo_projection_from": 2026,
+ "note": "imf_iip is a frozen file extract, not from the main store; its catalog vector is all zeros (no embedding call made). imf_weo:WORLD_NGDP_RPCH (country WLD) is computed with data_blocks.world_growth; its catalog vector is all zeros, so dense search never returns it (BM25 does). Later: the vectors of imf_iip:P_MV and imf_weo:WORLD_NGDP_RPCH were filled by embedding name + \". \" + description with openai/text-embedding-3-small (2 calls), so dense search now returns them.",
+ "catalog": {
+  "rows": 2107,
+  "by_source": {
+   "imf_weo": 45,
+   "wdi": 1497,
+   "psd": 564,
+   "imf_iip": 1
+  },
+  "store_catalog_before_drop": {
+   "imf_gfs_soo": 232,
+   "imf_weo": 145,
+   "oecd_rsglobal": 111,
+   "oecd_sngf_munifi": 29,
+   "psd": 564,
+   "wdi": 1498
+  },
+  "rows_without_embedding": 0
+ },
+ "sha256": {
+  "catalog.jsonl": "81b77050cf05c4865be5729ae6e17999ec1674413cc5661fd28de20622703bee",
+  "catalog_vectors.f32": "e1d7e9b52f0b18a19a2fea9d293b87a7aab1661d99da99a2c1544359950f6b09",
+  "data_imf_iip.csv.gz": "23256645c28341274df9450c13a4c3a825cf322b78a9cd12c25e62eb18308b91",
+  "data_imf_iip.idx.json": "497e9b576d06a17d352468afc93cd9f06df0487f2ef0c851046ca40a56e70490",
+  "data_imf_weo.csv.gz": "cecd80b479de6482af39ea84daada4ea72da9a8ea8c9db19986da63b33754fdb",
+  "data_imf_weo.idx.json": "b7d6edb681e554f7b94f0fa719770cb67cf4d94a04954b8bbabc1b5d4cef3bd3",
+  "data_psd.csv.gz": "856038da4b0ff1233c857f25740387126105ee4d0aca70f5f383f3ad9eb9622b",
+  "data_psd.idx.json": "a627a9ed87a951aa5cadcde660ffaa73b759a3e0708e7c59eea44fab67bc7156",
+  "data_wdi.csv.gz": "9ad1ef0caa9bb9e482e404263fa0fedaaccf9bf7d1321712589e1ad4135db2aa",
+  "data_wdi.idx.json": "13d405868a03627251ae91d86ec5034e07f91615a618324e7e6aa87ccde605b3"
+ },
+ "bytes": {
+  "catalog.jsonl": 1176180,
+  "catalog_vectors.f32": 12945408,
+  "data_imf_iip.csv.gz": 32372,
+  "data_imf_iip.idx.json": 27,
+  "data_imf_weo.csv.gz": 2027673,
+  "data_imf_weo.idx.json": 1531,
+  "data_psd.csv.gz": 11834075,
+  "data_psd.idx.json": 26917,
+  "data_wdi.csv.gz": 67573022,
+  "data_wdi.idx.json": 65961
+ }
+}

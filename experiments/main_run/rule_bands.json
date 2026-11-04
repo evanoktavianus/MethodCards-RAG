@@ -1,0 +1,158 @@
+{
+ "debt_stab": {
+  "points": 1,
+  "rule_band": "easy",
+  "methods_md_band": "medium",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "debt_path": {
+  "points": 3,
+  "rule_band": "hard",
+  "methods_md_band": "medium",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "gfn": {
+  "points": 4,
+  "rule_band": "hard",
+  "methods_md_band": "medium",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "lic_dsf_ci": {
+  "points": 3,
+  "rule_band": "hard",
+  "methods_md_band": "hard",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "structural_balance": {
+  "points": 3,
+  "rule_band": "hard",
+  "methods_md_band": "hard",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "debt_target_adjustment": {
+  "points": 3,
+  "rule_band": "hard",
+  "methods_md_band": "hard",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "convergence_criteria": {
+  "points": 3,
+  "rule_band": "hard",
+  "methods_md_band": "medium",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "income_group_atlas": {
+  "points": 2,
+  "rule_band": "medium",
+  "methods_md_band": "easy",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "growth_accounting": {
+  "points": 4,
+  "rule_band": "hard",
+  "methods_md_band": "hard",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "okun": {
+  "points": 3,
+  "rule_band": "hard",
+  "methods_md_band": "easy",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "okun_difference": {
+  "points": 1,
+  "rule_band": "easy",
+  "methods_md_band": "medium",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "reserve_adequacy_traditional": {
+  "points": 3,
+  "rule_band": "hard",
+  "methods_md_band": "medium",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "mac_dsa_stress": {
+  "points": 4,
+  "rule_band": "hard",
+  "methods_md_band": "hard",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "fsi": {
+  "points": 4,
+  "rule_band": "hard",
+  "methods_md_band": "hard",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "ara_em": {
+  "points": 4,
+  "rule_band": "hard",
+  "methods_md_band": "hard",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "eir": {
+  "points": 0,
+  "rule_band": "easy",
+  "methods_md_band": "easy",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "irev": {
+  "points": 1,
+  "rule_band": "easy",
+  "methods_md_band": "easy",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "prices_real_growth": {
+  "points": 1,
+  "rule_band": "easy",
+  "methods_md_band": "easy",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "prices_real_rate": {
+  "points": 1,
+  "rule_band": "easy",
+  "methods_md_band": "easy",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "prices_inflation_erosion": {
+  "points": 1,
+  "rule_band": "easy",
+  "methods_md_band": "easy",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "real_interest_rate": {
+  "points": 2,
+  "rule_band": "medium",
+  "methods_md_band": "easy",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "income_velocity": {
+  "points": 1,
+  "rule_band": "easy",
+  "methods_md_band": "easy",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "CAID": {
+  "points": 1,
+  "rule_band": "easy",
+  "methods_md_band": "easy",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "external_sector": {
+  "points": 1,
+  "rule_band": "easy",
+  "methods_md_band": "easy to medium",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "REER": {
+  "points": 4,
+  "rule_band": "hard",
+  "methods_md_band": "easy",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ },
+ "pc_decomp": {
+  "points": 1,
+  "rule_band": "easy",
+  "methods_md_band": "medium",
+  "note": "four-point structure rule (+1 multi-step, +1 institutional procedure, +1 loose or free parameter, +1 not famous); 3-4 points = institutional procedures (hard.json), otherwise standard formulas (easier.json); METHODS.md Band = earlier grouping by judgment, reported as a sensitivity in the paper (Section 5.6)"
+ }
+}

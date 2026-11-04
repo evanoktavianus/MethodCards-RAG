@@ -1,0 +1,192 @@
+{
+ "id": "ARAEM-06",
+ "family": "methodology",
+ "method": "ara_em",
+ "style": "hidden",
+ "tier": "analytical",
+ "validation_label": "definition-validated",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "Among the economies in the IMF World Economic Outlook database (October 2025 vintage), take the one whose overall fiscal balance in 2020 was between -8 and -6.5 percent of GDP, and whose primary balance in 2020 was between -5 and -4 percent of GDP, and whose nominal GDP growth in 2020 was between -6.5 and -5.5 percent, and whose real GDP growth in 2020 was between -8 and -6.5 percent. How adequate were that economy's foreign exchange reserves in 2020 for an emerging market economy exposed to capital-flow reversals? Express its reserves as a percentage of the benchmark designed for such economies, and say whether they were adequate. Use World Bank World Development Indicators and IMF International Investment Position data.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the IMF (2011) 'Assessing Reserve Adequacy' risk-weighted metric for emerging markets: reserves compared with a weighted sum of short-term external debt, other portfolio liabilities, broad money and exports, with weights 30/15/10/10 percent for a fixed exchange-rate regime and 30/10/5/5 percent for a floating regime, and an adequacy range of 100 to 150 percent.",
+    "accept": "full = names the weighted-metric approach, states the components and one of the two weight sets (declaring the regime assumed); partial = right components with other weights or without the regime choice; no = single-ratio cover tests, import months or reserves-to-GDP alone."
+   },
+   {
+    "id": "c7",
+    "kind": "text",
+    "importance": "okay",
+    "text": "Identifies the economy as Colombia.",
+    "accept": "full = names Colombia; no = another economy."
+   },
+   {
+    "id": "c4",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Concludes that reserves were adequate: at or above 100 percent of the metric (172% fixed, 274% floating).",
+    "accept": "full = verdict (adequate) stated consistently with the ratio reported; partial = verdict without the ratio; no = opposite verdict."
+   }
+  ],
+  "data": [
+   {
+    "id": "c9",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses gross reserves (WDI FI.RES.TOTL.CD), short-term external debt (DT.DOD.DSTC.CD), broad money in USD (FM.LBL.BMNY.CN / PA.NUS.FCRF), exports (BX.GSR.GNFS.CD) and portfolio investment liabilities from the IMF IIP.",
+    "accept": "full = all five components sourced; partial = one component proxied or missing; no = other series."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Colombia 2020: reserves of about 172% of the metric under the fixed-regime weights.",
+    "accept": "full = within 34.4 of 171.9; partial = correct sign and within 68.8; no = otherwise. Relative tolerance 20%. Credit if the answer states a ratio for the regime it declares; the other regime is not required.",
+    "target": 171.95,
+    "tolerance_abs": 34.4
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Colombia 2020: reserves of about 274% of the metric under the floating-regime weights.",
+    "accept": "full = within 54.9 of 274.4; partial = correct sign and within 109.8; no = otherwise. Relative tolerance 20%. Credit if the answer states a ratio for the regime it declares; the other regime is not required.",
+    "target": 274.41,
+    "tolerance_abs": 54.9
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_rel": 0.2,
+  "note": "Reserves as percent of the metric; relative tolerance 20% because the exchange-rate regime is free, the short-term debt proxy is original maturity and the portfolio liability series is a proxy. The adequacy verdict is identical under both regimes for every item (screened). No claim of agreement with published ratios: only 7 of 51 Article IV ratios fell within 10% of the fixed-weights recomputation."
+ },
+ "provenance": {
+  "generator": "gold from gold_scripts/ara_em/gold_ara_em.py via item_gold.py",
+  "frozen_data": "wdi_20261008_extract.psv, wdi_20261008_pa_nus_fcrf.csv, wdi_20261008_ara_ig_extract.psv, imf_iip_20261029_portfolio_other_liab.psv in frozen_extra/",
+  "method_text": "IMF (2011) Assessing Reserve Adequacy, para 38-40 and the displayed formula",
+  "subject": {
+   "iso3": "COL",
+   "country": "Colombia",
+   "year": 2020
+  }
+ },
+ "method_doc_ids": [
+  "e7c9a1d0-858e-4c4a-b336-1e4bd26d8504"
+ ],
+ "gold_report_ids": [],
+ "published_value": null,
+ "published_value_note": "Not used: the recomputation does not agree with published Article IV ratios (7 of 51 within 10%, 17 of 51 within 20%); published ratios often use the augmented or adjusted metric, so none is claimed as validation.",
+ "recomputed_value": {
+  "iso3": "COL",
+  "year": 2020,
+  "fixed": 171.95,
+  "floating": 274.41,
+  "reserves_usd": 58499477956.7248,
+  "std_usd": 13899621000.0,
+  "opl_usd": 88917929847.532,
+  "exports_usd": 38223632456.1989
+ },
+ "inputs": [
+  {
+   "release": "WDI_2026-10-08",
+   "code": "FI.RES.TOTL.CD"
+  },
+  {
+   "release": "WDI_2026-10-08",
+   "code": "DT.DOD.DSTC.CD"
+  },
+  {
+   "release": "WDI_2026-10-08",
+   "code": "FM.LBL.BMNY.CN"
+  },
+  {
+   "release": "WDI_2026-10-08",
+   "code": "PA.NUS.FCRF"
+  },
+  {
+   "release": "WDI_2026-10-08",
+   "code": "BX.GSR.GNFS.CD"
+  },
+  {
+   "release": "IMF_IIP_API_2026-10-29",
+   "code": "L_P.P_MV (portfolio investment liabilities, USD)"
+  }
+ ],
+ "distractors": [
+  "Traditional single-ratio cover tests (three months of imports, 100 percent of short-term external debt, 20 percent of broad money) taken one at a time",
+  "Reserves relative to GDP or months of import cover alone",
+  "Greenspan-Guidotti rule alone (reserves equal to short-term external debt)",
+  "Optimal-reserves models (precautionary saving, Jeanne-Ranciere type) rather than a weighted benchmark",
+  "Adequacy assessment for low-income countries (import cover based)",
+  "External debt sustainability or net international investment position analysis"
+ ],
+ "famous_method": false,
+ "strictness": {
+  "overall": "weights strict; exchange-rate regime free; adequacy range and component proxies loose",
+  "parameters": {
+   "weights": "strict: fixed exchange-rate regime 30% short-term external debt + 15% other portfolio liabilities + 10% broad money + 10% exports; floating regime 30% + 10% + 5% + 5% (IMF 2011, para 39)",
+   "exchange_rate_regime": "free: the analyst's classification (not a frozen series); the gold reports both regimes and the questions and claims are built so that the adequacy verdict does not depend on the choice",
+   "adequacy_range": "loose: 100 to 150 percent of the metric is the indicative range; the verdict uses the lower end of 100 percent",
+   "short_term_external_debt_proxy": "loose (document check): the document defines STD at remaining maturity (blocks 93 and 146); World Bank DT.DOD.DSTC.CD is original maturity. Sensitivity: multiplying STD by 1.5 or 2 leaves every adequacy verdict of the kept items unchanged (smallest ratio 101 for Indonesia 2017 fixed regime at 2x).",
+   "other_portfolio_liabilities_proxy": "loose (document check): the document's OPL is the medium- and long-term debt and equity liabilities other than STD (block 146, 'other portfolio liabilities' block 151); the IIP total portfolio investment liabilities (P_MV) also contain short-term securities, so a small overlap with STD is possible.",
+   "broad_money_and_exports": "WDI FM.LBL.BMNY.CN converted at the official rate PA.NUS.FCRF; exports of goods and services BX.GSR.GNFS.CD (balance of payments, USD)",
+   "reserves": "gross total reserves including gold, WDI FI.RES.TOTL.CD",
+   "vintage": "WDI 2026-10-08, IIP API 2026-10-29 (frozen extracts; not a frozen WDI vintage but this extract is the freeze)",
+   "review_flag": "Weights 30/15/10/10 and 30/10/5/5 (document block 157, display formula) and the 100-150 range (block 177, para 41) verified against the document text. No agreement with published ratios is claimed (7 of 51 within 10 percent); gold_report_ids is empty. "
+  }
+ },
+ "parameter_notes": {
+  "weights": "strict: fixed exchange-rate regime 30% short-term external debt + 15% other portfolio liabilities + 10% broad money + 10% exports; floating regime 30% + 10% + 5% + 5% (IMF 2011, para 39)",
+  "exchange_rate_regime": "free: the analyst's classification (not a frozen series); the gold reports both regimes and the questions and claims are built so that the adequacy verdict does not depend on the choice",
+  "adequacy_range": "loose: 100 to 150 percent of the metric is the indicative range; the verdict uses the lower end of 100 percent",
+  "short_term_external_debt_proxy": "loose (document check): the document defines STD at remaining maturity (blocks 93 and 146); World Bank DT.DOD.DSTC.CD is original maturity. Sensitivity: multiplying STD by 1.5 or 2 leaves every adequacy verdict of the kept items unchanged (smallest ratio 101 for Indonesia 2017 fixed regime at 2x).",
+  "other_portfolio_liabilities_proxy": "loose (document check): the document's OPL is the medium- and long-term debt and equity liabilities other than STD (block 146, 'other portfolio liabilities' block 151); the IIP total portfolio investment liabilities (P_MV) also contain short-term securities, so a small overlap with STD is possible.",
+  "broad_money_and_exports": "WDI FM.LBL.BMNY.CN converted at the official rate PA.NUS.FCRF; exports of goods and services BX.GSR.GNFS.CD (balance of payments, USD)",
+  "reserves": "gross total reserves including gold, WDI FI.RES.TOTL.CD",
+  "vintage": "WDI 2026-10-08, IIP API 2026-10-29 (frozen extracts; not a frozen WDI vintage but this extract is the freeze)",
+  "review_flag": "Weights 30/15/10/10 and 30/10/5/5 (document block 157, display formula) and the 100-150 range (block 177, para 41) verified against the document text. No agreement with published ratios is claimed (7 of 51 within 10 percent); gold_report_ids is empty. "
+ },
+ "gold_script": "gold_scripts/ara_em/gold_ara_em.py",
+ "gold_command": "python3 -I gold_scripts/ara_em/item_gold.py COL 2020   (run from the gold/ directory; agreement table with published ratios: python3 -I gold_scripts/ara_em/gold_ara_em.py)",
+ "validation_note": "Definition-validated only. Short-term debt is original maturity (proxy).",
+ "hidden_set_size": 1,
+ "conditions": [
+  {
+   "kind": "bal",
+   "year": 2020,
+   "low": -8.0,
+   "high": -6.5
+  },
+  {
+   "kind": "pb",
+   "year": 2020,
+   "low": -5.0,
+   "high": -4.0
+  },
+  {
+   "kind": "ng",
+   "year": 2020,
+   "low": -6.5,
+   "high": -5.5
+  },
+  {
+   "kind": "rg",
+   "year": 2020,
+   "low": -8.0,
+   "high": -6.5
+  }
+ ],
+ "hidden_subject": "COL",
+ "adequate_under_both_regimes": true,
+ "doc_check": {
+  "document": "e7c9a1d0 Assessing Reserve Adequacy (IMF 2011): formula block 157, adequacy range block 177, risk-weight table block 154, components blocks 144-148",
+  "verdict": "weights fixed 30/15/10/10 and floating 30/10/5/5 MATCH; 100-150 percent range MATCH (guide, not a rule); STD maturity basis MISMATCH (original vs remaining) already loose, verdicts robust to a doubled STD; no change to values"
+ }
+}

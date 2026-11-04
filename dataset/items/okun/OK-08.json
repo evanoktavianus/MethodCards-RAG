@@ -1,0 +1,78 @@
+{
+ "id": "OK-08",
+ "family": "methodology",
+ "pattern": "M-hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "formula-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "In 2012, among advanced economies, exactly one had an unemployment rate above 24.6% (among the group with an official output-gap estimate). How much of that economy's unemployment rate was cyclical, in percentage points, signed (positive if above the sustainable level)? Convention: take the WEO output-gap estimate and assume that each 1% of output gap moves the unemployment rate by one-half percentage point in the opposite direction.",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the relationship between the output gap and the deviation of unemployment from its natural rate (Okun's law, coefficient about -1/2).",
+    "accept": "full = names Okun's law / output-gap-to-unemployment-gap link with coefficient near 0.5; no = simple regression only"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO series: LUR, NGAP_NPGDP."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Cyclical unemployment of the identified economy (ESP) in 2012 = 2.62 pp",
+    "reference_value": 2.617,
+    "tolerance": 0.15,
+    "unit": "pp",
+    "accept": "full = within tolerance; correct country identification required (hidden)"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "WEO Oct 2012 Box 4.1 (bc66194c)",
+   "frozen WEO Oct 2025 (frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/growth_labour/gold_growth_labour.py",
+  "selection": "seeded draw (20261030), distinct country within style where possible"
+ },
+ "method": "okun_gap_cyclical_unemployment",
+ "method_doc_ids": [
+  "bc66194c-3b20-4007-95c3-b28b252fc286"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "No corpus report states these values; gold is recomputed from the frozen WEO vintage by formula (formula-validated, no published figure).",
+ "published_value": null,
+ "recomputed_value": 2.617,
+ "tolerance": 0.15,
+ "inputs": [
+  "LUR",
+  "NGAP_NPGDP"
+ ],
+ "style": "hidden",
+ "distractors": [
+  "potential-output estimation by HP filter alone",
+  "Phillips-curve / wage-inflation slack measure",
+  "fiscal cyclical adjustment (budget semi-elasticity)",
+  "unemployment-rate forecasting by autoregression"
+ ],
+ "famous_method": false,
+ "hidden_set_size": 1,
+ "predicate": "among the 27 economies with a published WEO output gap, unemployment rate (LUR) > 24.6 in 2012",
+ "validation_label": "formula-validated",
+ "method_class": "institutional procedure",
+ "hidden_answer_country": "ESP"
+}

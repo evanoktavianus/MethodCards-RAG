@@ -1,0 +1,90 @@
+{
+ "id": "EXP-03",
+ "family": "methodology",
+ "pattern": "M-named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "In 2008, Angola recorded an external surplus of 7.3% of GDP while its general government ran a deficit of 3.8% of GDP. How much of the external balance is accounted for by the private sector, as a share of GDP, and does the private sector add to or offset it?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the sectoral balances identity: current account balance = private saving-investment balance + government saving-investment balance, so the private balance is the current account minus government net lending.",
+    "accept": "full = sectoral balances / twin-deficit identity CAB = (Sp-Ip)+(Sg-Ig); no = single fiscal or external indicator alone"
+   },
+   {
+    "id": "c2",
+    "kind": "text",
+    "importance": "vital",
+    "text": "States that the private sector is a net lender (adds to the external surplus).",
+    "accept": "full = correct sign"
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO current account balance and general government net lending (BCA_NGDPD, GGXCNL_NGDP)."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Private-sector saving-investment balance Angola 2008 = 11.08 % of GDP",
+    "reference_value": 11.078,
+    "tolerance": 0.15,
+    "unit": "pp",
+    "accept": "full = within tolerance of CA minus government balance"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "BPM6 ch.14 (doc 712b0ad9, block 3197): \"CAB = (S_p - I_p) + (S_g - I_g).\" (government saving-investment balance = general government net lending).",
+   "frozen WEO Oct 2025 (release/official_benchmark/reference_data)"
+  ],
+  "gold_script": "gold_scripts/external_sector/gold_external.py",
+  "selection": "seeded draw (seed 2202); |CA|>=2, |fiscal|>=1.5, |private|>=1pp; one per country"
+ },
+ "method": "private_public_sector_balance_split",
+ "method_doc_ids": [
+  "712b0ad9-7e38-4e33-afc8-de1de9422d0d"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "Gold is a printed identity applied to frozen WEO series; no corpus report states these values, nothing to withhold.",
+ "published_value": null,
+ "published_value_note": "no institutional source publishes the private balance as a series; CA and fiscal inputs are WEO published values",
+ "recomputed_value": 11.078,
+ "tolerance": 0.15,
+ "inputs": [
+  "BCA_NGDPD",
+  "GGXCNL_NGDP"
+ ],
+ "style": "named",
+ "distractors": [
+  "cyclically adjusted fiscal balance",
+  "debt-stabilising primary balance",
+  "EBA current account gap regression",
+  "fiscal impulse",
+  "trade balance"
+ ],
+ "famous_method": true,
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity",
+ "formula_quote": "BPM6 ch.14 (doc 712b0ad9, block 3197): \"CAB = (S_p - I_p) + (S_g - I_g).\" (government saving-investment balance = general government net lending).",
+ "instance": {
+  "iso3": "AGO",
+  "year": 2008
+ },
+ "claim_truth": null
+}

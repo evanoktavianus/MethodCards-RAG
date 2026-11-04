@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "methodcards-rag"
+version = "1.0.0"
+description = "Method cards for agentic retrieval-augmented generation on public-finance statistics: code, questions, stored results"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Evan Oktavianus" }]
+# The key-free tier (tables, judge agreement, data tool, tests) uses only the standard library.
+dependencies = []
+
+[project.optional-dependencies]
+# Needed for the model-run tier: model-written code runs in a sandbox that preloads these libraries.
+run = ["numpy", "pandas", "scipy", "statsmodels"]
+test = ["pytest"]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pytest.ini_options]
+markers = ["slow: loads the 570 MB document index and runs the Ours arms against a scripted model (several minutes); run with  pytest -m slow"]
+addopts = "-m 'not slow'"

@@ -1,0 +1,79 @@
+{
+  "id": "GA-04",
+  "family": "methodology",
+  "pattern": "M-named",
+  "tier": "analytical",
+  "status": "validated",
+  "validation_tier": "formula-validated",
+  "procedure_kind": "institutional procedure",
+  "query": "On average per year over 2015-2024, how many percentage points of Ireland's growth came from improvements in efficiency, once the contributions of the capital stock and of employment are set aside? Convention: Cobb-Douglas production with a capital share of 0.33; build the capital stock from the WEO investment ratio and real GDP with 10% annual depreciation, starting from first-available-year investment divided by (0.10 + average real GDP growth over that year and the next nine); employment from the WEO.",
+  "claims": {
+    "text": [
+      {
+        "id": "c0",
+        "kind": "text",
+        "importance": "vital",
+        "text": "Identifies growth accounting with a Cobb-Douglas production function (capital stock from investment by perpetual inventory, employment, TFP as residual).",
+        "accept": "full = Cobb-Douglas growth accounting with TFP residual; capital share 0.33 and depreciation 10% (Mexico 2004 Art. IV convention) or close alternative acceptable (capital share 0.3-0.4)"
+      }
+    ],
+    "data": [
+      {
+        "id": "c5",
+        "kind": "data",
+        "importance": "okay",
+        "text": "Uses WEO series: NGDP_R, NID_NGDP, LE."
+      }
+    ],
+    "computation": [
+      {
+        "id": "c1",
+        "kind": "computation",
+        "importance": "vital",
+        "text": "IRL 2015-2024: tfp = 0.96 pp per year",
+        "reference_value": 0.965,
+        "tolerance": 0.4,
+        "unit": "pp",
+        "accept": "full = within tolerance; capital stock by perpetual inventory (delta 10%, K_1980=I_1980/(delta+g)), capital share 0.33, TFP = gY - a*gK - (1-a)*gL"
+      }
+    ]
+  },
+  "grading": {
+    "method": "answer_recall"
+  },
+  "provenance": {
+    "assembled_from": [
+      "Mexico 2004 Art IV growth-accounting box (270b189d, block 125) and WEO Apr 2015 Ch.3 (3ed94aa0, blocks 1055-1059)",
+      "frozen WEO Oct 2025 (frozen_extra)"
+    ],
+    "gold_script": "gold_scripts/growth_labour/gold_growth_labour.py",
+    "selection": "seeded draw (20261030), distinct country within style where possible"
+  },
+  "method": "growth_accounting_tfp_residual",
+  "method_doc_ids": [
+    "270b189d-9e67-4642-8c7d-bd1d160c5e14",
+    "3ed94aa0-95d3-4293-bbff-32bf7d10acd8"
+  ],
+  "gold_report_ids": [],
+  "gold_report_note": "No corpus report states these values; gold is recomputed from the frozen WEO vintage by formula (formula-validated, no published figure).",
+  "published_value": null,
+  "recomputed_value": 0.965,
+  "tolerance": 0.4,
+  "inputs": [
+    "NGDP_R",
+    "NID_NGDP",
+    "LE"
+  ],
+  "style": "named",
+  "distractors": [
+    "labour-productivity or per-capita income decomposition (employment rate)",
+    "potential-output estimation by filter",
+    "convergence (beta) regression",
+    "investment-rate / saving-gap analysis"
+  ],
+  "famous_method": false,
+  "hidden_set_size": null,
+  "predicate": null,
+  "validation_label": "formula-validated",
+  "method_class": "institutional procedure"
+}

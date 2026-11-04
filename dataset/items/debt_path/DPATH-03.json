@@ -1,0 +1,157 @@
+{
+ "id": "DPATH-03",
+ "family": "methodology",
+ "method": "debt_path",
+ "style": "named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "institutional procedure",
+ "query": "For Mexico: split the 2013 change in the general government gross debt ratio into the primary deficit, the nominal interest bill, the effect of GDP-deflator inflation and the effect of real GDP growth, each in percentage points of GDP, and say which of these four moved the ratio most.",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the change in the public debt ratio is attributed to its components by applying the debt-accumulation identity to the previous-year debt stock: primary deficit, an interest-rate term, a growth term (and, in the other published variant, a separate inflation term), as set out in Escolano (2010) 'A Practical Guide to Public Debt Dynamics...' (equations 24-28) and in the IMF (2013) Staff Guidance Note / MAC SRDSF (2021) debt-dynamics annex ('contribution from real interest rate', 'contribution from real GDP growth').",
+    "accept": "full = names the debt-dynamics decomposition (any of Escolano 2010, IMF 2013 Staff Guidance Note Annex I, MAC SRDSF 2021, or the IMF Public Debt Dynamics Tool) and applies it with the previous-year debt ratio; partial = describes an interest-growth-primary-balance attribution without a source; no = uses a stabilising-balance calculation or a naive deficit/interest split."
+   },
+   {
+    "id": "c7",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Names the nominal interest bill as the largest of the named contributions in 2013 (+2.6 percentage points).",
+    "accept": "full = identifies it as the dominant named driver with the sign (adds to / reduces debt) stated correctly; partial = right driver without sign or magnitude; no = otherwise."
+   }
+  ],
+  "data": [
+   {
+    "id": "c8",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government gross debt (% of GDP), primary balance, interest paid (primary balance minus overall balance), nominal and real GDP (WEO), i.e. IMF WEO GGXWDG_NGDP, GGXONLB_NGDP, GGXCNL_NGDP, NGDP, NGDP_R.",
+    "accept": "full = debt, primary balance, interest or overall balance, and nominal/real GDP or growth+deflator all used; partial = most of them; no = other."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Mexico: +0.9 percentage points of GDP in 2013 (primary deficit (positive = adds to debt)).",
+    "accept": "full = within 0.3 percentage points of +0.9; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 0.912,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Mexico: +2.6 percentage points of GDP in 2013 (nominal interest bill (interest paid divided by last year's GDP-adjusted debt)).",
+    "accept": "full = within 0.3 percentage points of +2.6; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 2.647,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c4",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Mexico: -0.7 percentage points of GDP in 2013 (GDP-deflator inflation effect).",
+    "accept": "full = within 0.3 percentage points of -0.7; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": -0.678,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c5",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Mexico: -0.3 percentage points of GDP in 2013 (real GDP growth effect).",
+    "accept": "full = within 0.3 percentage points of -0.3; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": -0.345,
+    "tolerance_abs": 0.3
+   },
+   {
+    "id": "c6",
+    "kind": "computation",
+    "importance": "okay",
+    "text": "Mexico: +0.7 percentage points of GDP in 2013 (remainder (change not explained by those three; includes exchange-rate and other flows)).",
+    "accept": "full = within 0.3 percentage points of +0.7; partial = correct sign and within 1.0 pp; no = otherwise. Equivalent published variants (IMF real-interest/real-growth vs Escolano nominal split) are accepted only for the pieces the question names.",
+    "target": 0.715,
+    "tolerance_abs": 0.3
+   }
+  ]
+ },
+ "grading": {
+  "computation_tolerance_abs_pp": 0.3,
+  "note": "Contributions are in percentage points of GDP in the target year; published tables round to 0.1 and use older WEO vintages, so 0.3 pp absolute. Gold from frozen WEO Oct 2025."
+ },
+ "provenance": {
+  "generator": "scripts/debt_path_build_items.py",
+  "frozen_data": "frozen_extra/weo_oct2025_*.csv (WEO Oct 2025 vintage)",
+  "method_text": "Escolano 2010 eqs 24-28 (decomposition of changes in the debt ratio); IMF 2013 Staff Guidance Note Fig. 1 footnotes 4-5 and Annex I",
+  "subject": {
+   "iso3": "MEX",
+   "country": "Mexico",
+   "year": 2013
+  }
+ },
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [
+  "ad64a0c0-1ccf-497a-a33e-814692eadd2b"
+ ],
+ "published_value": [
+  {
+   "doc": "ad64a0c0-1ccf-497a-a33e-814692eadd2b",
+   "title": "Mexico: Staff Report for the 2015 Article IV Consultation—Debt Sustainability Analysis",
+   "table_block_sequence": 34,
+   "primary_deficit": 1.2,
+   "real_interest": 1.8,
+   "real_growth": -0.6,
+   "change_in_debt": 3.19
+  }
+ ],
+ "recomputed_value": {
+  "change": 3.251,
+  "primary_deficit": 0.912,
+  "real_interest_imf": 1.963,
+  "growth_imf": -0.339,
+  "interest_total": 2.647,
+  "inflation": -0.678,
+  "growth": -0.345,
+  "residual": 0.715,
+  "auto_imf": 1.624,
+  "eff_rate": 6.652,
+  "defl": 1.704,
+  "g": 0.852,
+  "d_prev": 40.815,
+  "d": 44.066
+ },
+ "inputs": [
+  "GGXWDG_NGDP",
+  "GGXONLB_NGDP",
+  "GGXCNL_NGDP",
+  "NGDP",
+  "NGDP_R"
+ ],
+ "distractors": [
+  "Debt-stabilising primary balance / required fiscal adjustment (answers a different question: what balance holds the ratio constant)",
+  "Fiscal-impulse or change in the cyclically adjusted primary balance (measures policy stance, not debt-ratio attribution)",
+  "Naive attribution that divides the change in debt by the deficit (ignores interest-growth interaction and the previous-year debt stock)",
+  "Gross financing needs projection (liquidity measure, includes amortisation)",
+  "Using the overall deficit as the 'fiscal' term and then also adding interest, which double counts the interest bill"
+ ],
+ "famous_method": false,
+ "gold_script": "scripts/debt_path_build_items.py",
+ "validation": {
+  "published_instances_matching": 1,
+  "tolerance_abs_pp": 0.3,
+  "note": "Every reported report table in gold_report_ids matches the recomputation on change in debt, primary deficit, real-interest and real-growth contributions within tolerance"
+ },
+ "decomposition_variant": "Escolano eq. 26 nominal interest / inflation / growth split",
+ "dominant_driver": "ni"
+}

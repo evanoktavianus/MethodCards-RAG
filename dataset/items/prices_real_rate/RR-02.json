@@ -1,0 +1,79 @@
+{
+ "id": "RR-02",
+ "family": "methodology",
+ "pattern": "M-named",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "In 2013, Australia's government paid an average 9.5% on its borrowing. After allowing for how fast the price of the economy's total output (not consumer prices) rose that year, what was the effective cost of that borrowing?",
+ "claims": {
+  "text": [
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies that the real interest rate is the nominal rate deflated by inflation, r=(1+i)/(1+pi)-1 with pi the GDP deflator change.",
+    "accept": "names the accepted approach; alternative: report both deflator-based and note CPI-based as a variant; gold uses GDP deflator"
+   }
+  ],
+  "data": [
+   {
+    "id": "c2",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses WEO nominal GDP and GDP deflator series (NGDP_D, (nominal rate stated in query))."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c1",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Real interest rate AUS 2013 at i=9.5% = 8.11 %",
+    "reference_value": 8.109,
+    "tolerance": 0.2,
+    "unit": "pp",
+    "accept": "full = within tolerance"
+   }
+  ]
+ },
+ "grading": {
+  "method": "answer_recall"
+ },
+ "provenance": {
+  "assembled_from": [
+   "Escolano (2010) A Practical Guide to Public Debt Dynamics (doc 55319ff9-c45c-4e8d-99e4-5562a1158bf2)",
+   "frozen WEO Oct 2025 (frozen_extra)"
+  ],
+  "gold_script": "gold_scripts/prices/gold_prices.py",
+  "selection": "seeded draw over top-20 economies by 2024 USD GDP (frozen), one per country-year"
+ },
+ "method": "real_interest_rate_fisher_gdp_deflator",
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2"
+ ],
+ "gold_report_ids": [],
+ "gold_report_note": "Published value is WEO series or none; no corpus report states it, nothing to withhold.",
+ "published_value": null,
+ "published_value_note": "no published value; textbook identity checked by round trip (1+i)=(1+r)(1+pi)",
+ "recomputed_value": 8.109,
+ "tolerance": 0.2,
+ "inputs": [
+  "NGDP_D",
+  "(nominal rate stated in query)"
+ ],
+ "style": "named",
+ "distractors": [
+  "debt-stabilising primary balance",
+  "interest-growth differential (r-g) assessment",
+  "CPI-based ex-post real rate",
+  "Taylor-rule neutral rate",
+  "real effective exchange rate"
+ ],
+ "famous_method": true,
+ "hidden_set_size": null,
+ "predicate": null,
+ "validation_label": "formula-validated",
+ "method_class": "textbook identity"
+}

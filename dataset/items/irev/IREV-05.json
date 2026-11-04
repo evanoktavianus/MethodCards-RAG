@@ -1,0 +1,87 @@
+{
+ "id": "IREV-05",
+ "family": "methodology",
+ "method": "irev",
+ "style": "named",
+ "tier": "single_step",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "How large was the debt of the government of Germany relative to its annual revenue at the end of 2015?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the debt-to-revenue ratio (gross debt as a share of government revenue, i.e. debt/GDP divided by revenue/GDP) as the applicable debt-burden indicator (IMF 2013 Staff Guidance Note, MAC DSA template: debt-to-revenue ratio).",
+    "accept": "full = end-of-year gross debt divided by the same year's revenue, in percent; partial = debt in years of revenue expressed correctly (e.g. 1.5 years = 150%); no = debt-to-GDP or interest-to-revenue.",
+    "supporting_passages": [
+     "2dea3fb1-758b-40a4-882b-59f953293e2d#p16 (EIR footnote 3); 47 (debt-to-revenue)",
+     "afe8e3fb-67da-4099-9ee6-020466614eb8#pFigure 23 (interest payment to revenue)"
+    ]
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government revenue and grants (% GDP) and gross debt (% GDP) (WEO Oct 2025: GGR_NGDP, GGXWDG_NGDP).",
+    "accept": "full = all inputs correctly sourced; partial = some inputs approximated; no = unrelated series."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "The value for Germany in 2015 is about 156.8 % of revenue.",
+    "accept": "full = within +-5; partial = within +-10; no = otherwise.",
+    "target": 156.8,
+    "tolerance_abs": 5.0
+   }
+  ]
+ },
+ "grading": {
+  "tolerance_abs": 5.0,
+  "note": "Verdicts exact. Convention for the gold (WEO Oct 2025, general government): interest paid = primary balance minus overall balance (% of GDP); revenue = general government revenue and grants (GGR_NGDP, % of GDP); interest-to-revenue = interest / revenue x 100; debt-to-revenue = end-of-year gross debt (% of GDP) / revenue (% of GDP) x 100, in percent of revenue.",
+  "definitions": "Convention for the gold (WEO Oct 2025, general government): interest paid = primary balance minus overall balance (% of GDP); revenue = general government revenue and grants (GGR_NGDP, % of GDP); interest-to-revenue = interest / revenue x 100; debt-to-revenue = end-of-year gross debt (% of GDP) / revenue (% of GDP) x 100, in percent of revenue."
+ },
+ "provenance": {
+  "source": "frozen WEO Oct 2025 (frozen_extra/)",
+  "generator": "scripts/fr_items.py",
+  "method_text": "IMF 2013 Staff Guidance Note (annex on stress tests: debt-burden indicators; MAC DSA template debt-to-revenue)"
+ },
+ "validation_label": "definition-validated",
+ "method_kind": "textbook identity",
+ "famous_method": true,
+ "method_doc_ids": [
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "afe8e3fb-67da-4099-9ee6-020466614eb8"
+ ],
+ "gold_report_ids": [],
+ "published_value": null,
+ "published_value_note": "No corpus report states this country-year value for the identity on the frozen vintage; formula printed in the method document (gate a), inputs public (b), gold by script (c).",
+ "recomputed_value": 156.8,
+ "inputs": [
+  "GGR_NGDP",
+  "GGXWDG_NGDP"
+ ],
+ "distractors": [
+  "debt-to-GDP or interest-to-GDP ratios",
+  "debt-service-to-revenue (includes amortisation)",
+  "gross financing needs",
+  "present-value-of-debt-to-revenue indicators from the low-income-country framework",
+  "primary balance or debt-stabilising balance"
+ ],
+ "answer_summary": "DEU 2015: interest 1.08% GDP, revenue 45.40% GDP, debt 71.2% GDP -> int/rev 2.4%, debt/rev 156.8%. Gold 156.8",
+ "gold_script": "scripts/fr_items.py",
+ "gold": {
+  "iso3": "DEU",
+  "year": 2015,
+  "unit": "% of revenue",
+  "value": 156.8,
+  "kind": "debt_rev"
+ }
+}

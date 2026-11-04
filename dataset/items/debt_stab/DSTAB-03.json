@@ -1,0 +1,142 @@
+{
+ "id": "DSTAB-03",
+ "family": "methodology",
+ "method": "debt_stab",
+ "style": "named",
+ "tier": "single_step",
+ "status": "validated",
+ "validation_tier": "published-validated",
+ "procedure_kind": "textbook identity",
+ "query": "By how many percentage points of GDP did India's primary balance in 2022 exceed, or fall short of, the level needed to stop its debt-to-GDP ratio from rising?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the debt-dynamics identity d_t=(1+lambda)d_{t-1}-p_t with lambda=(r-g)/(1+g) (the debt-stabilising primary balance p*=lambda*d_{t-1}) as the applicable method.",
+    "accept": "full = names the debt-dynamics / debt-stabilising primary balance approach (Escolano 2010; IMF 2013 Staff Guidance Note for public DSA; MAC SRDSF) or applies the equivalent formula; partial = uses only a rule of thumb (r-g)*d without the 1+g denominator; no = uses an overall-balance, structural-balance or S1/S2 method.",
+    "supporting_passages": [
+     "55319ff9-c45c-4e8d-99e4-5562a1158bf2#escolano_eq5_7_20"
+    ]
+   },
+   {
+    "id": "c3",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Concludes the actual balance was above the debt-stabilising level, i.e. the debt ratio was set to fall.",
+    "accept": "direction must match."
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses general government gross debt (% GDP), primary balance and overall balance (interest = primary minus overall balance, % GDP), and nominal GDP (WEO Oct 2025: GGXWDG_NGDP, GGXONLB_NGDP, GGXCNL_NGDP, NGDP).",
+    "accept": "full = all inputs correctly sourced; partial = some inputs approximated (e.g. real growth plus deflator); no = unrelated series."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "Gap (actual minus required primary balance, positive = actual above required) is about +1.3 pp of GDP (actual -3.9, required -5.1); required balance p* = lambda x previous-year debt with effective interest rate = interest paid in 2022 / debt at end of 2021 and nominal growth = NGDP_2022/NGDP_2021 - 1.",
+    "accept": "full = within +-0.60 pp (sign: positive = actual above required; the reverse convention is accepted if stated explicitly and the direction of the verdict agrees). The gold uses the convention stated in the grading note; interest-definition alternatives (average debt, current-year debt, real-rate form) move the value by at most 0.55 pp, covered by the tolerance.",
+    "target": 1.3,
+    "tolerance_abs": 0.6
+   }
+  ]
+ },
+ "grading": {
+  "tolerance_abs_pp": 0.6,
+  "tolerance_basis": 0.3,
+  "note": "Vital computation tolerance +-0.60 (path endpoint pp of GDP; gap/required/horizon-target pp). Verdicts and directions exact. Convention for the gold (WEO Oct 2025, general government): effective interest rate r_t = interest paid in year t divided by gross debt at the end of year t-1 (in levels; interest = primary balance minus overall balance, % of GDP_t, so r_t = interest/GDP_t x (1+g_t) / (debt/GDP)_{t-1}); nominal GDP growth g_t = NGDP_t / NGDP_{t-1} - 1 from nominal GDP in national currency; primary balance = revenue minus non-interest spending, surplus positive; lambda=(r-g)/(1+g) and p* = lambda x (debt/GDP)_{t-1}. Sensitivity: the four interest-definition variants are recorded in the sensitivity object; the tolerance covers them.",
+  "definitions": "Convention for the gold (WEO Oct 2025, general government): effective interest rate r_t = interest paid in year t divided by gross debt at the end of year t-1 (in levels; interest = primary balance minus overall balance, % of GDP_t, so r_t = interest/GDP_t x (1+g_t) / (debt/GDP)_{t-1}); nominal GDP growth g_t = NGDP_t / NGDP_{t-1} - 1 from nominal GDP in national currency; primary balance = revenue minus non-interest spending, surplus positive; lambda=(r-g)/(1+g) and p* = lambda x (debt/GDP)_{t-1}."
+ },
+ "provenance": {
+  "source": "frozen WEO Oct 2025 (frozen_extra/)",
+  "generator": "scripts/debt_stab_items.py",
+  "method_text": "Escolano (2010) eqs 5,7,20,22; IMF 2013 Staff Guidance Note (DSA table footnote on debt-stabilising primary balance)",
+  "validation": "scripts/debt_stab_validation.json (28 of 29 published instances reproduced)"
+ },
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d",
+  "c010cde9-5069-43d5-a0a6-d162270835fd"
+ ],
+ "gold_report_ids": [
+  "9c3a6e09-0dcf-4fff-8617-a68e34fa6119"
+ ],
+ "recomputed_value": 1.3,
+ "inputs": [
+  "GGXWDG_NGDP",
+  "GGXONLB_NGDP",
+  "GGXCNL_NGDP",
+  "NGDP"
+ ],
+ "distractors": [
+  "overall (headline) balance that holds debt constant, b* = -g/(1+g) d (answers a different question)",
+  "cyclically adjusted / structural primary balance",
+  "fiscal-gap or tax-gap indicators (S1/S2) over an infinite horizon",
+  "primary balance needed to reach a debt anchor or fiscal-rule ceiling",
+  "debt-change decomposition without a stabilising benchmark"
+ ],
+ "famous_method": true,
+ "answer_summary": "IND 2022: debt prev 83.5, effective rate 6.94%, nominal growth 13.96%, lambda -0.0615, required primary balance -5.14, actual -3.88, gap +1.25. Gold: +1.3",
+ "gold_script": "scripts/debt_stab_items.py",
+ "validation_note": "The formula is validated on 29 published country-years; item gold is on frozen WEO Oct 2025 data for a historic year, so it is not itself a published number (see published_value_note / published_vintage_note).",
+ "sensitivity": {
+  "values": {
+   "a": 1.253,
+   "b": 1.545,
+   "c": 1.805,
+   "d": 1.253
+  },
+  "lambda_by_definition": {
+   "a": -0.06152,
+   "b": -0.06502,
+   "c": -0.06813,
+   "d": -0.06152
+  },
+  "definitions": {
+   "a": "interest / previous-year debt (canonical)",
+   "b": "interest / average of previous- and current-year debt",
+   "c": "interest / current-year debt",
+   "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+  },
+  "spread": 0.552,
+  "max_abs_dev_from_canonical": 0.552,
+  "flag_spread_gt_0.15": true,
+  "tolerance_before": 0.3,
+  "tolerance_used": 0.6,
+  "within_tolerance_before": false,
+  "action": "tolerance widened 0.30 -> 0.60 to cover all four definitions",
+  "canonical": "a"
+ },
+ "gold": {
+  "iso3": "IND",
+  "year": 2022,
+  "kind": "gap",
+  "value": 1.3,
+  "unit": "pp of GDP",
+  "answer": "+1.3"
+ },
+ "published_value": null,
+ "published_report_id": null,
+ "published_value_note": "No DSA baseline table in the corpus states a debt-stabilising primary balance for India for 2022 or an adjacent year: the published figure always refers to the last projection year of the table (report year + 4 or 5), and the validated reports for this country give 9c3a6e09 (report 2022, last projection year 2027): -2.3.",
+ "published_other_years": [
+  {
+   "report_id": "9c3a6e09-0dcf-4fff-8617-a68e34fa6119",
+   "report_title": "India: 2022 Article IV Consultation-Press Release; Staff Report; and Statement by the Executive Director for India",
+   "report_year": 2022,
+   "table_last_projection_year": 2027,
+   "table_year_inferred": false,
+   "published_value": -2.3,
+   "status": "MATCH",
+   "recomputed_pure_formula_report_vintage": -2.251,
+   "other_identified_flows_included": false
+  }
+ ]
+}

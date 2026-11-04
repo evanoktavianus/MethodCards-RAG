@@ -1,0 +1,137 @@
+{
+ "id": "RIR-05",
+ "family": "methodology",
+ "pattern": "M-hidden",
+ "tier": "analytical",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "In 2019 exactly one country combined a bank lending rate above 30 percent with GDP-deflator inflation below 5 percent. After allowing for price inflation, what did borrowing cost there that year?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the applicable approach: ex post real interest rate, the nominal lending rate deflated by inflation (GDP deflator), r = (i - pi)/(1 + pi) or approximately i - pi.",
+    "accept": "full = deflates the nominal lending rate by GDP-deflator (or economy-wide) inflation; partial = deflates with CPI inflation or reports the nominal rate only; no = unrelated method (natural rate model, Taylor rule)."
+   }
+  ],
+  "data": [
+   {
+    "id": "c2",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Retrieves the input series: FR.INR.LEND, NY.GDP.DEFL.KD.ZG.",
+    "accept": "full = all inputs retrieved with values close to the frozen ones; partial = some; no = none.",
+    "requires": [
+     {
+      "indicator": "FR.INR.LEND",
+      "source": "WDI",
+      "iso3": "BRA",
+      "years": [
+       2019,
+       2019
+      ]
+     },
+     {
+      "indicator": "NY.GDP.DEFL.KD.ZG",
+      "source": "WDI",
+      "iso3": "BRA",
+      "years": [
+       2019,
+       2019
+      ]
+     }
+    ]
+   }
+  ],
+  "computation": [
+   {
+    "id": "c3",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "The real lending rate in 2019 is about 31.9 percent (lending rate 37.5 percent deflated by GDP-deflator inflation 4.2 percent).",
+    "accept": "full = within +/-1.6 percentage points of 31.90 (the simple difference i - pi = 33.25 is therefore also accepted); partial = within +/-3 more; no = otherwise.",
+    "statistic": "r = (FR.INR.LEND - NY.GDP.DEFL.KD.ZG) / (1 + NY.GDP.DEFL.KD.ZG/100)",
+    "resolves": {
+     "value": 31.903,
+     "targets": [
+      {
+       "name": "value",
+       "kind": "number",
+       "value": 31.903,
+       "unit": "percent",
+       "tolerance": 1.6,
+       "tolerance_source": "identity recomputed from frozen WDI; rounding and vintage"
+      }
+     ]
+    }
+   }
+  ],
+  "answer": [
+   {
+    "id": "c4",
+    "kind": "answer",
+    "importance": "vital",
+    "text": "The real return/cost is positive (borrowers face a positive real rate).",
+    "accept": "full = correct sign; no = wrong sign.",
+    "value": "positive"
+   }
+  ]
+ },
+ "grading": {
+  "method": "claim_recall",
+  "tolerance": 1.6,
+  "note": "Definition: r = (i - pi)/(1+pi) with pi = GDP deflator inflation. Tolerance = max(1.5, |exact - simple difference| + 0.3) pp so that both forms are accepted."
+ },
+ "provenance": {
+  "assembled_from": [
+   "WDI 2026-10-08 (frozen_extra/wdi_20261008_monetary_other.psv)"
+  ],
+  "gold_script": "scripts/mo_build.py",
+  "validation": "identity reproduces WDI FR.INR.RINR",
+  "published_value_source": "see published_value_note"
+ },
+ "method": "real_interest_rate",
+ "validation_label": "formula-validated",
+ "method_kind": "textbook identity",
+ "method_doc_ids": [
+  "0343a0da-0a3a-4e01-8b5c-408816ccb412"
+ ],
+ "method_doc_cite": "AMRO 2023 Annual Consultation Report on Japan, p.65 (Annex 4, note): \"short-term real interest rates are calculated by subtracting ... actual inflation rates from the ... rates\". Exact form used by WDI (FR.INR.RINR): (i - pi)/(1 + pi), pi = GDP deflator inflation.",
+ "gold_report_ids": [],
+ "published_value": 31.903,
+ "published_value_note": "WDI FR.INR.RINR (real interest rate, %), published by the World Bank; recomputed identity matches to 0.05 on 4,771 country-years",
+ "recomputed_value": 31.903,
+ "tolerance": 1.6,
+ "inputs": [
+  "FR.INR.LEND",
+  "NY.GDP.DEFL.KD.ZG",
+  "FR.INR.RINR"
+ ],
+ "style": "hidden",
+ "subject": {
+  "iso3": "BRA",
+  "year": 2019,
+  "lending_rate": 37.475,
+  "deflator_inflation": 4.22425886342708,
+  "simple_difference": 33.251
+ },
+ "distractors": [
+  "Neutral/natural rate estimation (HLW-type model)",
+  "Taylor-rule prescription",
+  "Debt-dynamics interest-growth differential",
+  "Effective interest rate on public debt",
+  "Policy-rate stance read in nominal terms"
+ ],
+ "famous_method": false,
+ "gold_script": "scripts/mo_build.py",
+ "hidden_condition": {
+  "condition": "FR.INR.LEND (2019) > 30 and NY.GDP.DEFL.KD.ZG (2019) < 5",
+  "year": 2019,
+  "set": [
+   "BRA"
+  ]
+ }
+}

@@ -1,0 +1,158 @@
+{
+  "id": "DSTAB-08",
+  "family": "methodology",
+  "method": "debt_stab",
+  "style": "hidden",
+  "tier": "multi_step",
+  "status": "validated",
+  "validation_tier": "published-validated",
+  "procedure_kind": "textbook identity",
+  "query": "Among the economies in the IMF World Economic Outlook database, take the one whose general government gross debt at the end of 2022 was between 71 and 74 percent of GDP, and whose nominal GDP growth in 2023 was between 11 and 14 percent. What primary balance would that economy have needed in 2023 to stop its debt-to-GDP ratio from rising?",
+  "claims": {
+    "text": [
+      {
+        "id": "c1",
+        "kind": "text",
+        "importance": "vital",
+        "text": "Identifies the debt-dynamics identity d_t=(1+lambda)d_{t-1}-p_t with lambda=(r-g)/(1+g) (the debt-stabilising primary balance p*=lambda*d_{t-1}) as the applicable method.",
+        "accept": "full = names the debt-dynamics / debt-stabilising primary balance approach (Escolano 2010; IMF 2013 Staff Guidance Note for public DSA; MAC SRDSF) or applies the equivalent formula; partial = uses only a rule of thumb (r-g)*d without the 1+g denominator; no = uses an overall-balance, structural-balance or S1/S2 method.",
+        "supporting_passages": [
+          "55319ff9-c45c-4e8d-99e4-5562a1158bf2#escolano_eq5_7_20"
+        ]
+      }
+    ],
+    "data": [
+      {
+        "id": "c5",
+        "kind": "data",
+        "importance": "okay",
+        "text": "Uses general government gross debt (% GDP), primary balance and overall balance (interest = primary minus overall balance, % GDP), and nominal GDP (WEO Oct 2025: GGXWDG_NGDP, GGXONLB_NGDP, GGXCNL_NGDP, NGDP).",
+        "accept": "full = all inputs correctly sourced; partial = some inputs approximated (e.g. real growth plus deflator); no = unrelated series."
+      }
+    ],
+    "computation": [
+      {
+        "id": "c2",
+        "kind": "computation",
+        "importance": "vital",
+        "text": "Primary balance needed in 2023 is about -7.5% of GDP (a deficit of this size keeps the ratio constant), computed as p* = lambda x previous-year debt with the effective interest rate = interest paid in 2023 / debt at end of 2022 and nominal growth = NGDP_2023/NGDP_2022 - 1; surplus positive.",
+        "accept": "full = within +-0.15 pp (sign convention: surplus positive; a deficit stated as a positive 'deficit of x' with explicit wording is accepted); partial = right sign within +-0.5 pp; no = otherwise. The gold uses the convention stated in the grading note; interest-definition alternatives (average debt, current-year debt, real-rate form) move the value by at most 0.03 pp, covered by the tolerance.",
+        "target": -7.5,
+        "tolerance_abs": 0.15
+      }
+    ]
+  },
+  "grading": {
+    "tolerance_abs_pp": 0.15,
+    "tolerance_basis": 0.15,
+    "note": "Vital computation tolerance +-0.15 (path endpoint pp of GDP; gap/required/horizon-target pp). Verdicts and directions exact. Convention for the gold (WEO Oct 2025, general government): effective interest rate r_t = interest paid in year t divided by gross debt at the end of year t-1 (in levels; interest = primary balance minus overall balance, % of GDP_t, so r_t = interest/GDP_t x (1+g_t) / (debt/GDP)_{t-1}); nominal GDP growth g_t = NGDP_t / NGDP_{t-1} - 1 from nominal GDP in national currency; primary balance = revenue minus non-interest spending, surplus positive; lambda=(r-g)/(1+g) and p* = lambda x (debt/GDP)_{t-1}. Sensitivity: the four interest-definition variants are recorded in the sensitivity object; the tolerance covers them.",
+    "definitions": "Convention for the gold (WEO Oct 2025, general government): effective interest rate r_t = interest paid in year t divided by gross debt at the end of year t-1 (in levels; interest = primary balance minus overall balance, % of GDP_t, so r_t = interest/GDP_t x (1+g_t) / (debt/GDP)_{t-1}); nominal GDP growth g_t = NGDP_t / NGDP_{t-1} - 1 from nominal GDP in national currency; primary balance = revenue minus non-interest spending, surplus positive; lambda=(r-g)/(1+g) and p* = lambda x (debt/GDP)_{t-1}."
+  },
+  "provenance": {
+    "source": "frozen WEO Oct 2025 (frozen_extra/)",
+    "generator": "scripts/debt_stab_items.py",
+    "method_text": "Escolano (2010) eqs 5,7,20,22; IMF 2013 Staff Guidance Note (DSA table footnote on debt-stabilising primary balance)",
+    "validation": "scripts/debt_stab_validation.json (28 of 29 published instances reproduced)"
+  },
+  "method_doc_ids": [
+    "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+    "2dea3fb1-758b-40a4-882b-59f953293e2d",
+    "c010cde9-5069-43d5-a0a6-d162270835fd"
+  ],
+  "gold_report_ids": [
+    "593b4bbf-3078-40aa-9110-23b53ce66298"
+  ],
+  "recomputed_value": -7.5,
+  "inputs": [
+    "GGXWDG_NGDP",
+    "GGXONLB_NGDP",
+    "GGXCNL_NGDP",
+    "NGDP"
+  ],
+  "distractors": [
+    "overall (headline) balance that holds debt constant, b* = -g/(1+g) d (answers a different question)",
+    "cyclically adjusted / structural primary balance",
+    "fiscal-gap or tax-gap indicators (S1/S2) over an infinite horizon",
+    "primary balance needed to reach a debt anchor or fiscal-rule ceiling",
+    "debt-change decomposition without a stabilising benchmark"
+  ],
+  "famous_method": true,
+  "answer_summary": "SVN 2023: debt prev 72.8, effective rate 0.99%, nominal growth 12.60%, lambda -0.1031, required primary balance -7.50, actual -1.95, gap +5.56. Gold: -7.5",
+  "gold_script": "scripts/debt_stab_items.py",
+  "validation_note": "The formula is validated on 29 published country-years; item gold is on frozen WEO Oct 2025 data for a historic year, so it is not itself a published number (see published_value_note / published_vintage_note).",
+  "sensitivity": {
+    "values": {
+      "a": -7.503,
+      "b": -7.521,
+      "c": -7.538,
+      "d": -7.503
+    },
+    "lambda_by_definition": {
+      "a": -0.1031,
+      "b": -0.10335,
+      "c": -0.10358,
+      "d": -0.10311
+    },
+    "definitions": {
+      "a": "interest / previous-year debt (canonical)",
+      "b": "interest / average of previous- and current-year debt",
+      "c": "interest / current-year debt",
+      "d": "real-rate form with GDP-deflator growth and real growth (WEO NGDP_RPCH, NGDP_D)"
+    },
+    "spread": 0.034,
+    "max_abs_dev_from_canonical": 0.034,
+    "flag_spread_gt_0.15": false,
+    "tolerance_before": 0.15,
+    "tolerance_used": 0.15,
+    "within_tolerance_before": true,
+    "action": "none: all definitions within tolerance",
+    "canonical": "a"
+  },
+  "gold": {
+    "iso3": "SVN",
+    "year": 2023,
+    "kind": "required",
+    "hidden_condition": {
+      "fields": [
+        "d_prev",
+        "pb",
+        "nominal_growth"
+      ],
+      "used": [
+        0,
+        2
+      ],
+      "windows": {
+        "0": [
+          71.0,
+          74.0
+        ],
+        "2": [
+          11.0,
+          14.0
+        ]
+      },
+      "universe": 183,
+      "answer_set_size": 1
+    },
+    "value": -7.5,
+    "unit": "% of GDP",
+    "answer": "-7.5"
+  },
+  "published_value": null,
+  "published_report_id": null,
+  "published_value_note": "No DSA baseline table in the corpus states a debt-stabilising primary balance for Slovenia for 2023 or an adjacent year: the published figure always refers to the last projection year of the table (report year + 4 or 5), and the validated reports for this country give 593b4bbf (report 2021, last projection year not parsed): -2.8.",
+  "published_other_years": [
+    {
+      "report_id": "593b4bbf-3078-40aa-9110-23b53ce66298",
+      "report_title": "Republic of Slovenia: 2021 Article IV Consultation-Press Release; Staff Report; and Statement by the Executive Director for the Republic of Slovenia",
+      "report_year": 2021,
+      "table_last_projection_year": null,
+      "table_year_inferred": false,
+      "published_value": -2.8,
+      "status": "MATCH",
+      "recomputed_pure_formula_report_vintage": -2.793,
+      "other_identified_flows_included": false
+    }
+  ]
+}

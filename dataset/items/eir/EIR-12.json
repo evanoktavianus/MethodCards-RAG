@@ -1,0 +1,119 @@
+{
+ "id": "EIR-12",
+ "family": "methodology",
+ "method": "eir",
+ "style": "hidden",
+ "tier": "multi_step",
+ "status": "validated",
+ "validation_tier": "definition-validated",
+ "procedure_kind": "textbook identity",
+ "query": "Among the economies in the IMF World Economic Outlook database, take the one whose general government gross debt at the end of 2012 was between 65.5 and 67.5 percent of GDP, and whose real GDP growth in 2013 was between 3 and 5 percent. What average interest rate did its government pay on its debt in 2013?",
+ "claims": {
+  "text": [
+   {
+    "id": "c1",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the effective interest rate on government debt (interest paid in the year divided by the debt stock at the end of the previous year; IMF 2013 Staff Guidance Note, DSA table footnote 3; Escolano 2010 Box 1 notation i_t) as the applicable measure.",
+    "accept": "full = computes interest paid / previous-year-end debt (levels); partial = uses average or current-year debt, or the interest bill as a share of GDP without a debt base; no = uses a sovereign bond yield, a policy rate, or the debt-service ratio.",
+    "supporting_passages": [
+     "55319ff9-c45c-4e8d-99e4-5562a1158bf2#p4-5",
+     "2dea3fb1-758b-40a4-882b-59f953293e2d#p16 (EIR footnote 3); 47 (debt-to-revenue)"
+    ]
+   },
+   {
+    "id": "c0",
+    "kind": "text",
+    "importance": "vital",
+    "text": "Identifies the economy meeting the stated conditions as Israel.",
+    "accept": "must name the correct economy (ISR) before the computation."
+   }
+  ],
+  "data": [
+   {
+    "id": "c5",
+    "kind": "data",
+    "importance": "okay",
+    "text": "Uses gross debt (% GDP) at the end of the previous year, interest paid (primary balance minus overall balance, % GDP) and nominal GDP growth (WEO Oct 2025: GGXWDG_NGDP, GGXONLB_NGDP, GGXCNL_NGDP, NGDP).",
+    "accept": "full = all inputs correctly sourced; partial = some inputs approximated; no = unrelated series."
+   }
+  ],
+  "computation": [
+   {
+    "id": "c2",
+    "kind": "computation",
+    "importance": "vital",
+    "text": "The value for Israel in 2013 is about 4.74 % per year.",
+    "accept": "full = within +-0.5; partial = within +-1; no = otherwise.",
+    "target": 4.74,
+    "tolerance_abs": 0.5
+   }
+  ]
+ },
+ "grading": {
+  "tolerance_abs": 0.5,
+  "note": "Verdicts exact. Convention for the gold (WEO Oct 2025, general government): interest paid in year t = primary balance minus overall balance (% of GDP_t); effective interest rate i_t = interest_t / gross debt at end of t-1, in levels, i.e. (interest/GDP_t) x (1+gamma_t) / (debt/GDP)_{t-1}, gamma_t = NGDP_t/NGDP_{t-1} - 1; real rate r_t = (1+i_t)/(1+pi_t) - 1 with pi_t the growth of the GDP deflator NGDP_D; growth-adjusted rate lambda_t = (i_t - gamma_t)/(1 + gamma_t). Items are kept only where the average-debt and current-debt variants of i_t lie within 0.5 pp and (for lambda) plain i - gamma lies within 0.5 pp.",
+  "definitions": "Convention for the gold (WEO Oct 2025, general government): interest paid in year t = primary balance minus overall balance (% of GDP_t); effective interest rate i_t = interest_t / gross debt at end of t-1, in levels, i.e. (interest/GDP_t) x (1+gamma_t) / (debt/GDP)_{t-1}, gamma_t = NGDP_t/NGDP_{t-1} - 1; real rate r_t = (1+i_t)/(1+pi_t) - 1 with pi_t the growth of the GDP deflator NGDP_D; growth-adjusted rate lambda_t = (i_t - gamma_t)/(1 + gamma_t). Items are kept only where the average-debt and current-debt variants of i_t lie within 0.5 pp and (for lambda) plain i - gamma lies within 0.5 pp."
+ },
+ "provenance": {
+  "source": "frozen WEO Oct 2025 (frozen_extra/)",
+  "generator": "scripts/fr_items.py",
+  "method_text": "Escolano (2010) Box 1 and eq. 5; IMF 2013 Staff Guidance Note DSA table footnote 3"
+ },
+ "validation_label": "formula-validated",
+ "method_kind": "textbook identity",
+ "famous_method": true,
+ "method_doc_ids": [
+  "55319ff9-c45c-4e8d-99e4-5562a1158bf2",
+  "2dea3fb1-758b-40a4-882b-59f953293e2d"
+ ],
+ "gold_report_ids": [],
+ "published_value": null,
+ "published_value_note": "No corpus report states this country-year value for the identity on the frozen vintage; formula printed in the method document (gate a), inputs public (b), gold by script (c).",
+ "recomputed_value": 4.74,
+ "inputs": [
+  "GGXWDG_NGDP",
+  "GGXONLB_NGDP",
+  "GGXCNL_NGDP",
+  "NGDP"
+ ],
+ "distractors": [
+  "sovereign bond yield or marginal borrowing cost (market rate, not interest paid over debt)",
+  "policy interest rate",
+  "interest bill as a share of GDP",
+  "debt-stabilising primary balance or full debt-dynamics decomposition",
+  "debt service (interest plus amortisation) ratios"
+ ],
+ "answer_summary": "ISR 2013 hidden: i=4.74%, r=2.81%, lambda=-1.23. Gold 4.74",
+ "gold_script": "scripts/fr_items.py",
+ "gold": {
+  "iso3": "ISR",
+  "year": 2013,
+  "unit": "%",
+  "hidden_condition": {
+   "fields": [
+    "d_prev",
+    "real_growth",
+    "deflator_inflation"
+   ],
+   "used": [
+    0,
+    1
+   ],
+   "windows": {
+    "0": [
+     65.5,
+     67.5
+    ],
+    "1": [
+     3.0,
+     5.0
+    ]
+   },
+   "universe": 190,
+   "answer_set_size": 1
+  },
+  "value": 4.74,
+  "kind": "nominal"
+ }
+}
